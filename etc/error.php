@@ -4,9 +4,10 @@
 		$e = new RoutingException('Just view ErrorDocument', 200);
 
 	$errorCodes = include(ROOT.'etc/responses.php');
-	$name = $errorCodes[$e->getCode()];
+	$code = $e->getCode();
+	$name = $errorCodes[$code];
 
-	header('HTTP/1.0 '.$name);
+	header('HTTP/1.0 '.$code.' '.$name);
 
 ?>
 <html>
@@ -47,11 +48,11 @@
  	Произошла ошибка. Для продолжения: <br>
  	Нажмите любую клавишу, чтобы вернуться назад, или тыкните 
 	<a href="javascript:history.back();">ЗДЕСЬ</a><br>
- 	<br><br>
  	Зажмите CTRL+ALT+DEL и перезагрузите ваш компьютер, но это точно не поможет. <br>
  	<br><br>
- 	<b>Ошибка: <?=$name?></b><br>
-	<?php if (DEBUG) echo $e->getMessage().'<br>'; ?>
+	<b>Код ошибки: <?=$code?></b><br>
+ 	<b>Расшифровка: <?=$name?></b><br>
+	<?php if (DEBUG) echo '<br>'.$e->getMessage().'<br>'; ?>
 	<br><br>
  	<b>Press ANY key to continue</b>
 	</center>
