@@ -4,7 +4,7 @@ return array(
 
 	// Страница по-умолчанию
 	'' => ['MainController', 'actionIndex'],
-	'home' => ['MainController', 'actionTables'],
+	'tables' => ['MainController', 'actionTables'],
 
 	// Страница муляж-тестер
 	'test' => ['TestController', 'actionIndex'],

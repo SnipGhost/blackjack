@@ -17,6 +17,7 @@ class MainController extends Controller
 	public function actionTables()
 	{
 		$data = $this->model->getTablesList();
-		$this->view->display("default.php", "main/MainView.php", $data);
+		$meta = array('title' => 'Таблицы');
+		$this->view->display("default.php", "main/MainView.php", $data, $meta);
 	}
 }

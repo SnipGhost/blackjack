@@ -3,9 +3,12 @@
 class View
 {	
 	// Собирает результирующую страницу из шаблона
-	public function display($templateFileName, $contentFileName, $data = null)
+	public function display($templateFileName, $contentFileName, $data = null, $meta = null)
 	{
-		// [!] Внутри которого подключается контент
+		if (!$meta) {
+			$meta = array('title' => 'Главная');
+		}
+		// [!] Внутри шаблона контент должен подключаеться самостоятельно
 		include(ROOT."templates/$templateFileName");
 	}
 }
