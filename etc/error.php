@@ -1,11 +1,22 @@
 <?php
 
-	if (!isset($e))
-		$e = new RoutingException('Just view ErrorDocument', 200);
+	$errcode = 200;
 
-	$errorCodes = include(ROOT.'etc/responses.php');
-	$code = $e->getCode();
-	$name = $errorCodes[$code];
+	if (isset($_GET['code']))
+		$errcode = $_GET['code'];
+
+	$errorCodes = include('responses.php');
+
+	if (!isset($e)) {
+		$code = $errcode;
+		$name = $errorCodes[$code];
+		$message = "Server error";
+	} else {
+		$code = $e->getCode();
+		$name = $errorCodes[$code];
+		$message = $e->getMessage();
+	}
+	
 
 	header('HTTP/1.0 '.$code.' '.$name);
 
@@ -52,7 +63,7 @@
  	<br><br>
 	<b>Код ошибки: <?=$code?></b><br>
  	<b>Расшифровка: <?=$name?></b><br>
-	<?php if (DEBUG) echo '<br>'.$e->getMessage().'<br>'; ?>
+	<?php if (DEBUG) echo '<br>'.$message.'<br>'; ?>
 	<br><br>
  	<b>Press ANY key to continue</b>
 	</center>

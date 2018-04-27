@@ -1,9 +1,22 @@
 <?php
 
+include_once(ROOT.'models/MainModel.php');
+
 class MainController extends Controller
 {
+	public function __construct()
+	{
+		$this->view = new View();
+		$this->model = new MainModel();
+	}
 	public function actionIndex()
 	{
-		$this->view->display("Main", "1");
+		$data = $this->model->getData();
+		$this->view->display("default.php", "main/MainView.php", $data);
+	}
+	public function actionTables()
+	{
+		$data = $this->model->getTablesList();
+		$this->view->display("default.php", "main/MainView.php", $data);
 	}
 }

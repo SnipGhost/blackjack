@@ -8,7 +8,14 @@ if (DEBUG) {
 }
 
 // Адрес, по которому мы должны получать index нашего сайта
-define('BASE_URI', "~snipghost/blackjack/");
+define('BASE_URI', '~snipghost/blackjack/');
 
 // Версия, для удобства написания
 define('VERSION', 'v0.1');
+
+// Файл с конфиденциальными настройками БД
+include(ROOT.'etc/passwords.php');
+// define(HOSTNAME, "");
+// define(USERNAME, "");
+// define(PASSWORD, "");
+// define(DATABASE, "");

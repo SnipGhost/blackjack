@@ -2,8 +2,10 @@
 
 class View
 {	
-	public function display($contentView, $templateView, $data = null)
+	// Собирает результирующую страницу из шаблона
+	public function display($templateFileName, $contentFileName, $data = null)
 	{
-		echo $contentView.' : '.$templateView.'<br>';
+		// [!] Внутри которого подключается контент
+		include(ROOT."templates/$templateFileName");
 	}
 }

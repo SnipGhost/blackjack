@@ -12,6 +12,6 @@ class Controller
 	
 	public function actionIndex() 
 	{
-		$this->view->display('STD', '0');
+		$this->view->display('default.php', '');
 	}
 }

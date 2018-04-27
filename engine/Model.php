@@ -4,6 +4,6 @@ class Model
 {
 	public function getData() 
 	{
-		return 'Test';
+		return 'Default';
 	}
 }

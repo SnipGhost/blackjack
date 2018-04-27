@@ -2,8 +2,5 @@
 
 class TestController extends Controller
 {
-	public function actionTest()
-	{
-		$this->view->display("Test", "1");
-	}
+	// Супер-дефолтный - выводит шаблон без контента и всё
 }

@@ -4,11 +4,10 @@ return array(
 
 	// Страница по-умолчанию
 	'' => ['MainController', 'actionIndex'],
-	'home' => ['MainController', 'actionIndex'],
+	'home' => ['MainController', 'actionTables'],
 
 	// Страница муляж-тестер
-	'test' => ['TestController', 'actionTest'],
-	'test/[0-9]+' => ['TestController', 'actionTest'],
+	'test' => ['TestController', 'actionIndex'],
 
 	// Страница, которая всегда пятисотит
 	'500' => ['FAKE_CONTROLLER', 'actionFake'],
