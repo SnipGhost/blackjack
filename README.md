@@ -4,6 +4,8 @@
 
 Прочитать неплохой пример реализации и немного теории можно [тут][habr-mvc].
 
+![MVC-Picture](https://hsto.org/storage2/3c9/08c/28b/3c908c28b274e91c7043e3047465288c.png)
+
 [wiki-mvc]: https://ru.wikipedia.org/wiki/Model-View-Controller
 [habr-mvc]: https://habr.com/post/150267/
 
