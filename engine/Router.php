@@ -39,8 +39,12 @@ class Router
 				throw new RoutingException('No controller file: '.$controllerFile, 500);
 			}
 
-			$controllerObject = new $controllerName;
-			$result = $controllerObject->$actionName();
+			try {
+				$controllerObject = new $controllerName;
+				$result = $controllerObject->$actionName();
+			} catch (Error $e) {
+				throw new RoutingException('Class "'.$controllerName.'" with action "'.$actionName.'" not found', 500);
+			}
 
 			echo $result;
 
