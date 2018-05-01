@@ -54,6 +54,30 @@
 ```
 
 
+### Установка
+
+Для тестирования вам необходимо:
+
+1. HTTP-server ([Apache][apache-link] / [Nginx][nginx-link] / ...) + PHP-расширение для него
+2. SQL-server ([Mysql][mysql-link] / [MariaDB][mariadb-link]) + БД с таблицой `Классы`
+3. Изменить в `etc/config.php` строку: `define('BASE_URI', '...');`
+4. Добавить файл `etc/passwords.php` (занесите туда 4 строки настроек БД)
+5. Настроить редирект всех запросов на `index.php` и ErrorDocument для вашего HTTP-сервера
+
+P.S. Для апача уже есть `.htaccess`. Переводчик конфига Apache в Nginx [тут][apache-to-nginx].
+
+- Для винды есть сборка [XAMPP][xampp-link], для ubuntu то же самое - [LAMP][lamp-link]
+- Под маком уже есть апач + ставится mysql элементарно, либо XAMPP-VM
+- Тот, кто использует что-то кроме, в состоянии разобраться сам
+
+[apache-link]: https://httpd.apache.org/
+[nginx-link]: https://nginx.ru/ru/
+[mysql-link]: https://www.mysql.com/
+[mariadb-link]: https://mariadb.org/
+[apache-to-nginx]: https://winginx.com/ru/htaccess
+[xampp-link]: https://www.apachefriends.org/ru/index.html
+[lamp-link]: http://help.ubuntu.ru/wiki/lamp
+
 ### Рабочий цикл создания новой страницы
 
 0. Заранее обсуждаем и добавляем новые пути в etc/routes.php
