@@ -21,8 +21,7 @@ class DBController extends Controller
 
 	public function actionInsert()
 	{
-		$values = array('username' => 'test', 'password' => 'pass');
-		$data = $this->model->insert($values);
+		$data = $this->model->insert();
 		$page = array(
 			'content' => 'db/QueryView.php',
 			'title' => 'Результат',
@@ -33,13 +32,18 @@ class DBController extends Controller
 
 	public function actionInsertMany()
 	{
-		$keys = array('username', 'password');
-		$values = array(
-			array('test_1', 'pass_1'),
-			array('test_2', 'pass_2'),
-			array('test_3', 'pass_3'),
+		$data = $this->model->insertMany();
+		$page = array(
+			'content' => 'db/QueryView.php',
+			'title' => 'Результат',
+			'data' => $data,
 		);
-		$data = $this->model->insertMany($keys, $values);
+		$this->view->display($page);
+	}
+
+	public function actionSelect()
+	{
+		$data = $this->model->select();
 		$page = array(
 			'content' => 'db/QueryView.php',
 			'title' => 'Результат',

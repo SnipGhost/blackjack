@@ -79,7 +79,33 @@
 			return $this->mysqli->query($query);
 		}
 		// SELECT $cols FROM $table WHERE $where LIMIT $limit
-		public function select($table, $data, $cols = ['*'], $where = '', $limit = 0) {}
+		public function select($table, $keys = '*', $where = '', $order = '', $limit = 0)
+		{
+			$query = 'SELECT ';
+			if ($keys === '*' || $keys === '') {
+				$query .= '* FROM ';
+			} else {
+				foreach ($keys as $key) {
+					$query .= $this->mysqli->real_escape_string($key).', ';
+				}
+				$query = substr($query, 0, -2).' FROM ';
+			}
+			$table = $this->mysqli->real_escape_string($table);
+			$query .= $table;
+			if ($where != '') {
+				$where = $this->mysqli->real_escape_string($where);
+				$query .= ' WHERE '.$where;
+			}
+			if ($order != '') {
+				$order = $this->mysqli->real_escape_string($order);
+				$query .= ' ORDER BY '.$order;
+			}
+			if ($limit != 0) {
+				$limit = (string)$limit;
+				$query .= ' LIMIT '.$limit;
+			}
+			return $this->query($query);
+		}
 		// UPDATE $table SET $data[0]->key, ... WHERE $where LIMIT $limit
 		public function update($table, $data, $where = '', $limit = 0) {}
 		// DELETE FROM $table WHERE $where LIMIT $limit
