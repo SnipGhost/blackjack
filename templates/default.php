@@ -1,21 +1,21 @@
 <html>
 <head>
-	<title><?=$meta['title']?></title>
+	<title><?=$title?></title>
 	<link rel="stylesheet" type="text/css" href="/<?=BASE_URI?>css/style.css" />
 </head>
 <body>
 
 	<div class="header panel">
-		HEADER
+		Header
 		<span class="version"><?=VERSION?></span>
 	</div>
 
 	<div class="wrapper">
-		<?php if ($contentFileName != '') include(ROOT."views/$contentFileName"); ?>
+		<?php if ($content != '') include(ROOT."views/$content"); ?>
 	</div>
 
 	<div class="footer panel">
-		FOOTER
+		Footer
 	</div>
 
 </body>

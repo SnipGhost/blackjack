@@ -9,15 +9,25 @@ class MainController extends Controller
 		$this->view = new View();
 		$this->model = new MainModel();
 	}
+
 	public function actionIndex()
 	{
 		$data = $this->model->getData();
-		$this->view->display("default.php", "main/MainView.php", $data);
+		$page = array(
+			'content' => 'main/IndexView.php',
+			'data' => $data,
+		);
+		$this->view->display($page);
 	}
+
 	public function actionTables()
 	{
 		$data = $this->model->getTablesList();
-		$meta = array('title' => 'Таблицы');
-		$this->view->display("default.php", "main/MainView.php", $data, $meta);
+		$page = array(
+			'content' => 'main/TablesView.php',
+			'data' => $data,
+			'title' => 'Таблицы',
+		);
+		$this->view->display($page);
 	}
 }

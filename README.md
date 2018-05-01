@@ -54,6 +54,16 @@
 ```
 
 
+### Рабочий цикл создания новой страницы
+
+0. Заранее обсуждаем и добавляем новые пути в etc/routes.php
+1. Создаем файл контроллера, расширяем класс Controller, задаем хендлеры
+2. Если необходимы данные - создаем файл модели, расширяем класс Model
+3. Если необходимо - создаем файл шаблона страницы, файл стилей
+4. Создаем файл представления, наполняем его HTML + вставки PHP для вывода
+
+P.S. переменные внутри представления используются уже после extract, учтите это
+
 ### Примеры
 
 etc/routes.php
@@ -61,14 +71,14 @@ etc/routes.php
 return array(
 
     // Страница по-умолчанию
-    ''     => ['MainController', 'actionIndex'],  // список классов
-    'home' => ['MainController', 'actionTables'], // список всех таблиц в БД
+    ''       => ['MainController', 'actionIndex'],  // список классов
+    'tables' => ['MainController', 'actionTables'], // список всех таблиц в БД
 
     // Страница муляж-тестер
-    'test' => ['TestController', 'actionIndex'],
+    'test'   => ['TestController', 'actionIndex'],
 
     // Страница, которая всегда пятисотит
-    '500'  => ['FAKE_CONTROLLER', 'actionFake'],
+    '500'    => ['FAKE_CONTROLLER', 'actionFake'],
 
 );
 ```
@@ -90,15 +100,26 @@ class MainController extends Controller
     public function actionIndex()
     {
         $data = $this->model->getData(); // Получаем данные из модели
-        // Отрисовываем эти данные внутри шаблона, используя представление
-        $this->view->display("default.php", "main/MainView.php", $data);
+        // Упаковываем необходимые нам в представлении данные
+        $page = array(
+            'content' => 'main/IndexView.php', // Подключаем внутри шаблона 
+            'data' => $data,                   // И данные от модели сюда же
+            'title' => 'Главная',              // И заголовок укажем
+        );
+        // Отдаем все данные в представление - отрисовываем страницу
+        $this->view->display($page);
     }
 
-    // Регистрируем хендлер для '/home/' (см. etc/routes.php)
+    // Регистрируем хендлер для '/tables/' (см. etc/routes.php)
     public function actionTables()
     {
         $data = $this->model->getTablesList();
-        $this->view->display("default.php", "main/MainView.php", $data);
+        $page = array(
+            'content' => 'main/TablesView.php',
+            'data' => $data,
+            'title' => 'Таблицы',
+        );
+        $this->view->display($page);
     }
 }
 ```
@@ -123,7 +144,7 @@ class MainModel extends Model
 }
 ```
 
-views/main/MainView.php
+views/main/IndexView.php
 ```php 
 <div class="box">
     <center><h2>Just example!</h2></center>
