@@ -6,7 +6,7 @@ class MainModel extends Model
 {
 	public function getData()
 	{
-		return $this->db->query("SELECT * FROM users");
+		return $this->db->select('users', '*');
 	}
 	public function getTablesList()
 	{
