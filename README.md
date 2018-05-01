@@ -67,7 +67,7 @@
 P.S. Для апача уже есть `.htaccess`. Переводчик конфига Apache в Nginx [тут][apache-to-nginx].
 
 - Для винды есть сборка [XAMPP][xampp-link], для ubuntu то же самое - [LAMP][lamp-link]
-- Под маком уже есть апач + ставится mysql элементарно, либо XAMPP-VM
+- Под маком [уже есть апач][mac-apache] + ставится mysql элементарно, либо XAMPP-VM
 - Тот, кто использует что-то кроме, в состоянии разобраться сам
 
 [apache-link]: https://httpd.apache.org/
@@ -77,6 +77,7 @@ P.S. Для апача уже есть `.htaccess`. Переводчик кон�
 [apache-to-nginx]: https://winginx.com/ru/htaccess
 [xampp-link]: https://www.apachefriends.org/ru/index.html
 [lamp-link]: http://help.ubuntu.ru/wiki/lamp
+[mac-apache]: http://osxh.ru/content/apache_mac_os_x_10_8
 
 ### Рабочий цикл создания новой страницы
 
