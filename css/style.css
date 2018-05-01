@@ -9,6 +9,12 @@ h2 {
 	color: #fff;
 	margin-bottom: 40px;
 }
+a {
+	color: #6084a9;
+}
+a:visited {
+	color: #fff;
+}
 .panel {
 	width: 100vw;
 	height: 30px;
