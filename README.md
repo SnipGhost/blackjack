@@ -12,6 +12,10 @@
 ### Структура репозитория:
 ```
 ./
+│
+├─── benchmark           // Файлы тестов и бенчмарков
+│    └─── ...
+│
 ├─── controllers         // Файлы контроллеров проекта
 │    └─── ...
 │
@@ -40,6 +44,9 @@
 ├─── models              // Файлы моделей проекта
 │    └─── ...
 │
+├─── sql                 // Файлы SQL-дампов, настроек, итд
+│    └─── ...
+│
 ├─── templates           // Файлы html/php-шаблонов
 │    └─── ...
 │
@@ -59,7 +66,7 @@
 Для тестирования вам необходимо:
 
 1. HTTP-server ([Apache][apache-link] / [Nginx][nginx-link] / ...) + PHP-расширение для него
-2. SQL-server ([Mysql][mysql-link] / [MariaDB][mariadb-link]) + БД с таблицой `Классы`
+2. SQL-server ([Mysql][mysql-link] / [MariaDB][mariadb-link]) + БД (дамп в `sql/blackjack.sql`)
 3. Изменить в `etc/config.php` строку: `define('BASE_URI', '...');`
 4. Добавить файл `etc/passwords.php` (занесите туда 4 строки настроек БД)
 5. Настроить редирект всех запросов на `index.php` и ErrorDocument для вашего HTTP-сервера
@@ -156,14 +163,12 @@ class MainModel extends Model
     // Получаем таблицу классов
     public function getData()
     {
-        global $db;
-        return $db->query("SELECT * FROM Классы");
+        return $db->select('users', '*');
     }
 
     // Получение списка таблиц
     public function getTablesList()
     {
-        global $db;
         return $db->query("SHOW TABLES");
     }
 }

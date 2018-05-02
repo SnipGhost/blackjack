@@ -41,9 +41,14 @@ class Router
 
 			try {
 				$controllerObject = new $controllerName;
+			} catch (Error $e) {
+				throw new RoutingException('Class "'.$controllerName.'" not found', 500);
+			}
+
+			try {
 				$result = $controllerObject->$actionName();
 			} catch (Error $e) {
-				throw new RoutingException('Class "'.$controllerName.'" with action "'.$actionName.'" not found', 500);
+				throw new RoutingException('Action "'.$actionName.'" not found', 500);
 			}
 
 			echo $result;

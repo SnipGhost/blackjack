@@ -14,9 +14,5 @@
 		<?php if ($content != '') include(ROOT."views/$content"); ?>
 	</div>
 
-	<div class="footer panel">
-		Footer
-	</div>
-
 </body>
 </html>

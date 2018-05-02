@@ -6,12 +6,10 @@ class MainModel extends Model
 {
 	public function getData()
 	{
-		global $db;
-		return $db->query("SELECT * FROM Классы");
+		return $this->db->select('users', '*');
 	}
 	public function getTablesList()
 	{
-		global $db;
-		return $db->query("SHOW TABLES");
+		return $this->db->query("SHOW TABLES");
 	}
 }
