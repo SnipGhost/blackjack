@@ -32,7 +32,7 @@ class DBController extends Controller
 
 	public function actionInsertMany()
 	{
-		$data = $this->model->insertMany();
+		$data = $this->model->insertManyToUsers();
 		$page = array(
 			'content' => 'db/QueryView.php',
 			'title' => 'Результат',
@@ -60,6 +60,36 @@ class DBController extends Controller
 			'title' => 'Результат',
 			'data' => $data,
 		);
+		$this->view->display($page);
+	}
+
+	public function actionDelete()
+	{
+		$data = $this->model->delete();
+		$page = array(
+			'content' => 'db/QueryView.php',
+			'title' => 'Результат',
+			'data' => $data,
+		);
+		$this->view->display($page);
+	}
+
+	public function actionTruncate()
+	{
+		$data = $this->model->truncate();
+		$page = array(
+			'content' => 'db/QueryView.php',
+			'title' => 'Результат',
+			'data' => $data,
+		);
+		if ($data) {
+			$data = $this->model->insertManyToTest();
+			$page = array(
+				'content' => 'db/QueryView.php',
+				'title' => 'Результат',
+				'data' => $data,
+			);
+		}
 		$this->view->display($page);
 	}
 }
