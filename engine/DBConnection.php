@@ -40,42 +40,43 @@
 			$this->mysqli->close();
 		}
 
+		private function escape(string $str)
+		{
+			return $this->mysqli->real_escape_string($str);
+		}
+
 		// TODO: Реализовать шорткаты для SQL-команд
 
 		// INSERT INTO $table SET $data[0]->key = $data[0]->value, ...
 		public function insert($table, $data)
 		{
-			$table = $this->mysqli->real_escape_string($table);
+			$table = $this->escape($table);
 			$query = 'INSERT INTO '.$table.' SET ';
 			foreach ($data as $key => $value) {
-				$key = $this->mysqli->real_escape_string($key);
-				$value = $this->mysqli->real_escape_string($value);
+				$key = $this->escape($key);
+				$value = $this->escape($value);
 				$query .= $key." = '".$value."', ";
 			}
 			$query = substr($query, 0, -2);
+			echo $query;
 			return $this->mysqli->query($query);
 		}
 		// INSERT INTO $table ($keys) VALUES ($data[0]), ($data[1]), ... 
 		public function insertMany($table, $data, $keys = [])
 		{
-			$table = $this->mysqli->real_escape_string($table);
+			$table = $this->escape($table);
 			$query = 'INSERT INTO '.$table.' ';
 			if (count($keys) != 0) {
-				$query .= '(';
-				foreach ($keys as $key) {
-					$query .= $this->mysqli->real_escape_string($key).', ';
-				}
-				$query = substr($query, 0, -2).') ';
+				$keys = array_map(array($this, 'escape'), $keys);
+				$query .= '('.implode(', ', $keys).') ';
 			}
 			$query .= 'VALUES ';
-			foreach ($data as $row) {
-				$query .= '(';
-				foreach ($row as $value) {
-					$query .= "'".$this->mysqli->real_escape_string($value)."', ";
-				}
-				$query = substr($query, 0, -2).'), ';
+			foreach ($data as &$row) {
+				$row = array_map(array($this, 'escape'), $row);
+				$row = "'".implode("', '", $row)."'";
 			}
-			$query = substr($query, 0, -2);
+			$query .= "(".implode("), (", $data).")";
+			echo $query;
 			return $this->mysqli->query($query);
 		}
 		// SELECT $cols FROM $table WHERE $where LIMIT $limit
@@ -85,19 +86,16 @@
 			if ($keys === '*' || $keys === '') {
 				$query .= '* FROM ';
 			} else {
-				foreach ($keys as $key) {
-					$query .= $this->mysqli->real_escape_string($key).', ';
-				}
-				$query = substr($query, 0, -2).' FROM ';
+				$query .= implode(', ', $keys).' FROM ';
 			}
-			$table = $this->mysqli->real_escape_string($table);
+			$table = $this->escape($table);
 			$query .= $table;
 			if ($where != '') {
-				$where = $this->mysqli->real_escape_string($where);
+				$where = $this->escape($where);
 				$query .= ' WHERE '.$where;
 			}
 			if ($order != '') {
-				$order = $this->mysqli->real_escape_string($order);
+				$order = $this->escape($order);
 				$query .= ' ORDER BY '.$order;
 			}
 			if ($limit != 0) {

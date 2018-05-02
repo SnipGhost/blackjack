@@ -34,4 +34,12 @@ class DBModel extends Model
 			return $result;
 		return "Ошибка при выборке данных!";
 	}
+
+	public function update()
+	{
+		$result = $this->db->update('users', $data, $where, $limit);
+		if ($result)
+			return $result;
+		return "Ошибка при выборке данных!";
+	}
 }

@@ -51,4 +51,15 @@ class DBController extends Controller
 		);
 		$this->view->display($page);
 	}
+
+	public function actionUpdate()
+	{
+		$data = $this->model->update();
+		$page = array(
+			'content' => 'db/QueryView.php',
+			'title' => 'Результат',
+			'data' => $data,
+		);
+		$this->view->display($page);
+	}
 }
