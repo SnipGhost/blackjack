@@ -3,8 +3,6 @@
 // Front Controller
 //-----------------------------------------------------------------------------
 
-// Для отладки выставить DEBUG = true в etc/config.php
-
 // Для удобства написания, стандартная практика
 define('ROOT', dirname(__FILE__)."/");
 require_once(ROOT.'etc/config.php');
@@ -17,8 +15,8 @@ require_once(ROOT.'engine/DBConnection.php');
 require_once(ROOT.'engine/Session.php');
 require_once(ROOT.'engine/User.php');
 
+// Запускаем сессию
 $session = Session::getInstance();
-$user = User::authentication($session);
 
 // Подключение к базе данных
 try {
@@ -27,6 +25,9 @@ try {
 	include(ROOT.'etc/error.php');
 	exit();
 }
+
+// Производим аутентификацию пользователя
+[$user, $login_err] = User::authentication($session, $db);
 
 // Маршрутизируем на подходящий контроллер
 $router = new Router();

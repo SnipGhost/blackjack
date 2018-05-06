@@ -4,7 +4,9 @@ class DBModel extends Model
 {
 	public function insert()
 	{
-		$values = array('username' => 'test', 'password' => 'pass');
+		$values = array('username' => 'test',
+						'password' => 'pass',
+						'email' => 'email@t.t');
 		if ($this->db->insert('users', $values))
 			return "Запись успешно добавлена!";
 		return "Ошибка при добавлении записи!";
@@ -12,11 +14,11 @@ class DBModel extends Model
 
 	public function insertManyToUsers()
 	{
-		$keys = array('username', 'password');
+		$keys = array('username', 'password', 'email');
 		$values = array(
-			array('test_1', 'pass_1'),
-			array('test_2', 'pass_2'),
-			array('test_3', 'pass_3'),
+			array('test_1', 'pass_1', 'email_1@t.t'),
+			array('test_2', 'pass_2', 'email_2@t.t'),
+			array('test_3', 'pass_3', 'email_2@t.t'),
 		);
 		if ($this->db->insertMany('users', $values, $keys))
 			return "Записи успешно добавлены!";

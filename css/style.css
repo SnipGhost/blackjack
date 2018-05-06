@@ -38,13 +38,36 @@ a:visited {
 .login-panel {
 	float: right;
 	margin-right: 12px;
+	margin-top: -2px;
 }
 .login-panel input {
 	max-width: 100px;
 	background: transparent;
-	padding-bottom: 2px;
+	padding: 2px 4px;
 	border: 0;
 	border-bottom: 1px solid #34495e;
+	font-size: 12px;
+	margin-left: 4px;
+	color: #34495e;
+}
+.login-panel button {
+	display: inline-block;
+	margin-left: 20px;
+	padding: 4px;
+	border: 1px dashed #fff;
+	background-color: transparent;
+	color: #fff;
+	text-decoration: none;
+}
+.login-panel button:hover {
+	text-decoration: underline;
+}
+.login-panel #error-msg {
+	color: #e74c3c;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 8px;
+	margin-right: 10px;
 }
 /*********************************************************/
 .wrapper {
