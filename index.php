@@ -14,8 +14,11 @@ require_once(ROOT.'engine/Controller.php');
 require_once(ROOT.'engine/Router.php');
 require_once(ROOT.'engine/Exceptions.php');
 require_once(ROOT.'engine/DBConnection.php');
+require_once(ROOT.'engine/Session.php');
+require_once(ROOT.'engine/User.php');
 
-// TODO: запуск сессии
+$session = Session::getInstance();
+$user = User::authentication($session);
 
 // Подключение к базе данных
 try {
