@@ -86,3 +86,19 @@ a:visited {
 	color: #6084a9;
 }
 /*********************************************************/
+.reg-form {
+	width: 50%;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.reg-form input {
+	float: right;
+}
+.reg-form button {
+	float: right;
+}
+.reg-form .line {
+	margin-top: 10px;
+}
+/*********************************************************/

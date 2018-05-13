@@ -6,6 +6,9 @@ return array(
 	''       => ['MainController', 'actionIndex'],
 	'tables' => ['MainController', 'actionTables'],
 
+	// Страница регистрации
+	'reg' => ['RegController', 'actionReg'],
+
 	// Страница муляж-тестер
 	'test' => ['TestController', 'actionIndex'],
 
