@@ -1,24 +1,24 @@
 <?php
 
-	$errcode = 200;
+    $errcode = 200;
 
-	if (isset($_GET['code']))
-		$errcode = $_GET['code'];
+    if (isset($_GET['code'])) {
+        $errcode = $_GET['code'];
+    }
 
-	$errorCodes = include('responses.php');
+    $errorCodes = include 'responses.php';
 
-	if (!isset($e)) {
-		$code = $errcode;
-		$name = $errorCodes[$code];
-		$message = "Server error";
-	} else {
-		$code = $e->getCode();
-		$name = $errorCodes[$code];
-		$message = $e->getMessage();
-	}
-	
+    if (!isset($e)) {
+        $code = $errcode;
+        $name = $errorCodes[$code];
+        $message = 'Server error';
+    } else {
+        $code = $e->getCode();
+        $name = $errorCodes[$code];
+        $message = $e->getMessage();
+    }
 
-	header('HTTP/1.0 '.$code.' '.$name);
+    header('HTTP/1.0 '.$code.' '.$name);
 
 ?>
 <html>

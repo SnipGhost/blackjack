@@ -7,11 +7,11 @@
 
 	<div class="header panel">
 		<span class="panel-text">Project blackjack</span>
-		<?php include('templates/login.php'); ?>
+		<?php include 'templates/login.php'; ?>
 	</div>
 
 	<div class="wrapper">
-		<?php if ($content != '') include(ROOT."views/$content"); ?>
+		<?php if ($content != '') { include ROOT."views/$content"; } ?>
 	</div>
 
 	<div class="footer panel">

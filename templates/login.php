@@ -10,4 +10,4 @@
 		Пользователь: <?=$user->name?>
 		<button name="logout">Выход</button>
 	</form>
-<?php endif ?>
+<?php endif; ?>
