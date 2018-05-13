@@ -29,7 +29,11 @@ class Session
     public function startSession()
     {
         if ($this->sessionState == self::SESSION_NOT_STARTED) {
-			$this->sessionState = session_start();
+            try {
+                $this->sessionState = session_start();
+            } catch (Error $e) {
+                throw new SessionException("Session error: ".$e->getMessage(), 500);
+            }
         }
         return $this->sessionState;
     }

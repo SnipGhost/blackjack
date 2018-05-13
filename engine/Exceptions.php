@@ -5,3 +5,4 @@
 
 class RoutingException extends Exception {}
 class DataBaseException extends Exception {}
+class SessionException extends Exception {}

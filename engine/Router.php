@@ -48,7 +48,7 @@ class Router
 			try {
 				$result = $controllerObject->$actionName();
 			} catch (Error $e) {
-				throw new RoutingException('Action "'.$actionName.'" not found', 500);
+				throw new RoutingException('Action "'.$actionName.'" error: '.$e->getMessage(), 500);
 			}
 
 			echo $result;
