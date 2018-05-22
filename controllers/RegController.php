@@ -17,13 +17,16 @@ class RegController extends Controller
                   $_POST['password'],
                   $_POST['retype'],
                   $_POST['email'])) {
-            $data = $this->model->checkUserName($_POST['username']);
+
+            // TODO: Реализовать добавление пользователя
+
             $page = array(
                 'content' => 'reg/RegEnd.php',
                 'title' => 'Завершение регистрации',
-                'data' => $data,
+                'data' => $this->model->checkUserName($_POST['username']),
             );
             $this->view->display($page);
+
         } else {
             $page = array(
                 'content' => 'reg/RegForm.php',
