@@ -5,6 +5,7 @@ return array(
     // Страница по-умолчанию
     ''       => ['MainController', 'actionIndex'],
     'tables' => ['MainController', 'actionTables'],
+    'tpl'    => ['MainController', 'actionTemplateTest'],
 
     // Страница регистрации
     'reg' => ['RegController', 'actionReg'],

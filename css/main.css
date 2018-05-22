@@ -1,0 +1,95 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Arial";
+}
+/*********************************************/
+.header {
+	position: fixed;
+	background: #00a0fe;
+	box-shadow: 0 0 8px rgba(0,0,0,0.5);
+	width: 100%;
+}
+.wrapper {
+	height: 1200px;
+}
+.footer {
+	height: 200px;
+	background-color: gray;
+}
+/*********************************************/
+.header_content {
+	margin: 8px;
+}
+#logo {
+	display: inline-flex;
+	width: 180px;
+	text-decoration: none;
+	color: #ffffff;
+}
+#logo div {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #ffffff;
+}
+#logo span {
+	display: inline-flex;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	margin-left: 10px;
+	font-family: Impact;
+	font-size: 20px;
+}
+.auth {
+	float: right;
+	width: 100px;
+	height: 50px;
+}
+.auth button {
+	height: 30px;
+	margin-top: 10px;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 30px;
+	background-color: #ffffff;
+	font-family: Impact;
+	font-size: 18px;
+}
+/*********************************************/
+.allin-block {
+	display: block;
+	height: 50vh;
+	background-color: #00a0fe;
+	background-image: url(../img/bg-cover.png);
+	background-position: center;
+	background-size: cover;
+	color: white;
+	padding-top: 50vh;
+}
+.allin-block div {
+	width: 100%;
+	font-family: Impact;
+	font-size: 45px;
+	text-align: center;
+}
+/* Ужасно, но мне лень и хочется спать */
+.wrapper img {
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	margin: 20px 20px 0 20px;
+	border: 2px solid #00a0fe;
+	border-radius: 50%;
+}
+.wrapper p {
+	display: inline-block;
+	width: 400px;
+	font-family: Arial;
+	font-size: 18px;
+}
+/*********************************************/

@@ -30,4 +30,13 @@ class MainController extends Controller
         );
         $this->view->display($page);
     }
+
+    public function actionTemplateTest()
+    {
+        $page = array(
+            'title' => 'Шаблон',
+            'template' => 'template.php',
+        );
+        $this->view->display($page);
+    }
 }
