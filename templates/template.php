@@ -2,28 +2,29 @@
 <head>
 	<title>Шаблон</title>
 	<link rel="stylesheet" type="text/css" href="/<?=BASE_URI?>css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/<?=BASE_URI?>css/icons.css" />
 </head>	
 <body>
 	<div class="header">
-		<div class="header_content">
-			<a href="#" id="logo">
-				<div></div>
-				<span>Логотип</span>
-			</a>
+		<div class="header-content">
 			<form class="auth" action="" method="POST">
-				<button>Войти</button>
+				<button>
+					<div class="material-icons md-light">exit_to_app</div>
+				</button>
 			</form>
 		</div>
 	</div>
 	<div class="wrapper">
 		<div class="allin-block">
-			<div class="title-block">
-				<div class="Title">
-					<span class="startT">START</span><span class="startT orange">UP</span><br>
-					<span class="mainT">ANALYTICS</span><br>
-				</div>
-				<div class="Text">
-					<span>НАУЧНО-ИНЖЕНЕРНОЕ<br>РЕПУТАЦИОННОЕ АГЕНТСТВО</span>
+			<a href="#" id="logo">
+				<div></div>
+				<span>Лого</span>
+			</a>
+			<div class="title-block noselect">
+				<div class="title-startup">START</div><div class="title-startup orange">UP</div>
+				<div class="title-main">ANALYTICS</div>
+				<div class="title-name">
+					<div>Научно-инженерное<br>репутационное агентство</div>
 				</div>
 			</div>
 		</div>
@@ -45,7 +46,9 @@
 		</div>
 	</div>
 	<div class="footer">
-
+		<div class="footer-content">
+			<div>Команда StartUP Analytics</div>
+		</div>
 	</div>
 </body>
 </html>

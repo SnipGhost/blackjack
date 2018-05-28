@@ -1,3 +1,4 @@
+/*****************************************************************************/
 * {
 	margin: 0;
 	padding: 0;
@@ -5,27 +6,46 @@
 body {
 	font-family: "Arial";
 }
-/*********************************************/
+/*****************************************************************************/
 .header {
 	position: fixed;
-	background: #00a0fe;
-	box-shadow: 0 0 8px rgba(0,0,0,0.5);
 	width: 100%;
 }
-.wrapper {
-	height: 1500px;
+.header-content {
+	margin: 20px; /* искусственный padding, для width = 100% */
 }
+/*****************************************************************************/
+/* .wrapper {} /* Он полностью динамичный */
+/*****************************************************************************/
 .footer {
 	height: 200px;
-	background-color: gray;
+	color: #fff;
+	background-color: #353535;
+	box-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
-/*********************************************/
-.header_content {
-	margin: 8px;
+.footer-content {
+	margin: 0 10vw 0 10vw;
+	padding: 20px 0 20px 0;
 }
+/*****************************************************************************/
+/*                                TOOLS                                      */
+/*****************************************************************************/
+.orange {
+	color: #ff7f28;
+}
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	  -webkit-user-select: none; /* Safari */
+	   -khtml-user-select: none; /* Konqueror HTML */
+		 -moz-user-select: none; /* Firefox */
+		  -ms-user-select: none; /* Internet Explorer/Edge */
+			  user-select: none; /* Non-prefixed version, currently
+									supported by Chrome and Opera */
+  }
+/*****************************************************************************/
 #logo {
+	margin: 20px;
 	display: inline-flex;
-	width: 180px;
 	text-decoration: none;
 	color: #ffffff;
 }
@@ -35,6 +55,8 @@ body {
 	height: 50px;
 	border-radius: 50%;
 	background-color: #ffffff;
+	/* Возможно, с тенью будет стилявее? */
+	/* box-shadow: 0 0 5px rgba(0,0,0,0.5); */
 }
 #logo span {
 	display: inline-flex;
@@ -44,75 +66,72 @@ body {
 	margin-left: 10px;
 	font-family: Impact;
 	font-size: 20px;
+	/* text-shadow: 0 0 5px rgba(0,0,0,0.5); */
 }
+/*****************************************************************************/
 .auth {
 	float: right;
-	width: 100px;
-	height: 50px;
 }
 .auth button {
-	height: 30px;
-	margin-top: 10px;
-	padding: 5px 10px;
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	text-align: center;
 	border: none;
-	border-radius: 30px;
-	background-color: #ffffff;
-	font-family: Impact;
-	font-size: 18px;
+	border-radius: 50%;
+	background-color: #fff;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
-/*********************************************/
+.auth button:hover .material-icons {
+	color: #00a0fe;
+}
+/*****************************************************************************/
 .allin-block {
 	display: block;
-	height: 50vh;
+	height: 100vh;
 	background-color: #00a0fe;
-	background-image: url(../img/bg-cover.png);
+	background-image: url(../img/bg-cover.jpg);
 	background-position: center;
 	background-size: cover;
 	color: white;
-	padding-top: 50vh;
+	box-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
-/* .allin-block div {
-	width: 100%;
-	font-family: Impact;
-	font-size: 45px;
-	text-align: center;
-} */
-
-.allin-block .title-block {
-	font-family: Impact;
-	color: #000000;
-	/*background-color: aquamarine;*/
+/*****************************************************************************/
+.title-block {
+	position: absolute;
 	width: 300px;
+	height: 160px;
+	top: 0;
+	bottom: 0;
 	left: 0;
 	right: 0;
 	margin: auto;
-	position: relative;
+	/* background-color: aquamarine; */
+	font-family: Impact;
+	color: #000000;
+	line-height: 0.95;
 }
-.allin-block .title-block .Title{
-	line-height: 3em;
-}
-.allin-block .title-block  .mainT{
+.title-block .title-main {
 	color: #ffffff;
 	font-size: 70px;
 }
-.allin-block .title-block .startT{
-	font-size: 40px;
+.title-block .title-startup {
+	font-size: 37px;
+	display: inline;
 }
-.allin-block .title-block .orange{
-	color: orange;
-}
-.allin-block .title-block .Text{
+.title-block .title-name {
 	margin-top: 2px;
-	line-height: 1em;
 	font-size: 20px;
+	text-transform: uppercase;
+	line-height: 1.4;
 }
-/* Ужасно, но мне лень и хочется спать */
+/*****************************************************************************/
+/* Мне хочется плакать, когда я вижу этот код */
 .wrapper img {
 	display: inline-block;
 	width: 400px;
 	height: 300px;
 	margin: 20px 20px 0 20px;
-	/*border: 2px solid #00a0fe;*/
 	border-radius: 1%;
 }
 .wrapper p {
@@ -121,7 +140,7 @@ body {
 	font-family: Tahoma;
 	font-size: 22px;
 }
-/*********************************************/
+/*****************************************************************************/
 .abouter {
 	margin-top: 40px;
 	display: block;
@@ -142,4 +161,4 @@ body {
 .abouter .ab-table{
 	vertical-align: top;
 }
-/*********************************************/
+/*****************************************************************************/
