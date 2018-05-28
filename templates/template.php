@@ -27,10 +27,22 @@
 				</div>
 			</div>
 		</div>
-		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Redhead_Beach_Bell_Bottoms.jpg/480px-Redhead_Beach_Bell_Bottoms.jpg"/>
-		<p>
-			Брюки клёш появились на флоте. Ещё во времена парусного флота моряки носили брюки особого покроя. Брюки расширялась книзу начиная от бедра. Такая форма называлась «cloche», что с французского обозначало колокол, труба, а по-русски так и звучало — клёш.<br>
-		</p>
+		<div class="abouter">
+			<div class="ab-allin-block">
+				<div class="abouter-title">
+					<span>О Сайте</span>
+					<br>
+				</div>
+				<img src=img/main-1.png>
+				<p>
+					Должно помещаться 30 символо(!)в на строчку поэтому вот этот должен быть последний в 1-й строке<br>
+				</p>
+				<img src=img/main-2.png>
+				<p>
+					Должно помещаться 30 символо(!)в на строчку поэтому вот этот должен быть последний в 1-й строке<br>
+				</p>
+			</div>
+		</div>
 	</div>
 	<div class="footer">
 

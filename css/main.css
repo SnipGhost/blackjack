@@ -13,7 +13,7 @@ body {
 	width: 100%;
 }
 .wrapper {
-	height: 1200px;
+	height: 1500px;
 }
 .footer {
 	height: 200px;
@@ -77,6 +77,7 @@ body {
 	font-size: 45px;
 	text-align: center;
 } */
+
 .allin-block .title-block {
 	font-family: Impact;
 	color: #000000;
@@ -108,16 +109,37 @@ body {
 /* Ужасно, но мне лень и хочется спать */
 .wrapper img {
 	display: inline-block;
-	width: 200px;
-	height: 200px;
+	width: 400px;
+	height: 300px;
 	margin: 20px 20px 0 20px;
-	border: 2px solid #00a0fe;
-	border-radius: 50%;
+	/*border: 2px solid #00a0fe;*/
+	border-radius: 1%;
 }
 .wrapper p {
 	display: inline-block;
 	width: 400px;
-	font-family: Arial;
-	font-size: 18px;
+	font-family: Tahoma;
+	font-size: 22px;
+}
+/*********************************************/
+.abouter {
+	margin-top: 40px;
+	display: block;
+	height: 750px;
+}
+.abouter .ab-allin-block{
+	width: 850px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	position: relative;
+}
+.abouter .abouter-title{
+	margin-left: 20px;
+	font-size: 36px;
+	font-family: Tahoma;
+}
+.abouter .ab-table{
+	vertical-align: top;
 }
 /*********************************************/
