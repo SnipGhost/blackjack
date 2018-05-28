@@ -17,7 +17,15 @@
 	</div>
 	<div class="wrapper">
 		<div class="allin-block">
-			<div>Analytics</div>
+			<div class="title-block">
+				<div class="Title">
+					<span class="startT">START</span><span class="startT orange">UP</span><br>
+					<span class="mainT">ANALYTICS</span><br>
+				</div>
+				<div class="Text">
+					<span>НАУЧНО-ИНЖЕНЕРНОЕ<br>РЕПУТАЦИОННОЕ АГЕНТСТВО</span>
+				</div>
+			</div>
 		</div>
 		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Redhead_Beach_Bell_Bottoms.jpg/480px-Redhead_Beach_Bell_Bottoms.jpg"/>
 		<p>

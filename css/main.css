@@ -71,11 +71,39 @@ body {
 	color: white;
 	padding-top: 50vh;
 }
-.allin-block div {
+/* .allin-block div {
 	width: 100%;
 	font-family: Impact;
 	font-size: 45px;
 	text-align: center;
+} */
+.allin-block .title-block {
+	font-family: Impact;
+	color: #000000;
+	/*background-color: aquamarine;*/
+	width: 300px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	position: relative;
+}
+.allin-block .title-block .Title{
+	line-height: 3em;
+}
+.allin-block .title-block  .mainT{
+	color: #ffffff;
+	font-size: 70px;
+}
+.allin-block .title-block .startT{
+	font-size: 40px;
+}
+.allin-block .title-block .orange{
+	color: orange;
+}
+.allin-block .title-block .Text{
+	margin-top: 2px;
+	line-height: 1em;
+	font-size: 20px;
 }
 /* Ужасно, но мне лень и хочется спать */
 .wrapper img {
