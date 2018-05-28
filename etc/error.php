@@ -42,7 +42,7 @@
 			color: white;
 		}
 	</style>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		function handler(event) {
 			switch(event.keyCode) {
 				default:
@@ -50,14 +50,14 @@
 				}	
 		}
 		window.addEventListener('keydown', handler, false);
-	</script>
+	</script> -->
  </head>	
  <body>
 	<center>
  	<h1>Kernel panic!</h1>
  	<br><br>
  	Произошла ошибка. Для продолжения: <br>
- 	Нажмите любую клавишу, чтобы вернуться назад, или тыкните 
+ 	<!-- Нажмите любую клавишу, чтобы вернуться назад, или  -->тыкните 
 	<a href="javascript:history.back();">ЗДЕСЬ</a><br>
  	Зажмите CTRL+ALT+DEL и перезагрузите ваш компьютер, но это точно не поможет. <br>
  	<br><br>
@@ -65,7 +65,7 @@
  	<b>Расшифровка: <?=$name?></b><br>
 	<?php if (DEBUG) echo '<br>'.$message.'<br>'; ?>
 	<br><br>
- 	<b>Press ANY key to continue</b>
+ 	<!-- <b>Press ANY key to continue</b> -->
 	</center>
  </body>
 </html>
