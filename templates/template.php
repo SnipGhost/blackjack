@@ -3,6 +3,7 @@
 	<title>Шаблон</title>
 	<link rel="stylesheet" type="text/css" href="/<?=BASE_URI?>css/main.css" />
 	<link rel="stylesheet" type="text/css" href="/<?=BASE_URI?>css/icons.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>	
 <body>
 	<div class="header">
@@ -28,45 +29,40 @@
 				</div>
 			</div>
 		</div>
-		<div class="abouter">
-			<div class="ab-allin-block">
-				<div class="abouter-title">
-					<span>О Сайте</span>
-					<br>
+		<div class="content-box">
+			<div class="content-box-title">
+				О Сайте
+			</div>
+			<div class="ab-block">
+				<div class="ab-pic">
+					<img src=img/main-1.png>
 				</div>
-				<div class="ab-block">
-					<div class="ab-img">
-						<img src=img/main-1.png>
-					</div>
-					<div class="ab-text">
-						<div class="ab-title">Описание</div>
-						<p>
-						Должно помещаться 30 символо(!)в на строчку поэтому вот этот должен быть последний в 1-й строке. В итоге где-то 40
-						текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст 
-						текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст 
-						текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст
-						<br>
-					</p></div>
+				<div class="ab-text">
+					<div class="ab-title">Описание</div>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+					</p>
 				</div>
-				<div class="ab-block">
-					<div class="ab-img">
-						<img src=img/main-2.png>
-					</div>
-					<div class="ab-text">
-						<div class="ab-title">Наши плюсы</div>
-						<p>
-						Наша команда потом и кровью трудится, создавая этот сайт!)<br>
-					</p></div>
+			</div>
+			<div class="ab-block">
+				<div class="ab-pic">
+					<img src=img/main-2.png>
+				</div>
+				<div class="ab-text">
+					<div class="ab-title">Наши плюсы</div>
+					<p>
+					Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+					</p>
 				</div>
 			</div>
 		</div>
-		<div class="offers">
+		<!-- <div class="offers">
 			<div class="offers-allin-block">
 				<div class="title">
 					Наши предложения
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<div class="footer">
 		<div class="footer-content">
