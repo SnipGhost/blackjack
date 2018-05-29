@@ -60,6 +60,13 @@
 				</div>
 			</div>
 		</div>
+		<div class="advertiser">
+			<div class="ad-allin-block">
+				<div class="title">
+					Наши предложения
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="footer">
 		<div class="footer-content">

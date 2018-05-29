@@ -181,3 +181,23 @@ body {
 	align-content: left;
 }
 /*****************************************************************************/
+.advertiser{
+	height:600px;
+	background-color: #00a0fe;
+}
+.advertiser .ad-allin-block{
+	width: 810px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	position: relative;
+}
+.advertiser .title{
+	padding-top: 20px;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: Tahoma;
+	font-size: 32px;	
+}
+/*****************************************************************************/
