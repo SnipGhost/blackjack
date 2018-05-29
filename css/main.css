@@ -138,7 +138,8 @@ body {
 	display: inline-block;
 	width: 400px;
 	font-family: Tahoma;
-	font-size: 22px;
+	font-size: 18px;
+	line-height: 1;
 }
 /*****************************************************************************/
 .abouter {
@@ -154,11 +155,29 @@ body {
 	position: relative;
 }
 .abouter .abouter-title{
+	text-transform: uppercase;
 	margin-left: 20px;
 	font-size: 36px;
 	font-family: Tahoma;
+	font-weight: bold;
 }
-.abouter .ab-table{
-	vertical-align: top;
+.abouter .ab-block
+{
+	display: inline-flex;
+	height: 320px;
+}
+.abouter .ab-text{
+	text-transform: uppercase;
+	font-family: Tahoma;
+	margin-top: 20px;
+}
+.abouter .ab-title{
+	vertical-align: 0%;
+	font-size: 26px;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+.abouter .ab-img{
+	align-content: left;
 }
 /*****************************************************************************/
