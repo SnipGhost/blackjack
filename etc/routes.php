@@ -2,23 +2,27 @@
 
 return array(
 
-	// Страница по-умолчанию
-	''       => ['MainController', 'actionIndex'],
-	'tables' => ['MainController', 'actionTables'],
+    // Страница по-умолчанию
+    ''       => ['MainController', 'actionIndex'],
+    'tables' => ['MainController', 'actionTables'],
+    'tpl'    => ['MainController', 'actionTemplateTest'],
 
-	// Страница муляж-тестер
-	'test' => ['TestController', 'actionIndex'],
+    // Страница регистрации
+    'reg' => ['RegController', 'actionReg'],
 
-	// Страницы тестирования сокращений из DBConnection
-	'db'            => ['DBController', 'actionIndex'],
-	'db/insert'     => ['DBController', 'actionInsert'],
-	'db/insertmany' => ['DBController', 'actionInsertMany'],
-	'db/select'     => ['DBController', 'actionSelect'],
-	'db/update'     => ['DBController', 'actionUpdate'],
-	'db/delete'     => ['DBController', 'actionDelete'],
-	'db/truncate'   => ['DBController', 'actionTruncate'],
+    // Страница муляж-тестер
+    'test' => ['TestController', 'actionIndex'],
 
-	// Страница, которая всегда пятисотит
-	'500' => ['FAKE_CONTROLLER', 'actionFake'],
+    // Страницы тестирования сокращений из DBConnection
+    'db'            => ['DBController', 'actionIndex'],
+    'db/insert'     => ['DBController', 'actionInsert'],
+    'db/insertmany' => ['DBController', 'actionInsertMany'],
+    'db/select'     => ['DBController', 'actionSelect'],
+    'db/update'     => ['DBController', 'actionUpdate'],
+    'db/delete'     => ['DBController', 'actionDelete'],
+    'db/truncate'   => ['DBController', 'actionTruncate'],
 
+    // Страница, которая всегда пятисотит
+    '500' => ['FAKE_CONTROLLER', 'actionFake'],
+    
 );
