@@ -11,7 +11,9 @@ body {
 /*****************************************************************************/
 .header {
 	position: fixed;
-	width: 100%;
+	/* width: 100%; */
+	right: 0;
+	z-index: 9;
 }
 .header-content {
 	margin: 20px; /* искусственный padding, для width = 100% */
@@ -136,7 +138,7 @@ body {
 .content-box .content-box-title {
 	margin-bottom: 40px;
 	text-transform: uppercase;
-	font-size: 36px;
+	font-size: 1.8em;
 	font-weight: bold;
 }
 .content-box .ab-block {
@@ -157,7 +159,7 @@ body {
 }
 .content-box .ab-title {
 	margin-bottom: 5px;
-	font-size: 26px;
+	font-size: 1.3em;
 	font-weight: bold;
 	line-height: 1;
 }
@@ -190,16 +192,18 @@ body {
 }
 @media screen and (max-width: 768px), screen and (max-device-width: 768px) {
 	.title-block {
-		width: 200px;
+		width: 270px;
+		/* background-color: aquamarine; */
+		font-weight: 900;
 	}
 	.title-block .title-main {
-		font-size: 2.3em;
+		font-size: 3.2em;
 	}
 	.title-block .title-startup {
-		font-size: 1.3em;
+		font-size: 1.8em;
 	}
 	.title-block .title-name {
-		font-size: 0.6em;
+		font-size: 0.8em;
 	}
 	.content-box .content-box-title {
 		font-size: 1.5em;
