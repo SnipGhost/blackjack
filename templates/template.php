@@ -60,8 +60,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="advertiser">
-			<div class="ad-allin-block">
+		<div class="offers">
+			<div class="offers-allin-block">
 				<div class="title">
 					Наши предложения
 				</div>

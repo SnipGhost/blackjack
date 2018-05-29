@@ -147,52 +147,51 @@ body {
 	display: block;
 	height: 750px;
 }
-.abouter .ab-allin-block{
+.abouter .ab-allin-block {
 	width: 850px;
 	left: 0;
 	right: 0;
 	margin: auto;
 	position: relative;
 }
-.abouter .abouter-title{
+.abouter .abouter-title {
 	text-transform: uppercase;
 	margin-left: 20px;
 	font-size: 36px;
 	font-family: Tahoma;
 	font-weight: bold;
 }
-.abouter .ab-block
-{
+.abouter .ab-block {
 	display: inline-flex;
 	height: 320px;
 }
-.abouter .ab-text{
+.abouter .ab-text {
 	text-transform: uppercase;
 	font-family: Tahoma;
 	margin-top: 20px;
 }
-.abouter .ab-title{
+.abouter .ab-title {
 	vertical-align: 0%;
 	font-size: 26px;
 	margin-bottom: 5px;
 	font-weight: bold;
 }
-.abouter .ab-img{
+.abouter .ab-img {
 	align-content: left;
 }
 /*****************************************************************************/
-.advertiser{
+.offers {
 	height:600px;
 	background-color: #00a0fe;
 }
-.advertiser .ad-allin-block{
+.offers .offers-allin-block {
 	width: 810px;
 	left: 0;
 	right: 0;
 	margin: auto;
 	position: relative;
 }
-.advertiser .title{
+.offers .title {
 	padding-top: 20px;
 	color: #ffffff;
 	text-transform: uppercase;
