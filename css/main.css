@@ -132,7 +132,8 @@ body {
 }
 /*****************************************************************************/
 .content-box {
-	margin: 40px 10vw;
+	margin: 0 10vw;
+	padding: 40px 0;
 	font-family: Tahoma;
 }
 .content-box .content-box-title {
@@ -141,14 +142,14 @@ body {
 	font-size: 1.8em;
 	font-weight: bold;
 }
-.content-box .ab-block {
+.content-box .ab-box {
 	display: inline-flex;
 }
 .content-box .ab-pic {
 	margin-right: 20px;
 	margin-bottom: 20px;
 }
-.content-box .ab-block img {
+.content-box .ab-box img {
 	width: 400px;
 	border-radius: 1%;
 }
@@ -164,29 +165,34 @@ body {
 	line-height: 1;
 }
 /*****************************************************************************/
-.offers {
-	height:600px;
+#block-about {
+	color: #000;
+}
+#block-offers {
 	background-color: #00a0fe;
+	color: #fff;
+	box-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
-.offers .offers-allin-block {
-	left: 0;
-	right: 0;
-	margin: auto;
-	position: relative;
+/*****************************************************************************/
+.offers-wrap {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: stretch;
 }
-.offers .title {
-	padding-top: 20px;
-	color: #ffffff;
-	text-transform: uppercase;
-	font-weight: bold;
-	font-family: Tahoma;
-	font-size: 32px;	
+.offer {
+	margin: 0 20px;
+	width: 100%;
+	height: 300px; /* временно, должно быть по-контенту */
+	background-color: #fff;
+	border-radius: 20px;
+	box-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
 /*****************************************************************************/
 /*                               SMALL SCREENS                               */
 /*****************************************************************************/
 @media screen and (max-width: 991px), screen and (max-device-width: 991px) {
-	.content-box .ab-block img {
+	.content-box .ab-box img {
 		width: 300px;
 	}
 }
@@ -205,21 +211,29 @@ body {
 	.title-block .title-name {
 		font-size: 0.8em;
 	}
+	.offers-wrap {
+		flex-direction: column;
+		align-items: center;
+	}
+	.offer {
+		height: 200px;
+		margin: 20px;
+	}
 	.content-box .content-box-title {
 		font-size: 1.5em;
 	}
-	.content-box .ab-block {
+	.content-box .ab-box {
 		flex-direction: column;
 	}
 	.content-box .ab-title {
 		text-align: center;
 		font-size: 1.2em;
 	}
-	.content-box .ab-block .ab-pic {
+	.content-box .ab-box .ab-pic {
 		text-align: center;
 		margin-right: 0;
 	}
-	.content-box .ab-block img {
+	.content-box .ab-box img {
 		width: 85%;
 	}
 	.content-box .ab-text {
