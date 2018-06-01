@@ -72,7 +72,20 @@
 							</div>
 							<div class="castil-block"></div>
 					</div>
-					<div id="kik" class="offer"></div>
+					<div id="kik" class="offer">
+						<div class="offer-title">
+							КИК
+							<div class="offer-ttext">
+								Комплекс избирательных технологий
+							</div>
+						</div>
+						<div class="offer-content">
+							Содержимое с текстом
+						</div>
+						<div class="offer-button">
+							Это типа кнопка, докрути
+						</div>
+					</div>
 					<div id="smt" class="offer"></div>
 				</div>
 			</div>

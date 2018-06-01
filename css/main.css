@@ -185,8 +185,75 @@ body {
 	width: 100%;
 	height: 300px; /* временно, должно быть по-контенту */
 	background-color: #fff;
-	border-radius: 20px;
+	border-radius: 0 0 20px 20px;
 	box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+/*****************************************************************************/
+/*					Small blocks content		 							*/
+/*****************************************************************************/
+#opi{
+	background-color: rgb(97, 172, 89);
+	color: #ffffff;
+}
+.offer .opi-box{
+	margin-top:5px;
+	margin-left:5px;
+	margin-right:5px;
+	
+	background-color: #ffffff;
+	color: #000000;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 13px;
+	padding-bottom: 50px;
+}
+.offer .castil-block{
+	height: 100px;
+	background-color: #ffffff;
+	border-radius:15px;
+	margin-left:5px;
+	margin-right:5px;
+	margin-top: -15px;
+}
+.offer .offer-title{
+	left: 0;
+	right: 0;
+	margin: auto;
+	font-size: 48px;
+	text-align: center;
+	font-weight: bold;
+}
+.offer .offer-ttext{
+	left: 0;
+	right: 0;
+	margin: auto;
+	font-size: 13px;
+	text-align: center;
+}
+/*****************************************************************************/
+#kik {
+	position: relative;
+	border: 4px solid #ac5868;
+}
+#kik .offer-title {
+	background-color: #ac5868;
+	padding-bottom: 8px;
+}
+#kik .offer-content {
+	color: #000;
+	position: relative;
+}
+#kik .offer-button {
+	color: #000;
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 80%;
+	margin: auto;
+	padding: 20px;
+	border: 2px solid #ac5868;
+	border-radius: 40px; 
+	bottom: 10px;
 }
 /*****************************************************************************/
 /*                               SMALL SCREENS                               */
@@ -240,46 +307,4 @@ body {
 		margin-bottom: 50px;
 		font-size: 0.9em;
 	}
-}
-/*****************************************************************************/
-/*					Small blocks content		 							*/
-/*****************************************************************************/
-#opi{
-	background-color: rgb(97, 172, 89);
-	color: #ffffff;
-}
-.offer .opi-box{
-	margin-top:5px;
-	margin-left:5px;
-	margin-right:5px;
-	
-	background-color: #ffffff;
-	color: #000000;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 13px;
-	padding-bottom: 50px;
-}
-.offer .castil-block{
-	height: 100px;
-	background-color: #ffffff;
-	border-radius:15px;
-	margin-left:5px;
-	margin-right:5px;
-	margin-top: -15px;
-}
-.offer .offer-title{
-	left: 0;
-	right: 0;
-	margin: auto;
-	font-size: 48px;
-	text-align: center;
-	font-weight: bold;
-}
-.offer .offer-ttext{
-	left: 0;
-	right: 0;
-	margin: auto;
-	font-size: 13px;
-	text-align: center;
 }
