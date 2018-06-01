@@ -14,7 +14,7 @@
 	</form>
 <?php else: ?>
 	<form class="login-panel" method="POST">
-		<span class="ok-msg">Пользователь: <?=$user->name?></span>
+		<span class="ok-msg"><?=$user->name?></span>
 		<button name="logout">
 			<!-- <div class="material-icons md-light">exit_to_app</div> -->
 			Выйти
