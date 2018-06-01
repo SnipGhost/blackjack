@@ -37,7 +37,11 @@ try {
 }
 
 // Производим аутентификацию пользователя
-[$user, $login_err] = User::authentication($session, $db);
+try {
+    [$user, $login_err] = User::authentication($session, $db);
+} catch (DataBaseException $e) {
+    $login_err = "Ошибка при запросе в БД";
+}
 
 // Маршрутизируем на подходящий контроллер
 $router = new Router();

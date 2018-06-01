@@ -24,7 +24,7 @@ class User
             $q = "SELECT `id`, `username`, `password`, `email`, `date` 
 				  FROM `users`
 				  WHERE `username` = '$username'
-				  LIMIT 1";
+                  LIMIT 1";
 
             if ($data = $db->query($q)) {
                 if (password_verify($_POST['password'], $data[0]['password'])) {

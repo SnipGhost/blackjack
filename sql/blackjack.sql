@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Май 06 2018 г., 20:56
+-- Время создания: Июн 01 2018 г., 23:20
 -- Версия сервера: 5.7.20
 -- Версия PHP: 7.1.14
 
@@ -29,8 +29,7 @@ USE `blackjack`;
 --
 -- Структура таблицы `test`
 --
--- Создание: Май 01 2018 г., 22:02
--- Последнее обновление: Май 06 2018 г., 20:53
+-- Создание: Июн 01 2018 г., 23:11
 --
 
 DROP TABLE IF EXISTS `test`;
@@ -39,15 +38,6 @@ CREATE TABLE `test` (
   `colname` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- ССЫЛКИ ТАБЛИЦЫ `test`:
---
-
---
--- Очистить таблицу перед добавлением данных `test`
---
-
-TRUNCATE TABLE `test`;
 --
 -- Дамп данных таблицы `test`
 --
@@ -64,28 +54,19 @@ INSERT INTO `test` (`id`, `colname`) VALUES
 --
 -- Структура таблицы `users`
 --
--- Создание: Май 06 2018 г., 20:56
--- Последнее обновление: Май 06 2018 г., 20:51
+-- Создание: Июн 01 2018 г., 23:18
+-- Последнее обновление: Июн 01 2018 г., 23:18
 --
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `username` varchar(32) NOT NULL,
-  `password` varchar(64) NOT NULL,
-  `email` varchar(64) NOT NULL,
+  `username` varchar(32) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `password` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `email` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- ССЫЛКИ ТАБЛИЦЫ `users`:
---
-
---
--- Очистить таблицу перед добавлением данных `users`
---
-
-TRUNCATE TABLE `users`;
 --
 -- Дамп данных таблицы `users`
 --
