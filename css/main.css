@@ -124,6 +124,11 @@ body {
 	border: none;
 	border-radius: 50px;
 	font-family: Impact;
+	z-index: 6;
+	outline: none;
+	outline-style: none;
+	outline-color: transparent;
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 .login-panel button {
 	float: right;
@@ -138,6 +143,7 @@ body {
 	color: #ffffff;
 	font-size: 16px;
 	font-family: Impact;
+	z-index: 5;
 }
 .login-panel button:hover .material-icons {
 	color: #00a0fe;
