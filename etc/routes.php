@@ -3,17 +3,16 @@
 return array(
 
     // Страница по-умолчанию
-    ''       => ['MainController', 'actionIndex'],
+    '' => ['MainController', 'actionIndex'],
+
+    // Отображает список таблиц в БД
     'tables' => ['MainController', 'actionTables'],
 
     // Скрипт загрузки excel-документов на сервер
     'upload' => ['MainController', 'actionUpload'],
 
-    // Страница регистрации
+    // Страница регистрации пользователя
     'reg' => ['MainController', 'actionReg'],
-
-    // Страница муляж-тестер
-    'test' => ['TestController', 'actionIndex'],
 
     // Страницы тестирования сокращений из DBConnection
     'db'            => ['DBController', 'actionIndex'],
