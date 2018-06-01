@@ -231,29 +231,37 @@ body {
 	text-align: center;
 }
 /*****************************************************************************/
-#kik {
+#kik { /* Это добавить в offer и сделать универсальным */
 	position: relative;
 	border: 4px solid #ac5868;
 }
-#kik .offer-title {
+#kik .offer-title { /* Ну тоже сделать универсальным */
 	background-color: #ac5868;
-	padding-bottom: 8px;
+	padding-bottom: 5px;
 }
-#kik .offer-content {
+#kik .offer-content { /* Докрутить и сделать универсальным */
 	color: #000;
 	position: relative;
+	text-align: center;
+	margin-top: 10px; /* Это, как и все размеры - от балды, поправьте по ТЗ */
 }
-#kik .offer-button {
-	color: #000;
+#kik .offer-button { /* Аналогично, не только для кик-а */
 	position: absolute;
 	left: 0;
 	right: 0;
+	bottom: 10px;
 	width: 80%;
 	margin: auto;
-	padding: 20px;
+	padding: 8px;
 	border: 2px solid #ac5868;
+	background-color: #ac5868;
 	border-radius: 40px; 
-	bottom: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+#kik .offer-button:hover { /* И это не забудьте */
+	background-color: #ffffff;
+	color: #ac5868;
 }
 /*****************************************************************************/
 /*                               SMALL SCREENS                               */
