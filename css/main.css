@@ -137,6 +137,7 @@ body {
 	font-family: Tahoma;
 }
 .content-box .content-box-title {
+	margin-left:20px;
 	margin-bottom: 40px;
 	text-transform: uppercase;
 	font-size: 1.8em;
@@ -170,8 +171,12 @@ body {
 }
 #block-offers {
 	background-color: #00a0fe;
+	background-image: url(../img/bg-offer.png);
+	background-position: center;
+	background-size: cover;
 	color: #fff;
 	box-shadow: 0 0 8px rgba(0,0,0,0.5);
+	padding-bottom: 50px;
 }
 /*****************************************************************************/
 .offers-wrap {
@@ -183,38 +188,17 @@ body {
 .offer {
 	margin: 0 20px;
 	width: 100%;
-	height: 300px; /* временно, должно быть по-контенту */
+	/*height: 350px; *//*временно, должно быть по-контенту */
+	position: relative;
+	text-transform: uppercase;
 	background-color: #fff;
-	border-radius: 0 0 20px 20px;
+	border-radius: 0 0 30px 30px;
 	box-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
 /*****************************************************************************/
 /*					Small blocks content		 							*/
 /*****************************************************************************/
-#opi{
-	background-color: rgb(97, 172, 89);
-	color: #ffffff;
-}
-.offer .opi-box{
-	margin-top:5px;
-	margin-left:5px;
-	margin-right:5px;
-	
-	background-color: #ffffff;
-	color: #000000;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 13px;
-	padding-bottom: 50px;
-}
-.offer .castil-block{
-	height: 100px;
-	background-color: #ffffff;
-	border-radius:15px;
-	margin-left:5px;
-	margin-right:5px;
-	margin-top: -15px;
-}
+
 .offer .offer-title{
 	left: 0;
 	right: 0;
@@ -222,28 +206,67 @@ body {
 	font-size: 48px;
 	text-align: center;
 	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 5px;
 }
 .offer .offer-ttext{
 	left: 0;
 	right: 0;
 	margin: auto;
+	font-weight: normal;
 	font-size: 13px;
 	text-align: center;
+	
+}
+/*****************************************************************************/
+#opi{
+	border: 4px solid #61ac59
+}
+#opi .offer-title { /* Ну тоже сделать универсальным */
+	background-color: #61ac59;
+}
+#opi .offer-content { /* Докрутить и сделать универсальным */
+	color: #000;
+	position: relative;
+	text-align: center;
+	margin-top: 10px; /* Это, как и все размеры - от балды, поправьте по ТЗ */
+	font-size: 13px;
+	word-wrap: break-word;
+	margin-bottom: 100px;
+}
+#opi .offer-button { 
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 10px;
+	width: 80%;
+	margin: auto;
+	padding: 8px;
+	border: 2px solid #61ac59;
+	background-color: #61ac59;
+	border-radius: 40px; 
+	text-align: center;
+	cursor: pointer;
+}
+#opi .offer-button:hover { /* И это не забудьте */
+	background-color: #ffffff;
+	color: #61ac59;
 }
 /*****************************************************************************/
 #kik { /* Это добавить в offer и сделать универсальным */
-	position: relative;
 	border: 4px solid #ac5868;
 }
 #kik .offer-title { /* Ну тоже сделать универсальным */
 	background-color: #ac5868;
-	padding-bottom: 5px;
 }
 #kik .offer-content { /* Докрутить и сделать универсальным */
 	color: #000;
 	position: relative;
 	text-align: center;
 	margin-top: 10px; /* Это, как и все размеры - от балды, поправьте по ТЗ */
+	font-size: 13px;
+	word-wrap: break-word;
+	margin-bottom: 100px;
 }
 #kik .offer-button { /* Аналогично, не только для кик-а */
 	position: absolute;
@@ -262,6 +285,40 @@ body {
 #kik .offer-button:hover { /* И это не забудьте */
 	background-color: #ffffff;
 	color: #ac5868;
+}
+/*****************************************************************************/
+#smt { /* Это добавить в offer и сделать универсальным */
+	border: 4px solid #ac9558;
+}
+#smt .offer-title { /* Ну тоже сделать универсальным */
+	background-color: #ac9558;
+}
+#smt .offer-content { /* Докрутить и сделать универсальным */
+	color: #000;
+	position: relative;
+	text-align: center;
+	margin-top: 10px; /* Это, как и все размеры - от балды, поправьте по ТЗ */
+	font-size: 13px;
+	word-wrap: break-word;
+	margin-bottom: 100px;
+}
+#smt .offer-button { /* Аналогично, не только для кик-а */
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 10px;
+	width: 80%;
+	margin: auto;
+	padding: 8px;
+	border: 2px solid #ac9558;
+	background-color: #ac9558;
+	border-radius: 40px; 
+	text-align: center;
+	cursor: pointer;
+}
+#smt .offer-button:hover { /* И это не забудьте */
+	background-color: #ffffff;
+	color: #ac9558;
 }
 /*****************************************************************************/
 /*                               SMALL SCREENS                               */

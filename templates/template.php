@@ -61,32 +61,47 @@
 				<div class="content-box-title">Наши предложения</div>
 				<div class="offers-wrap">
 					<div id="opi" class="offer">
-							<div class="offer-title">
+							<div class="offer-title noselect">
 								ОПИ
-							</div>
-							<div class="offer-ttext">
+								<div class="offer-ttext">
 								ОПРЕДЕЛЕНИЕ ПОТЕНЦИАЛА ИЗБИРАЕМОСТИ
+								</div>
 							</div>
-							<div class="opi-box">
-								Разработка и реализация индивидуальных репутационных программ для публичных личностей
+							<div class="offer-content">
+							Разработка и реализация индивидуальных репутационных программ для публичных личностей
+							</div><br>
+							<div class="offer-button noselect">
+							Попробовать
 							</div>
-							<div class="castil-block"></div>
 					</div>
 					<div id="kik" class="offer">
-						<div class="offer-title">
-							КИК
+						<div class="offer-title noselect">
+							КИТ
 							<div class="offer-ttext">
 								Комплекс избирательных технологий
 							</div>
 						</div>
 						<div class="offer-content">
-							Содержимое с текстом
+							Комплекс избирательных технологий, обеспечивающих информационных воздействий с прогнозируемой социальной реацией
 						</div>
-						<div class="offer-button">
-							Это типа кнопка, докрути
+						<div class="offer-button noselect">
+							Попробовать демо
 						</div>
 					</div>
-					<div id="smt" class="offer"></div>
+					<div id="smt" class="offer">
+						<div class="offer-title noselect">
+							РЭМ
+							<div class="offer-ttext">
+								Репутационный менеджмент
+							</div>
+						</div>
+						<div class="offer-content">
+							Проектирование и внедрение репутационных стратегий для предприятий и организаций разных масштабов
+						</div>
+						<div class="offer-button noselect">
+							Узнать подробнее
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
