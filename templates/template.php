@@ -60,8 +60,19 @@
 			<div class="content-box">
 				<div class="content-box-title">Наши предложения</div>
 				<div class="offers-wrap">
+					<div id="opi" class="offer">
+							<div class="offer-title">
+								ОПИ
+							</div>
+							<div class="offer-ttext">
+								ОПРЕДЕЛЕНИЕ ПОТЕНЦИАЛА ИЗБИРАЕМОСТИ
+							</div>
+							<div class="opi-box">
+								Разработка и реализация индивидуальных репутационных программ для публичных личностей
+							</div>
+							<div class="castil-block"></div>
+					</div>
 					<div id="kik" class="offer"></div>
-					<div id="opi" class="offer"></div>
 					<div id="smt" class="offer"></div>
 				</div>
 			</div>
