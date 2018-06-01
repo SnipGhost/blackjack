@@ -115,6 +115,7 @@ body {
 	background-color: #fff;
 	border-radius: 50px;
 	line-height: 50px;
+	z-index: 7;
 }
 .login-panel input {
 	width: 170px;
