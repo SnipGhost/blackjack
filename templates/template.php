@@ -8,11 +8,13 @@
 <body>
 	<div class="header">
 		<div class="header-content">
-			<form class="auth" action="" method="POST">
+			<?php require 'templates/login.php'; ?>
+			<!-- TODO: верните красивые кнопки! -->
+			<!-- <form class="auth" action="" method="POST">
 				<button>
 					<div class="material-icons md-light">exit_to_app</div>
 				</button>
-			</form>
+			</form> -->
 		</div>
 	</div>
 	<div class="wrapper">

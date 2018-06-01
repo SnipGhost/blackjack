@@ -73,20 +73,45 @@ body {
 	/* text-shadow: 0 0 5px rgba(0,0,0,0.5); */
 }
 /*****************************************************************************/
-.auth {
+.login-panel {
+	display: inline-flex;
 	float: right;
-}
-.auth button {
-	cursor: pointer;
-	width: 50px;
-	height: 50px;
-	text-align: center;
-	border: none;
-	border-radius: 50%;
+	border-radius: 50px;
 	background-color: #fff;
 	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
-.auth button:hover .material-icons {
+.login-panel span {
+	padding-left: 20px;
+	padding-right: 30px;
+	height: 50px;
+	background-color: #fff;
+	border-radius: 50px;
+	line-height: 50px;
+}
+.login-panel input {
+	width: 170px;
+	height: 50px;
+	padding: 0 15px;
+	font-size: 16px;
+	border: none;
+	border-radius: 50px;
+	font-family: Impact;
+}
+.login-panel button {
+	float: right;
+	cursor: pointer;
+	height: 50px;
+	padding: 0 15px 0 40px;
+	margin-left: -30px;
+	text-align: center;
+	border: none;
+	border-radius: 0 50px 50px 0;
+	background-color: #383838;
+	color: #ffffff;
+	font-size: 16px;
+	font-family: Impact;
+}
+.login-panel button:hover .material-icons {
 	color: #00a0fe;
 }
 /*****************************************************************************/

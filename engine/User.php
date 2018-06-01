@@ -33,10 +33,10 @@ class User
                     $session->user = serialize($user);
                     return [$user, $msg];
                 } else {
-                    $msg = 'password incorrect';
+                    $msg = 'Неверный пароль';
                 }
             } else {
-                $msg = 'username incorrect';
+                $msg = 'Неверный логин';
             }
             
         }

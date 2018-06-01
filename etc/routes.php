@@ -5,10 +5,12 @@ return array(
     // Страница по-умолчанию
     ''       => ['MainController', 'actionIndex'],
     'tables' => ['MainController', 'actionTables'],
-    'tpl'    => ['MainController', 'actionTemplateTest'],
+
+    // Скрипт загрузки excel-документов на сервер
+    'upload' => ['MainController', 'actionUpload'],
 
     // Страница регистрации
-    'reg' => ['RegController', 'actionReg'],
+    'reg' => ['MainController', 'actionReg'],
 
     // Страница муляж-тестер
     'test' => ['TestController', 'actionIndex'],

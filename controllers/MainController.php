@@ -12,10 +12,9 @@ class MainController extends Controller
 
     public function actionIndex()
     {
-        $data = $this->model->getData();
         $page = array(
-            'content' => 'main/IndexView.php',
-            'data' => $data,
+            'title' => 'Главная',
+            'template' => 'template.php',
         );
         $this->view->display($page);
     }
@@ -30,13 +29,30 @@ class MainController extends Controller
         );
         $this->view->display($page);
     }
-
-    public function actionTemplateTest()
+    
+    public function actionReg()
     {
-        $page = array(
-            'title' => 'Шаблон',
-            'template' => 'template.php',
-        );
-        $this->view->display($page);
+        if (isset($_POST['reg'],
+                  $_POST['username'],
+                  $_POST['password'],
+                  $_POST['retype'],
+                  $_POST['email'])) {
+
+            // TODO: Реализовать добавление пользователя
+
+            $page = array(
+                'content' => 'reg/RegEnd.php',
+                'title' => 'Завершение регистрации',
+                'data' => $this->model->checkUserName($_POST['username']),
+            );
+            $this->view->display($page);
+
+        } else {
+            $page = array(
+                'content' => 'reg/RegForm.php',
+                'title' => 'Регистрация',
+            );
+            $this->view->display($page);
+        }
     }
 }
