@@ -106,37 +106,42 @@ body {
 	display: inline-flex;
 	float: right;
 	border-radius: 50px;
-	background-color: #fff;
 	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 .login-panel span {
-	padding: 0 30px;
 	height: 50px;
 	background-color: #fff;
-	border-radius: 50px;
 	line-height: 50px;
-	z-index: 7;
+	z-index: 6;
+	padding: 0 15px;
+	border-radius: 50px;
+	margin-right: -50px;
+}
+.login-panel .error-msg {
+	padding: 0 40px 0 15px;
+	margin-right: -25px;
+	border-radius: 50px 0 0 50px;
 }
 .login-panel input {
-	width: 170px;
+	width: 200px;
 	height: 50px;
-	padding: 0 15px;
+	margin-right: -50px;
+	padding: 0 50px 0 15px;
 	font-size: 16px;
 	border: none;
 	border-radius: 50px;
 	font-family: Impact;
-	z-index: 6;
+	z-index: 7;
 	outline: none;
 	outline-style: none;
 	outline-color: transparent;
-	-webkit-box-shadow: 0 0 0px 1000px white inset;
+	-webkit-box-shadow: 0 0 0px 1000px white inset; /* Костыль для хрома */
 }
 .login-panel button {
 	float: right;
 	cursor: pointer;
 	height: 50px;
-	padding: 0 15px 0 40px;
-	margin-left: -30px;
+	padding: 0 15px 0 58px;
 	text-align: center;
 	border: none;
 	border-radius: 0 50px 50px 0;
