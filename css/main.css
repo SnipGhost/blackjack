@@ -1,26 +1,21 @@
-/*****************************************************************************/
-* {
+/*******************************************************************/
+body {
 	margin: 0;
 	padding: 0;
-}
-body {
-	width: 100%;
-	height: 100%;
 	font-family: "Arial";
 }
-/*****************************************************************************/
+/*******************************************************************/
 .header {
 	position: fixed;
-	/* width: 100%; */
 	right: 0;
 	z-index: 9;
 }
 .header-content {
 	margin: 20px; /* искусственный padding, для width = 100% */
 }
-/*****************************************************************************/
+/*******************************************************************/
 /* .wrapper {} /* Он полностью динамичный */
-/*****************************************************************************/
+/*******************************************************************/
 .footer {
 	height: 200px;
 	color: #fff;
@@ -31,9 +26,9 @@ body {
 	margin: 0 10vw 0 10vw;
 	padding: 20px 0 20px 0;
 }
-/*****************************************************************************/
-/*                                TOOLS                                      */
-/*****************************************************************************/
+/*******************************************************************/
+/*                              TOOLS                              */
+/*******************************************************************/
 .orange {
 	color: #ff7f28;
 }
@@ -46,7 +41,7 @@ body {
 			  user-select: none; /* Non-prefixed version, currently
 									supported by Chrome and Opera */
   }
-/*****************************************************************************/
+/*******************************************************************/
 #logo {
 	margin: 20px;
 	display: inline-flex;
@@ -72,7 +67,7 @@ body {
 	font-size: 20px;
 	/* text-shadow: 0 0 5px rgba(0,0,0,0.5); */
 }
-/*****************************************************************************/
+/*******************************************************************/
 .login-panel {
 	display: inline-flex;
 	float: right;
@@ -114,7 +109,7 @@ body {
 .login-panel button:hover .material-icons {
 	color: #00a0fe;
 }
-/*****************************************************************************/
+/*******************************************************************/
 .allin-block {
 	display: block;
 	height: 100vh;
@@ -125,7 +120,7 @@ body {
 	color: white;
 	box-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
-/*****************************************************************************/
+/*******************************************************************/
 .title-block {
 	position: absolute;
 	width: 300px;
@@ -135,7 +130,6 @@ body {
 	left: 0;
 	right: 0;
 	margin: auto;
-	/* background-color: aquamarine; */
 	font-family: Impact;
 	font-weight: bold;
 	color: #000000;
@@ -155,7 +149,7 @@ body {
 	text-transform: uppercase;
 	line-height: 1.4;
 }
-/*****************************************************************************/
+/*******************************************************************/
 .content-box {
 	margin: 0 10vw;
 	padding: 40px 0;
@@ -180,7 +174,6 @@ body {
 	border-radius: 1%;
 }
 .content-box .ab-text {
-	/* text-transform: uppercase; */
 	margin-bottom: 40px;
 	text-align: justify;
 }
@@ -190,7 +183,7 @@ body {
 	font-weight: bold;
 	line-height: 1;
 }
-/*****************************************************************************/
+/*******************************************************************/
 #block-about {
 	color: #000;
 }
@@ -203,7 +196,7 @@ body {
 	box-shadow: 0 0 8px rgba(0,0,0,0.5);
 	padding-bottom: 50px;
 }
-/*****************************************************************************/
+/*******************************************************************/
 .offers-wrap {
 	display: flex;
 	flex-direction: row;
@@ -213,18 +206,28 @@ body {
 .offer {
 	margin: 0 20px;
 	width: 100%;
-	/*height: 350px; *//*временно, должно быть по-контенту */
 	position: relative;
 	text-transform: uppercase;
 	background-color: #fff;
 	border-radius: 0 0 30px 30px;
 	box-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
-/*****************************************************************************/
-/*					Small blocks content		 							*/
-/*****************************************************************************/
-
-.offer .offer-title{
+/*******************************************************************/
+/*                          Offer blocks                           */
+/*******************************************************************/
+.offer {
+	border: 4px solid;
+}
+.offer .offer-content {
+	color: #000;
+	position: relative;
+	text-align: center;
+	margin-top: 10px;
+	font-size: 13px;
+	word-wrap: break-word;
+	margin-bottom: 100px;
+}
+.offer .offer-title {
 	left: 0;
 	right: 0;
 	margin: auto;
@@ -234,32 +237,15 @@ body {
 	padding-top: 10px;
 	padding-bottom: 5px;
 }
-.offer .offer-ttext{
+.offer .offer-ttext {
 	left: 0;
 	right: 0;
 	margin: auto;
 	font-weight: normal;
 	font-size: 13px;
-	text-align: center;
-	
+	text-align: center;	
 }
-/*****************************************************************************/
-#opi{
-	border: 4px solid #61ac59
-}
-#opi .offer-title { /* Ну тоже сделать универсальным */
-	background-color: #61ac59;
-}
-#opi .offer-content { /* Докрутить и сделать универсальным */
-	color: #000;
-	position: relative;
-	text-align: center;
-	margin-top: 10px; /* Это, как и все размеры - от балды, поправьте по ТЗ */
-	font-size: 13px;
-	word-wrap: break-word;
-	margin-bottom: 100px;
-}
-#opi .offer-button { 
+.offer .offer-button { 
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -267,93 +253,67 @@ body {
 	width: 80%;
 	margin: auto;
 	padding: 8px;
-	border: 2px solid #61ac59;
-	background-color: #61ac59;
+	border: 2px solid;
 	border-radius: 40px; 
 	text-align: center;
 	cursor: pointer;
 }
-#opi .offer-button:hover { /* И это не забудьте */
+#opi{
+	border-color: #61ac59
+}
+#opi .offer-title {
+	background-color: #61ac59;
+}
+#opi .offer-button { 
+	border-color: #61ac59;
+	background-color: #61ac59;
+}
+#opi .offer-button:hover {
 	background-color: #ffffff;
 	color: #61ac59;
 }
-/*****************************************************************************/
-#kik { /* Это добавить в offer и сделать универсальным */
-	border: 4px solid #ac5868;
+#kik {
+	border-color: #ac5868;
 }
-#kik .offer-title { /* Ну тоже сделать универсальным */
+#kik .offer-title {
 	background-color: #ac5868;
 }
-#kik .offer-content { /* Докрутить и сделать универсальным */
-	color: #000;
-	position: relative;
-	text-align: center;
-	margin-top: 10px; /* Это, как и все размеры - от балды, поправьте по ТЗ */
-	font-size: 13px;
-	word-wrap: break-word;
-	margin-bottom: 100px;
-}
-#kik .offer-button { /* Аналогично, не только для кик-а */
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 10px;
-	width: 80%;
-	margin: auto;
-	padding: 8px;
-	border: 2px solid #ac5868;
+#kik .offer-button {
+	border-color: #ac5868;
 	background-color: #ac5868;
-	border-radius: 40px; 
-	text-align: center;
-	cursor: pointer;
 }
-#kik .offer-button:hover { /* И это не забудьте */
+#kik .offer-button:hover {
 	background-color: #ffffff;
 	color: #ac5868;
 }
-/*****************************************************************************/
-#smt { /* Это добавить в offer и сделать универсальным */
-	border: 4px solid #ac9558;
+#smt {
+	border-color: #ac9558;
 }
-#smt .offer-title { /* Ну тоже сделать универсальным */
+#smt .offer-title {
 	background-color: #ac9558;
 }
-#smt .offer-content { /* Докрутить и сделать универсальным */
-	color: #000;
-	position: relative;
-	text-align: center;
-	margin-top: 10px; /* Это, как и все размеры - от балды, поправьте по ТЗ */
-	font-size: 13px;
-	word-wrap: break-word;
-	margin-bottom: 100px;
-}
-#smt .offer-button { /* Аналогично, не только для кик-а */
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 10px;
-	width: 80%;
-	margin: auto;
-	padding: 8px;
-	border: 2px solid #ac9558;
+#smt .offer-button {
+	border-color: #ac9558;
 	background-color: #ac9558;
-	border-radius: 40px; 
-	text-align: center;
-	cursor: pointer;
 }
-#smt .offer-button:hover { /* И это не забудьте */
+#smt .offer-button:hover {
 	background-color: #ffffff;
 	color: #ac9558;
 }
-/*****************************************************************************/
-/*                               SMALL SCREENS                               */
-/*****************************************************************************/
-@media screen and (max-width: 991px), screen and (max-device-width: 991px) {
+/*******************************************************************/
+/*                          SMALL SCREENS                          */
+/*******************************************************************/
+@media screen and (max-width: 991px),
+	   screen and (max-device-width: 991px)
+{
 	.content-box .ab-box img {
 		width: 300px;
 	}
 }
-@media screen and (max-width: 768px), screen and (max-device-width: 768px) {
+/*******************************************************************/
+@media screen and (max-width: 768px),
+	   screen and (max-device-width: 768px)
+{
 	.title-block {
 		width: 270px;
 		/* background-color: aquamarine; */
@@ -398,3 +358,4 @@ body {
 		font-size: 0.9em;
 	}
 }
+/*******************************************************************/
