@@ -22,18 +22,51 @@ body {
 /* .wrapper {} /* Он полностью динамичный */
 /*****************************************************************************/
 .footer {
-	height: 200px;
+	/*height: 200px;*/
 	color: #fff;
 	background-color: #353535;
 	box-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
 .footer-content {
-	margin: 0 10vw 0 10vw;
-	padding: 20px 0 20px 0;
+	margin: 0 20vw;
+	padding: 10px 0;
 }
-/*****************************************************************************/
-/*                                TOOLS                                      */
-/*****************************************************************************/
+.footer-content .footer-content-left {
+    float: left;
+}
+.footer-content .footer-content-right {
+    float: right;
+}
+.footer-content-left a {
+	display: block;
+    text-decoration: none;
+	font-family: Tahoma;
+    font-weight: bold;
+	font-size: 20px;
+    color: #ffffff;
+    position: relative;
+}
+#about-command {}
+#partner {}
+#support {}
+#startup-analytics {
+    font-weight: 100;
+    margin-top: 40px;
+    font-size: 15px;
+}
+.footer-content-right p {
+    text-align: right;
+	display: block;
+    text-decoration: none;
+	font-family: Tahoma;
+    font-weight: bold;
+	font-size: 20px;
+    color: #ffffff;
+    position: relative;
+}
+#address {}
+/*********************************************************************/
+/*                               TOOLS                               */ /*********************************************************************/
 .orange {
 	color: #ff7f28;
 }
@@ -132,7 +165,7 @@ body {
 }
 /*****************************************************************************/
 .content-box {
-	margin: 0 10vw;
+	margin: 0 20vw;
 	padding: 40px 0;
 	font-family: Tahoma;
 }
@@ -272,6 +305,19 @@ body {
 	}
 }
 @media screen and (max-width: 768px), screen and (max-device-width: 768px) {
+    .footer-content .footer-content-left {
+        margin-top: 20px;
+        float: none;
+    }
+    .footer-content .footer-content-right {
+        float: none;
+    }
+    .footer-content .footer-content-right p{
+        text-align: center;
+    }
+    .footer-content .footer-content-left a{
+        text-align: center;
+    }
 	.title-block {
 		width: 270px;
 		/* background-color: aquamarine; */
