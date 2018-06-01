@@ -131,11 +131,11 @@ body {
 	border: none;
 	border-radius: 50px;
 	font-family: Impact;
-	z-index: 7;
 	outline: none;
-	outline-style: none;
-	outline-color: transparent;
-	-webkit-box-shadow: 0 0 0px 1000px white inset; /* Костыль для хрома */
+	/* Костыль для хрома */
+	box-shadow: none;
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+	z-index: 7;
 }
 .login-panel button {
 	float: right;
