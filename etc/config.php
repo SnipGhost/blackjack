@@ -34,5 +34,5 @@ if (!defined('BASE_URI')) {
 
 // Версия, для удобства написания
 if (!defined('VERSION')) {
-    define('VERSION', 'v0.1');
+    define('VERSION', 'v0.1-dev');
 }

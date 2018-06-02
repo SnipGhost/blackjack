@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Шаблон</title>
+	<title><?=$title?></title>
 	<link rel="stylesheet" type="text/css" href="/<?=BASE_URI?>css/main.css" />
 	<link rel="stylesheet" type="text/css" href="/<?=BASE_URI?>css/icons.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -122,6 +122,7 @@
 				<a href="#" id="about-command">О команде</a>
 				<a href="#" id="partner">Партнёры</a>
 				<a href="#" id="support">Поддержка</a>
+				<br><?=VERSION?> <!-- Тагир, оформи плз сюда и версию тоже, пригодится -->
 				<a id="startup-analytics">© 2018 Startup-Analytics.com</a>
 			</div>
 			<div style="clear: both;"></div>
