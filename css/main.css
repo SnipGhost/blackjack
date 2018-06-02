@@ -124,8 +124,8 @@ body {
 .login-panel input {
 	width: 200px;
 	height: 50px;
-	margin-right: -50px;
 	padding: 0 50px 0 15px;
+	margin-right: -50px;
 	font-size: 16px;
 	border: none;
 	border-radius: 50px;
@@ -136,22 +136,27 @@ body {
 	-webkit-box-shadow: 0 0 0px 1000px white inset;
 	z-index: 7;
 }
-.login-panel button {
+.login-panel .btn {
 	float: right;
 	cursor: pointer;
 	height: 50px;
 	padding: 0 15px 0 58px;
 	text-align: center;
 	border: none;
-	border-radius: 0 50px 50px 0;
+	border-radius: 50px;
 	background-color: #383838;
 	color: #ffffff;
 	font-size: 16px;
 	font-family: Impact;
 	z-index: 5;
 }
-.login-panel button:hover .material-icons {
-	color: #00a0fe;
+.login-panel .reg {
+	line-height: 50px;
+	text-decoration: none;
+	float: left;
+	margin-right: -50px;
+	padding: 0 58px 0 15px;
+	z-index: 6;
 }
 /*******************************************************************/
 .allin-block {
