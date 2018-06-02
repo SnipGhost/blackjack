@@ -122,7 +122,7 @@
 				<a href="#" id="about-command">О команде</a>
 				<a href="#" id="partner">Партнёры</a>
 				<a href="#" id="support">Поддержка</a>
-				<br><?=VERSION?> <!-- Тагир, оформи плз сюда и версию тоже, пригодится -->
+				<a id="version">Текущая версия: <?=VERSION?></a>
 				<a id="startup-analytics">© 2018 Startup-Analytics.com</a>
 			</div>
 			<div style="clear: both;"></div>

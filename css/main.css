@@ -59,6 +59,10 @@ body {
 	margin: 0;
 	padding: 0;
 }
+#version {
+    font-weight: 100;
+	font-size: 10px;
+}
 /*******************************************************************/
 /*                              TOOLS                              */
 /*******************************************************************/
@@ -149,6 +153,7 @@ body {
 	font-size: 16px;
 	font-family: Impact;
 	z-index: 5;
+    outline: none;
 }
 .login-panel button:hover .material-icons {
 	color: #00a0fe;
@@ -162,7 +167,7 @@ body {
 	background-position: center;
 	background-size: cover;
 	color: white;
-	box-shadow: 0 0 8px rgba(0,0,0,0.5);
+	box-shadow: 0 0 25px rgba(0,0,0,0.8);
 }
 /*******************************************************************/
 .title-block {
