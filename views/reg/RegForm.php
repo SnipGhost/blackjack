@@ -34,4 +34,6 @@
 		<div style="clear: both;"></div>
 
 	</form>
+
+	<a href="/<?=BASE_URI?>"> НАЗАД </a>
 </div>

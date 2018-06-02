@@ -12,7 +12,7 @@ return array(
     'upload' => ['MainController', 'actionUpload'],
 
     // Страница регистрации пользователя
-    'reg' => ['MainController', 'actionReg'],
+    'reg' => ['RegController', 'actionReg'],
 
     // Страницы тестирования сокращений из DBConnection
     'db'            => ['DBController', 'actionIndex'],
