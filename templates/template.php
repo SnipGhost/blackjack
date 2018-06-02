@@ -73,7 +73,7 @@
 							Разработка и реализация индивидуальных репутационных программ для публичных личностей
 							</div><br>
 							<div class="offer-button noselect">
-							Попробовать
+                            Попробовать
 							</div>
 					</div>
 					<div id="kik" class="offer">
@@ -122,6 +122,7 @@
 				<a href="#" id="about-command">О команде</a>
 				<a href="#" id="partner">Партнёры</a>
 				<a href="#" id="support">Поддержка</a>
+                <br>
 				<a id="version">Текущая версия: <?=VERSION?></a>
 				<a id="startup-analytics">© 2018 Startup-Analytics.com</a>
 			</div>

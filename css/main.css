@@ -61,7 +61,7 @@ body {
 }
 #version {
     font-weight: 100;
-	font-size: 10px;
+	font-size: 15px;
 }
 /*******************************************************************/
 /*                              TOOLS                              */
@@ -133,7 +133,7 @@ body {
 	font-size: 16px;
 	border: none;
 	border-radius: 50px;
-	font-family: Impact;
+	font-family: Tahoma;
 	outline: none;
 	/* Костыль для хрома */
 	box-shadow: none;
@@ -226,7 +226,7 @@ body {
 	text-align: justify;
 }
 .content-box .ab-title {
-	margin-bottom: 5px;
+	margin-bottom: 30px;
 	font-size: 1.3em;
 	font-weight: bold;
 	line-height: 1;
