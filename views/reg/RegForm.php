@@ -2,6 +2,10 @@
 	<form class="reg-form" action="" method="POST">
 
 		<div class="line">
+			<span class="orange"><?=$msg?></span>
+		</div>
+
+		<div class="line">
 			<label>Логин: </label>
 			<input type="text" name="username" value="test_user" required/>
 		</div>

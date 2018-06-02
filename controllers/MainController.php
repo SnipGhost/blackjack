@@ -29,30 +29,55 @@ class MainController extends Controller
         );
         $this->view->display($page);
     }
+
+    public function regMain($msg = '') {
+        $page = array(
+            'content' => 'reg/RegForm.php',
+            'title' => 'Регистрация',
+            'msg' => $msg,
+        );
+        $this->view->display($page);
+    }
     
     public function actionReg()
     {
+        global $user;
+        // Если пользователь уже залогинен, то
+        //  игнорируем его запрос на actionReg
+        if (!is_null($user)) {
+            header('Location: /'.BASE_URI);
+            return;
+        }
+
         if (isset($_POST['reg'],
                   $_POST['username'],
                   $_POST['password'],
                   $_POST['retype'],
                   $_POST['email'])) {
 
-            // TODO: Реализовать добавление пользователя
+            if ($_POST['retype'] != $_POST['password']) {
+                $this->regMain('Вы повторили пароль неверно');
+                return;
+            }
+
+            if (!$this->model->checkUserName($_POST['username'])) {
+                $this->regMain('Пользователь с таким логином уже есть');
+                return;
+            }
+
+            if (!$this->model->addUser($_POST['username'], $_POST['password'], $_POST['email'])) {
+                $this->regMain('Ошибка при добавлении пользователя');
+                return;
+            }
 
             $page = array(
                 'content' => 'reg/RegEnd.php',
                 'title' => 'Завершение регистрации',
-                'data' => $this->model->checkUserName($_POST['username']),
             );
             $this->view->display($page);
 
         } else {
-            $page = array(
-                'content' => 'reg/RegForm.php',
-                'title' => 'Регистрация',
-            );
-            $this->view->display($page);
+            $this->regMain();
         }
     }
 }
