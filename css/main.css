@@ -32,7 +32,6 @@ body {
     float: right;
 }
 .footer-content-left a {
-	display: block;
     text-decoration: none;
 	font-family: Tahoma;
     font-weight: bold;
@@ -60,6 +59,8 @@ body {
 	padding: 0;
 }
 #version {
+	display: block;
+	margin-bottom: 20px;
     font-weight: 100;
 	font-size: 15px;
 }

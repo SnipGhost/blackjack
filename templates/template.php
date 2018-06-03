@@ -119,9 +119,9 @@
 				</p>
 			</div>
 			<div class="footer-content-left">
-				<a href="#" id="about-command">О команде</a>
-				<a href="#" id="partner">Партнёры</a>
-				<a href="#" id="support">Поддержка</a>
+				<div><a href="#" id="about-command">О команде</a></div>
+				<div><a href="#" id="partner">Партнёры</a></div>
+				<div><a href="#" id="support">Поддержка</a></div>
                 <br>
 				<a id="version">Текущая версия: <?=VERSION?></a>
 				<a id="startup-analytics">© 2018 Startup-Analytics.com</a>
