@@ -59,6 +59,10 @@ body {
 	margin: 0;
 	padding: 0;
 }
+#version {
+    font-weight: 100;
+	font-size: 15px;
+}
 /*******************************************************************/
 /*                              TOOLS                              */
 /*******************************************************************/
@@ -129,7 +133,7 @@ body {
 	font-size: 16px;
 	border: none;
 	border-radius: 50px;
-	font-family: Impact;
+	font-family: Tahoma;
 	outline: none;
 	/* Костыль для хрома */
 	box-shadow: none;
@@ -149,6 +153,7 @@ body {
 	font-size: 16px;
 	font-family: Impact;
 	z-index: 5;
+    outline: none;
 }
 .login-panel .reg {
 	line-height: 50px;
@@ -167,7 +172,7 @@ body {
 	background-position: center;
 	background-size: cover;
 	color: white;
-	box-shadow: 0 0 8px rgba(0,0,0,0.5);
+	box-shadow: 0 0 25px rgba(0,0,0,0.8);
 }
 /*******************************************************************/
 .title-block {
@@ -226,7 +231,7 @@ body {
 	text-align: justify;
 }
 .content-box .ab-title {
-	margin-bottom: 5px;
+	margin-bottom: 30px;
 	font-size: 1.3em;
 	font-weight: bold;
 	line-height: 1;
