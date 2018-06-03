@@ -36,8 +36,9 @@ body {
 	font-family: Tahoma;
     font-weight: bold;
 	font-size: 1em;
+	line-height: 1.5em; /* междустрочный интервал, считай */
     color: #ffffff;
-    position: relative;
+	position: relative;
 }
 .footer-content-left a:hover {
 	color: #666666;
@@ -47,7 +48,7 @@ body {
 	display: block;
     text-decoration: none;
 	font-family: Tahoma;
-    font-weight: bold;
+    /* font-weight: bold; */
 	font-size: 1em;
     color: #ffffff;
     position: relative;
@@ -62,7 +63,7 @@ body {
 	font-size: 0.8em;
 }
 #copyright {
-	margin-top: 40px;
+	margin-top: 2.5em;
 }
 /*******************************************************************/
 /*                              TOOLS                              */
