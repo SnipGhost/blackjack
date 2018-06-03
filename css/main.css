@@ -31,13 +31,16 @@ body {
 .footer-content .footer-content-right {
     float: right;
 }
-.footer-content-left a {
+.footer-content-left a, span {
     text-decoration: none;
 	font-family: Tahoma;
     font-weight: bold;
 	font-size: 20px;
     color: #ffffff;
     position: relative;
+}
+.footer-content-left a:hover {
+	color: #666666;
 }
 .footer-content-right p {
     text-align: right;
@@ -53,16 +56,13 @@ body {
 	margin: 0;
 	padding: 0;
 }
-#version {
+#version, #copyright {
 	display: block;
     font-weight: 100;
 	font-size: 15px;
 }
 #copyright {
-	display: block;
-    font-weight: 100;
-    margin-top: 40px;
-    font-size: 15px;
+	margin-top: 40px;
 }
 /*******************************************************************/
 /*                              TOOLS                              */
