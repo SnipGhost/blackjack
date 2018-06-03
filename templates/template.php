@@ -124,7 +124,7 @@
 				<div><a href="#" id="support">Поддержка</a></div>
                 <br>
 				<a id="version">Текущая версия: <?=VERSION?></a>
-				<a id="startup-analytics">© 2018 Startup-Analytics.com</a>
+				<a id="copyright">© 2018 Startup-Analytics.com</a>
 			</div>
 			<div style="clear: both;"></div>
 		</div>

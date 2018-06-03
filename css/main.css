@@ -39,11 +39,6 @@ body {
     color: #ffffff;
     position: relative;
 }
-#startup-analytics {
-    font-weight: 100;
-    margin-top: 40px;
-    font-size: 15px;
-}
 .footer-content-right p {
     text-align: right;
 	display: block;
@@ -60,9 +55,14 @@ body {
 }
 #version {
 	display: block;
-	margin-bottom: 20px;
     font-weight: 100;
 	font-size: 15px;
+}
+#copyright {
+	display: block;
+    font-weight: 100;
+    margin-top: 40px;
+    font-size: 15px;
 }
 /*******************************************************************/
 /*                              TOOLS                              */
