@@ -14,6 +14,9 @@ return array(
     // Страница регистрации пользователя
     'reg' => ['RegController', 'actionReg'],
 
+    // Страница ОПИ (оценка потенциала избираемости)
+    'opi' => ['OpiController', 'actionOpi'],
+
     // Страницы тестирования сокращений из DBConnection
     'db'            => ['DBController', 'actionIndex'],
     'db/insert'     => ['DBController', 'actionInsert'],
