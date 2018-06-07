@@ -119,12 +119,12 @@
 				</p>
 			</div>
 			<div class="footer-content-left">
-				<a href="#" id="about-command">О команде</a>
-				<a href="#" id="partner">Партнёры</a>
-				<a href="#" id="support">Поддержка</a>
+				<a href="#" id="about-command">О команде</a><br>
+				<a href="#" id="partner">Партнёры</a><br>
+				<a href="#" id="support">Поддержка</a><br>
                 <br>
-				<a id="version">Текущая версия: <?=VERSION?></a>
-				<a id="startup-analytics">© 2018 Startup-Analytics.com</a>
+				<span id="version">Текущая версия: <?=VERSION?></span>
+				<span id="copyright">© 2018 Startup-Analytics.com</span>
 			</div>
 			<div style="clear: both;"></div>
 		</div>
