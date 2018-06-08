@@ -464,7 +464,7 @@ body {
 	margin-right:45vw;
 	font-family: Impact;
 	font-weight: bold;
-	color: #000000;
+	color: #ffffff;
 	line-height: 0.95;
 }
 .opi-allin-block .title-block .title-main{
@@ -537,8 +537,8 @@ body {
 	text-align: center;
 	cursor: pointer;
 	color: #ffffff;
-	border-color: #000000;
-	background-color: #000000;
+	border-color: #383838;
+	background-color: #383838;
 }
 .content-box-opi .test-block .test-button:hover{
 	color: #000000;
