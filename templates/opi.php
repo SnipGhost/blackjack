@@ -48,14 +48,17 @@
 			</div>
 			<div class="content-box-opi">
 				<div class="content-box-semititle">
-						Форма для определения потенциала
+                    ФОРМА ДЛЯ ОПРЕДЕЛЕНИЯ ПОТЕНЦИАЛА
 				</div>	
 				<div>
-						Необходимо заполнить и нажать анализ
+						(необходимо заполнить и нажать кнопку "Анализ")
 				</div>
 				<div class="test-block">
 					<div class="radio-block">
-						Привязка кандидата к округу	<br>
+                        <div class="name-block">
+                            Привязка кандидата к округу
+                        </div>	
+<!--                        <br>-->
 						<div class="inblock-string"><input type="radio" id="RB0" name="kand_okr" value="neither"><label for="RB0">Кандидат в округе не живет и не работает</label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB1" name="kand_okr" value="work"><label for="RB1">Кандидат работает в округе </label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB2" name="kand_okr" value="live"><label for="RB2">Кандидат живет в округе </label></div><br>
@@ -63,14 +66,20 @@
 					</div>
 					<hr>
 					<div class="radio-block">
-						Возраст кандидата	<br>
+                        <div class="name-block">
+                            Возраст кандидата	
+                        </div>	
+<!--                        <br>-->
 						<div class="inblock-string"><input type="radio" id="RB4" name="age" value="old"><label for="RB4">Возраст <25 или >75 лет</label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB5" name="age" value="not_so_old"><label for="RB5">Возраст 25-30 или 65-75 лет</label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB6" name="age" value="normal"><label for="RB6">Возраст 40-65 лет</label></div><br>
 					</div>
 					<hr>
 					<div class="radio-block">
-						Поддержка кандидата общественностью	<br>
+                        <div class="name-block">
+                            Поддержка кандидата общественностью	
+                        </div>	
+<!--                        <br>-->
 						<div class="inblock-string"><input type="radio" id="RB7" name="support" value="great_sup"><label for="RB7">Поддержка кандидата известными популярными у населения крупными общественными организациями</label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB8" name="support" value="big_sup"><label for="RB8">Поддержка достаточно известными организациями</label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB9" name="support" value="sup"><label for="RB9">Поддержка прочими организациями</label></div><br>
@@ -78,15 +87,21 @@
 					</div>
 					<hr>
 					<div class="radio-block">
-						Образование кандидата	<br>
+                        <div class="name-block">
+                            Образование кандидата
+                        </div>	
+<!--                        <br>-->
 						<div class="inblock-string"><input type="radio" id="RB11" name="education" value="general"><label for="RB11">Среднее образование</label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB12" name="education" value="unfinished"><label for="RB12">Незаконченное высшее образование</label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB13"  name="education" value="higher"><label for="RB13">Высшее образование</label></div><br>
 					</div>
 					<hr>
 					<div class="radio-block">
-						Показатель предпочтительности деятельности кандидата	<br>
-						<div class="minitext">Выбирается по мнению эксперта в зависимости от сформировавшихся в данной местности представлений о социальной значимости той или иной профессии</div>
+                       <div class="name-block">
+                            Показатель предпочтительности деятельности кандидата
+                        </div>	
+<!--                        <br>-->
+						<div class="minitext">(выбирается по мнению эксперта в зависимости от сформировавшихся в данной местности представлений о социальной значимости той или иной профессии)</div>
 						<div class="inblock-string"><input type="radio" id="RB14" name="Way_of_life" value="0"><label for="RB14">0</label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB15" name="Way_of_life" value="1"><label for="RB15">1</label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB16" name="Way_of_life" value="2"><label for="RB16">2</label></div><br>
@@ -96,14 +111,20 @@
 					</div>
 					<hr>
 					<div class="radio-block">
-						Харизма кандидата	<br>
+                        <div class="name-block">
+                            Харизма кандидата
+                        </div>	
+<!--                        <br>-->
 						<div class="inblock-string"><input type="radio" id="RB20" name="charisma" value="great"><label for="RB20">Кандидат - яркая, харизматичная личность</label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB21" name="charisma" value="well"><label for="RB21">Кандидат способен проявить себя как сильная личность, но не всегда</label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB22" name="charisma" value="bad"><label for="RB22">Кандидат - тихоня</label></div><br>
 					</div>
 					<hr>
 					<div class="radio-block">
-						Личная известность кандидата	<br>
+                        <div class="name-block">
+                            Личная известность кандидата	
+                        </div>		
+<!--                        <br>-->
 						<div class="inblock-string"><input type="radio" id="RB23" name="celebrity" value="bad"><label for="RB23">Кандидат не известен даже соседям</label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB24" name="celebrity" value="normal"><label for="RB24">Кандидат известен узкому кругу людей</label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB25" name="celebrity" value="well"><label for="RB25">Кандидат известен практически всему округу</label></div><br>
@@ -111,7 +132,10 @@
 					</div>
 					<hr>
 					<div class="radio-block">
-						Оттенок популярности	<br>
+                        <div class="name-block">
+                            Оттенок популярности	
+                        </div>
+<!--                        <br>-->
 						<div class="inblock-string"><input type="radio" id="RB27" name="kind_cel" value="good"><label for="RB27">Кандидат позитивно известен жителям округа</label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB28" name="kind_cel" value="bad"><label for="RB28">Кандидат известен жителям с негативных сторон</label></div><br>
 						<div class="inblock-string"><input type="radio" id="RB29" name="kind_cel" value="so_so"><label for="RB29">Кандидат в разных ситуациях проявляет себя по-разному</label></div><br>

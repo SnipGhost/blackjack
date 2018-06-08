@@ -72,9 +72,11 @@
 							<div class="offer-content">
 							Разработка и реализация индивидуальных репутационных программ для публичных личностей
 							</div><br>
-							<div class="offer-button noselect">
-                            Попробовать
-							</div>
+                            <a href="opi" id="offer-button-link">
+                                <div class="offer-button noselect">
+                                    Попробовать
+                                </div>
+                            </a>
 					</div>
 					<div id="kik" class="offer">
 						<div class="offer-title noselect">
@@ -86,9 +88,11 @@
 						<div class="offer-content">
 							Комплекс избирательных технологий, обеспечивающих информационных воздействий с прогнозируемой социальной реацией
 						</div>
-						<div class="offer-button noselect">
-							Попробовать демо
-						</div>
+                        <a href="kit" id="offer-button-link">
+                            <div class="offer-button noselect">
+                                Попробовать демо
+                            </div>
+                        </a>
 					</div>
 					<div id="smt" class="offer">
 						<div class="offer-title noselect">
@@ -100,9 +104,11 @@
 						<div class="offer-content">
 							Проектирование и внедрение репутационных стратегий для предприятий и организаций разных масштабов
 						</div>
-						<div class="offer-button noselect">
-							Узнать подробнее
-						</div>
+                        <a href="rem" id="offer-button-link">
+                            <div class="offer-button noselect">
+                                Узнать подробнее
+                            </div>
+                        </a>
 					</div>
 				</div>
 			</div>

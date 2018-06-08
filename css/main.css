@@ -94,7 +94,7 @@ body {
 	height: 50px;
 	border-radius: 50%;
 	background-color: #ffffff;
-	/* Возможно, с тенью будет стилявее? */
+	/* Возможно, с тенью будет стилявее?  <---- "НИТ" От: HoriFox */
 	/* box-shadow: 0 0 5px rgba(0,0,0,0.5); */
 }
 #logo span {
@@ -280,6 +280,10 @@ body {
 	font-size: 12px;
 	word-wrap: break-word;
 	margin-bottom: 100px;
+}
+#offer-button-link div {
+    color: white;
+/*  text-decoration: none;*/  /*Вроде нафиг не нужна*/
 }
 .offer .offer-title {
 	left: 0;
@@ -473,13 +477,15 @@ body {
 	width: 100%;
 }
 .content-box-opi {
-	text-transform: uppercase;
+	text-transform: uppercase; /*Все символы становятся прописными */
 	margin: 0 20vw;
 	padding: 40px 0;
 	font-family: Tahoma;
 }
 .content-box-opi div{
 	margin-bottom: 5px;
+    font-family: Verdana;
+    text-transform: none; /*Все символы с нормальными регистрами */
 }
 .content-box-opi .content-box-semititle{
 	font-size: 1.4em;
@@ -500,7 +506,6 @@ body {
 	margin-top: 0px;
 	margin-bottom: 0px;
 	font-weight: normal;
-	/*настройка шрифта тут!*/
 }
 .content-box-opi .test-block .radio-block input{
 	margin-right: 15px;
@@ -513,7 +518,13 @@ body {
 }
 .content-box-opi .test-block .radio-block .minitext{
 	width:70%;
-	font-size: 0.6em;
+    text-transform: none;
+    font-weight: 100;
+    font-family: Verdana;
+    margin-bottom: 10px;
+}
+.content-box-opi .test-block .radio-block .name-block{
+    margin-bottom: 5px;
 }
 
 .content-box-opi .test-block .test-button{
