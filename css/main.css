@@ -493,19 +493,20 @@ body {
 	margin-top: 15px;
 	margin-bottom: 50px;
 }
-.content-box-opi .test-block p{
-	margin-top: 0px;
-	margin-bottom: 0px;
-	font-weight: normal;
-}
 .content-box-opi .test-block .radio-block{
 	font-weight: bold;
 	margin-bottom: 10px;
 }
+.content-box-opi .test-block .radio-block label{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-weight: normal;
+}
 .content-box-opi .test-block .radio-block .inblock-string{
+	font-weight: normal;
 	display: inline-flex;
 	justify-content: space-between;
-	width:70%;
+	width:75%;
 	align-items: center;
 }
 .content-box-opi .test-block .radio-block .minitext{
@@ -531,4 +532,3 @@ body {
 	color: #000000;
 	background-color: #ffffff;
 }
-
