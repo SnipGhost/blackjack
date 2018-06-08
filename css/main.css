@@ -491,7 +491,6 @@ body {
 }
 .content-box-opi .test-block{
 	margin-top: 15px;
-	margin-bottom: 50px;
 }
 .content-box-opi .test-block .radio-block{
 	font-weight: bold;
@@ -501,12 +500,15 @@ body {
 	margin-top: 0px;
 	margin-bottom: 0px;
 	font-weight: normal;
+	/*настройка шрифта тут!*/
+}
+.content-box-opi .test-block .radio-block input{
+	margin-right: 15px;
 }
 .content-box-opi .test-block .radio-block .inblock-string{
 	font-weight: normal;
 	display: inline-flex;
-	justify-content: space-between;
-	width:75%;
+	width:100%;
 	align-items: center;
 }
 .content-box-opi .test-block .radio-block .minitext{
@@ -516,8 +518,6 @@ body {
 
 .content-box-opi .test-block .test-button{
 	margin-top: 30px;
-	float: right;
-	margin-right:15%;
 	width: 200px;
 	padding: 8px;
 	border: 2px solid;
