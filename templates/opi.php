@@ -25,13 +25,15 @@
 				<span>Лого</span>
 			</a>
 			<div class="title-block noselect">
+<!--
 				<div class="title-name">
 					Научно-инженерное репутационное агентство
 				</div>
-				<div class="inline-flex">
-					<div class="title-startup">START</div><div class="title-startup orange">UP</div>
-					<div class="title-main">ANALYTICS</div>
-				</div>
+-->
+<!--				<div class="inline-flex">-->
+<!--					<div class="title-startup">START</div><div class="title-startup orange">UP</div>-->
+					<div class="title-main">STARTUPANALYTICS</div>
+<!--				</div>-->
 			</div>
 		</div>
 		<div id="block-about">
