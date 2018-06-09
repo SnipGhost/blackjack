@@ -52,8 +52,16 @@ func (q *Quiz) generateQuiz(outputFile string) {
 	out := bufio.NewWriter(file)
 	fmt.Fprintf(out, quizHeadFmt)
 	aid := 0
-	for qid, q := range q.Questions {
-		q.generateQuestion(out, 1, qid, &aid)
+	for cid := 0; cid < maxCand; cid++ {
+		fmt.Fprintf(out, candHeadFmt, cid)
+		for qid, q := range q.Questions {
+			q.generateQuestion(out, cid, qid, &aid)
+		}
+		fmt.Fprintf(out, quizNextBtn)
+		if cid != 0 {
+			fmt.Fprintf(out, quizSubmitBtn)
+		}
+		fmt.Fprintf(out, candEndFmt)
 	}
 	fmt.Fprintf(out, quizEndFmt)
 	out.Flush()

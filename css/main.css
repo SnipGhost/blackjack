@@ -510,6 +510,12 @@ body {
 .content-box-opi .test-block{
 	margin-top: 15px;
 }
+.content-box-opi .test-block .cand-form {
+	display: none;
+}
+#cand-0 {
+	display: block;
+}
 .content-box-opi .test-block .radio-block{
 	font-weight: bold;
 	margin-bottom: 10px;
