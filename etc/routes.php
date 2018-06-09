@@ -17,6 +17,9 @@ return array(
     // Страница ОПИ (оценка потенциала избираемости)
     'opi' => ['OpiController', 'actionOpi'],
 
+    // Страница ОПИ (оценка потенциала избираемости)
+    'rem' => ['RemController', 'actionRem'],
+
     // Страницы тестирования сокращений из DBConnection
     'db'            => ['DBController', 'actionIndex'],
     'db/insert'     => ['DBController', 'actionInsert'],
