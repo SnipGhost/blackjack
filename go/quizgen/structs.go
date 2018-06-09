@@ -57,8 +57,15 @@ func (q *Quiz) generateQuiz(outputFile string) {
 		for qid, q := range q.Questions {
 			q.generateQuestion(out, cid, qid, &aid)
 		}
-		fmt.Fprintf(out, quizNextBtn)
+		if cid+1 != maxCand {
+			fmt.Fprintf(out, quizNextBtn, nextLabel, cid+1)
+		}
 		if cid != 0 {
+			if cid == 1 {
+				fmt.Fprintf(out, quizLastBtn, lastLabelAlt, cid-1)
+			} else {
+				fmt.Fprintf(out, quizLastBtn, lastLabel, cid-1)
+			}
 			fmt.Fprintf(out, quizSubmitBtn)
 		}
 		fmt.Fprintf(out, candEndFmt)

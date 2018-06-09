@@ -1,33 +1,18 @@
 package main
 
 const (
-	maxCand     = 5
+	maxCand     = 5 // Максимальное число кандидатов
 	quizHeadFmt = `
 	<form id="test-wrapper" class="test-block" action="" method="POST">
 	`
-	quizEndFmt = `
-	</form>
-	`
 	candHeadFmt = `
 		<div id="cand-%d" class="cand-form">
-	`
-	candEndFmt = `
-		</div>
-	`
-	quizNextBtn = `
-			<div class="test-button noselect" onClick="nextCand();">Следующий кандидат</div>
-	`
-	quizSubmitBtn = `
-			<button class="test-button noselect">Анализ</button>
 	`
 	questionHeadFmt = `
 			<div class="radio-block">
 				<div class="name-block">%s</div>`
 	questionDescFmt = `
 				<div class="minitext">(%s)</div>`
-	questionEndFmt = `
-			</div>
-	`
 	answerFmt = `
 				<div class="inblock-string">
 					<input type="radio" id="qrb-%s" name="aspt[%d][%d]" value="%s">
@@ -35,4 +20,25 @@ const (
 						%s
 					</label>
 				</div><br>`
+	questionEndFmt = `
+			</div>
+	`
+	quizNextBtn = `
+			<div class="test-button noselect" onClick="nextCand();">%s (%d)</div>
+	`
+	quizLastBtn = `
+			<div class="test-button noselect" onClick="lastCand();">%s (%d)</div>
+	`
+	quizSubmitBtn = `
+			<button class="test-button noselect">Анализ</button>
+	`
+	candEndFmt = `
+		</div>
+	`
+	quizEndFmt = `
+	</form>
+	`
+	nextLabel    = `Следующий кандидат`
+	lastLabel    = `Предыдущий кандидат`
+	lastLabelAlt = `Вы`
 )

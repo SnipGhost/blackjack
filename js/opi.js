@@ -11,31 +11,17 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function nextCand() {
-	document.getElementById(prefix + cur_rec.toString()).style.display = "none";
-	cur_rec++;
-	//console.log(cur_rec);
-	var element = document.getElementById(prefix + cur_rec.toString());
-	if (!element) {
-		cur_rec = 0;
-		//console.log("UPS:", cur_rec);
+	if (cur_rec < max_num) {
+		document.getElementById(prefix + cur_rec.toString()).style.display = "none";
+		cur_rec++;
 		document.getElementById(prefix + cur_rec.toString()).style.display = "block";
 	}
-	else element.style.display = "block";
 }
 
-// function lastCand() {
-// 	if (cur_rec == 1) {
-// 		document.getElementById('edit-form-1').style.display = "none";
-// 		cur_rec = max_num;
-// 		document.getElementById(prefix + cur_rec.toString()).style.display = "block";
-// 		return;
-// 	}
-// 	if (cur_rec == 0) {
-// 		document.getElementById('edit-form-newrec').style.display = "none";
-// 		cur_rec = 1;
-// 	} else {
-// 		document.getElementById(prefix + cur_rec.toString()).style.display = "none";
-// 		cur_rec--;
-// 	}
-// 	document.getElementById(prefix + cur_rec.toString()).style.display = "block";
-// }
+function lastCand() {
+	if (cur_rec > 0) {
+		document.getElementById(prefix + cur_rec.toString()).style.display = "none";
+		cur_rec--;
+		document.getElementById(prefix + cur_rec.toString()).style.display = "block";
+	}
+}
