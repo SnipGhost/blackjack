@@ -580,14 +580,6 @@ body {
 	color: #ffffff;
 	line-height: 0.95;
 }
-.reg-block{
-	width: 300px;
-	background-color: #ffffff;
-	border-radius:10%;
-	border: 2px solid #353535;
-	padding-bottom: 30px;
-	padding-top: 15px;
-}
 .reg-title-block .title-main {
 	color: #ffffff;
 	font-size: 4.4em;
@@ -603,13 +595,24 @@ body {
 	line-height: 1.4;
     font-family: Arial Black;
 }
-.reg-block .title{
+
+.reg-block{
+	width: 300px;
+	background-color: #ffffff;
+	border-radius: 25px; 
+	border: 2px solid #353535;
+	padding-bottom: 30px;
+	padding-top: 15px;
 	font-family: Impact;
 	font-weight: bold;
 	text-transform: uppercase;
+	color:#353535;
+}
+
+.reg-block .title{
 	font-size:20px;
 	margin-left:10%;
-	color:#353535;
+
 }
 .reg-block .title .semititle{
 	font-family: Tahoma;
@@ -617,10 +620,12 @@ body {
 	text-transform: none;
 	font-size:	16px;
 }
+.reg-block span{
+	width:100%;
+	font-size:16px;
+}
 .reg-block input{
-	width:80%;
-	margin-right:10%;
-	margin-left:10%;
+	width:100%;
 	font-size:16px;
 	background-color: #d0c2c2;
 	border-color:#353535;
@@ -629,6 +634,9 @@ body {
 }
 .reg-block .line{
 	margin-top:10px;
+	width:80%;
+	margin-right:10%;
+	margin-left:10%;
 }
 .reg-form .buttons{
 	width:100%;
@@ -675,4 +683,19 @@ body {
 	color: #353535;
 	background-color: #ffffff;
 	border: 2px solid #353535;
+}
+.reg-block .reg-end{
+	width:80%;
+	margin:auto;
+	bottom: 0;
+}
+.reg-endb{
+	width:80%;
+	justify-content: center;
+}
+.reg-endb a{
+	width:90%;
+}
+.buttons .reg-end{
+	width:100%;
 }

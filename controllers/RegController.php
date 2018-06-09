@@ -12,10 +12,10 @@ class RegController extends Controller
 
     public function regMain($msg = '') {
         $page = array(
-            'content' => 'teplates/reg.php',
+            'content' => '/reg/RegForm.php',
             'title' => 'Регистрация',
             'template' =>'reg.php',
-            'msg' => $msg,
+            'msg' => $msg, 
         );
         $this->view->display($page);
     }
@@ -60,8 +60,9 @@ class RegController extends Controller
             }
 
             $page = array(
-                'content' => 'reg/RegEnd.php',
+                'content' => '/reg/RegEnd.php',
                 'title' => 'Завершение регистрации',
+                'template' =>'reg.php',
             );
             $this->view->display($page);
 
