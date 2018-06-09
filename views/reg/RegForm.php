@@ -11,9 +11,9 @@
 								<span class="orange"><?=$msg?></span>
 							</div>
 							<div class="line">
-								<input type="text" name="username" placeholder="Логин" required/>
+								<input type="email" name="email" placeholder="Электронная почта"  required/>
 							</div>
-
+							
 							<div class="line">
 								<input type="password" name="password" placeholder="Пароль" required/>
 							</div>
@@ -22,9 +22,7 @@
 								<input type="password" name="retype"placeholder="Повторите пароль" required/>
 							</div>
 
-							<div class="line">
-								<input type="email" name="email" placeholder="Электронная почта"  required/>
-							</div>
+							
 						</div>
 					</div>
 					<div class="buttons">

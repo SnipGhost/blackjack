@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.7.5
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1:3306
--- Время создания: Июн 09 2018 г., 17:34
--- Версия сервера: 5.7.22
--- Версия PHP: 7.1.16
+-- Хост: localhost
+-- Время создания: Июн 01 2018 г., 23:20
+-- Версия сервера: 5.7.20
+-- Версия PHP: 7.1.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,7 +29,10 @@ USE `blackjack`;
 --
 -- Структура таблицы `test`
 --
+-- Создание: Июн 01 2018 г., 23:11
+--
 
+DROP TABLE IF EXISTS `test`;
 CREATE TABLE `test` (
   `id` int(11) NOT NULL,
   `colname` varchar(16) NOT NULL
@@ -51,13 +54,27 @@ INSERT INTO `test` (`id`, `colname`) VALUES
 --
 -- Структура таблицы `users`
 --
+-- Создание: Июн 01 2018 г., 23:18
+-- Последнее обновление: Июн 01 2018 г., 23:18
+--
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `password` varchar(64) NOT NULL,
-  `email` varchar(64) NOT NULL,
+  `username` varchar(32) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `password` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `email` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `date`) VALUES
+(1, 'root', '$2y$10$lKpEyM9hIhiWuvQHSWBEhOlUcuVwgOIguy4t.s55rM0KkTfY/7F3W', 'adm@test.ru', '2018-05-01 22:32:41'),
+(2, 'snipghost', '$2y$10$yC8GeAiLK7OW78CuBkAxyOQyIbUS8/mwjCxaNnITQVnKFR7WgHY9C', 'snipghost@list.ru', '2018-05-01 22:32:41'),
+(3, 'ihikaru', '$2y$10$eOQbUmc.ulBW3dieVWlO7Oi3oKbTiSBv7DM1CmV.YrPj7xPNyUXqa', 'ihikaru@inbox.ru', '2018-05-01 22:33:17');
 
 --
 -- Индексы сохранённых таблиц
@@ -74,6 +91,7 @@ ALTER TABLE `test`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`) USING BTREE,
   ADD UNIQUE KEY `email` (`email`);
 
 --
@@ -90,7 +108,7 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

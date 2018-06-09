@@ -7,7 +7,7 @@
     				<div class = "reg-block">
                         <div class="reg-end">
                             <?php
-                                echo 'Пользователь ', $_POST['username'], ' успешно добавлен';
+                                echo 'Пользователь ', $_POST['email'], ' успешно добавлен';
                             ?>
                         </div>
 					</div>
