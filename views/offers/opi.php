@@ -17,6 +17,8 @@
 	<div>
 		(необходимо заполнить и нажать кнопку "Анализ")
 	</div>
-		<?php require ROOT."data/out.html"; ?>
-	</div>
+	<script>
+		<?php require ROOT."js/opi.js"; ?>
+	</script>
+	<?php require ROOT."data/out.html"; ?>
 </div>

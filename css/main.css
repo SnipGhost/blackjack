@@ -510,6 +510,12 @@ body {
 .content-box-opi .test-block{
 	margin-top: 15px;
 }
+.content-box-opi .test-block .cand-form {
+	display: none;
+}
+#cand-0 {
+	display: block;
+}
 .content-box-opi .test-block .radio-block{
 	font-weight: bold;
 	margin-bottom: 10px;
@@ -538,10 +544,9 @@ body {
 .content-box-opi .test-block .radio-block .name-block{
     margin-bottom: 5px;
 }
-
 .content-box-opi .test-block .test-button{
 	margin-top: 30px;
-	width: 200px;
+	max-width: 240px;
 	padding: 8px;
 	border: 2px solid;
 	border-radius: 40px; 
@@ -550,6 +555,7 @@ body {
 	color: #ffffff;
 	border-color: #383838;
 	background-color: #383838;
+	font-size: 1em;
 }
 .content-box-opi .test-block .test-button:hover{
 	color: #000000;
