@@ -12,10 +12,10 @@ class RegController extends Controller
 
     public function regMain($msg = '') {
         $page = array(
-            'content' => 'teplates/reg.php',
+            'content' => '/reg/RegForm.php',
             'title' => 'Регистрация',
             'template' =>'reg.php',
-            'msg' => $msg,
+            'msg' => $msg, 
         );
         $this->view->display($page);
     }
@@ -31,7 +31,6 @@ class RegController extends Controller
         }
 
         if (isset($_POST['reg'],
-                  $_POST['username'],
                   $_POST['password'],
                   $_POST['retype'],
                   $_POST['email'])) {
@@ -40,12 +39,7 @@ class RegController extends Controller
                 $this->regMain('Вы повторили пароль неверно');
                 return;
             }
-
-            if (!$this->model->checkUserField('username', $_POST['username'])) {
-                $this->regMain('Пользователь с таким логином уже есть');
-                return;
-			}
-			
+	
 			if (!$this->model->checkUserField('email', $_POST['email'])) {
 				$this->regMain('Пользователь с таким email уже есть');
                 return;
@@ -54,14 +48,15 @@ class RegController extends Controller
 			// TODO: возможна ошибка при добавлении, если два пользователя пытаются добавиться
 			// Пока что забью на это. Но в идеале стоит сделать одно поле - email, а username убрать
 
-            if (!$this->model->addUser($_POST['username'], $_POST['password'], $_POST['email'])) {
+            if (!$this->model->addUser($_POST['password'], $_POST['email'])) {
                 $this->regMain('Ошибка при добавлении пользователя');
                 return;
             }
 
             $page = array(
-                'content' => 'reg/RegEnd.php',
+                'content' => '/reg/RegEnd.php',
                 'title' => 'Завершение регистрации',
+                'template' =>'reg.php',
             );
             $this->view->display($page);
 

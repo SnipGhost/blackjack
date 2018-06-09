@@ -3,7 +3,6 @@
 class User
 {
     public $id;
-    public $name;
     public $hash;
     public $email;
     public $date;
@@ -18,12 +17,12 @@ class User
             }
             unset($session->user);
 
-        } elseif (isset($_POST['login'], $_POST['username'], $_POST['password'])) {
+        } elseif (isset($_POST['login'], $_POST['email'], $_POST['password'])) {
 
-            $username = $db->escape($_POST['username']);
-            $q = "SELECT `id`, `username`, `password`, `email`, `date` 
+            $email = $db->escape($_POST['email']);
+            $q = "SELECT `id`, `password`, `email`, `date` 
 				  FROM `users`
-				  WHERE `username` = '$username'
+				  WHERE `email` = '$email'
                   LIMIT 1";
 
             if ($data = $db->query($q)) {
@@ -36,7 +35,7 @@ class User
                     $msg = 'Неверный пароль';
                 }
             } else {
-                $msg = 'Неверный логин';
+                $msg = 'Неверный email';
             }
             
         }
@@ -46,7 +45,6 @@ class User
     public function __construct($userData)
     {
         $this->id = $userData['id'];
-        $this->name = $userData['username'];
         $this->hash = $userData['password'];
         $this->email = $userData['email'];
         $this->date = $userData['date'];
