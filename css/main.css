@@ -68,6 +68,9 @@ body {
 /*******************************************************************/
 /*                              TOOLS                              */
 /*******************************************************************/
+.inline-flex{
+	display: inline-flex;
+}
 .orange {
 	color: #ff7f28;
 }
@@ -93,7 +96,7 @@ body {
 	height: 50px;
 	border-radius: 50%;
 	background-color: #ffffff;
-	/* Возможно, с тенью будет стилявее? */
+	/* Возможно, с тенью будет стилявее?  <---- "НИТ" От: HoriFox */
 	/* box-shadow: 0 0 5px rgba(0,0,0,0.5); */
 }
 #logo span {
@@ -115,7 +118,7 @@ body {
 }
 .login-panel span {
 	height: 50px;
-	background-color: #fff;
+	background-color: #000000;
 	line-height: 50px;
 	z-index: 6;
 	padding: 0 15px;
@@ -170,14 +173,14 @@ body {
 	display: block;
 	height: 100vh;
 	background-color: #00a0fe;
-	background-image: url(../img/bg-cover.jpg);
+	background-image: url(../img/bg-cover.png);
 	background-position: center;
 	background-size: cover;
 	color: white;
 	box-shadow: 0 0 25px rgba(0,0,0,0.8);
 }
 /*******************************************************************/
-.title-block {
+.allin-block .title-block {
 	position: absolute;
 	width: 300px;
 	height: 160px;
@@ -187,8 +190,8 @@ body {
 	right: 0;
 	margin: auto;
 	font-family: Impact;
-	font-weight: bold;
-	color: #000000;
+	font-weight: 200;
+	color: #ffffff;
 	line-height: 0.95;
 }
 .title-block .title-main {
@@ -201,9 +204,10 @@ body {
 }
 .title-block .title-name {
 	margin-top: 2px;
-	font-size: 1.2em;
+	font-size: 0.9em;
 	text-transform: uppercase;
 	line-height: 1.4;
+    font-family: Arial Black;
 }
 /*******************************************************************/
 .content-box {
@@ -279,6 +283,10 @@ body {
 	font-size: 12px;
 	word-wrap: break-word;
 	margin-bottom: 100px;
+}
+#offer-button-link div {
+    color: white;
+/*  text-decoration: none;*/  /*Вроде нафиг не нужна*/
 }
 .offer .offer-title {
 	left: 0;
@@ -429,3 +437,242 @@ body {
 	}
 }
 /*******************************************************************/
+/*								   								   */
+/*					Страница ОПИ   								   */
+/*					footer как на главной						   */
+/*					Название недоработано: 						   */
+/*					неправильно реагирует на ужимание	  		   */
+/*								   								   */
+/*******************************************************************/
+.opi-allin-block{
+/*
+	height:20vh;
+	min-height: 10vw;
+*/
+	display: block;
+	background-color: #00a0fe;
+	background-image: url(../img/bg-cover.jpg);
+	background-position: center;
+	background-size: cover;
+	color: white;
+	box-shadow: 0 0 25px rgba(0,0,0,0.8);
+}
+.opi-allin-block .title-block{
+	text-align: left;
+	position: absolute;
+	width: 40vw;
+	top: 20px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	margin-right:45vw;
+	font-family: Impact;
+	font-weight: bold;
+	color: #ffffff;
+	line-height: 0.95;
+}
+.opi-allin-block .title-block .title-main{
+	font-size:3.4em;
+    text-align: left;
+    font-weight: 100;
+    margin-left: 6.1vw;
+}
+/*
+.opi-allin-block .title-block .title-startup{
+	font-size: 2.3em;
+}
+*/
+/*
+.opi-allin-block .title-block .title-name{
+	font-size:0.9em;
+	width: 100%;
+}
+*/
+.content-box-opi {
+	text-transform: uppercase; /*Все символы становятся прописными */
+	margin: 0 20vw;
+	padding: 40px 0;
+	font-family: Tahoma;
+}
+.content-box-opi div{
+	margin-bottom: 5px;
+    font-family: Verdana;
+    text-transform: none; /*Все символы с нормальными регистрами */
+}
+.content-box-opi .content-box-semititle{
+	font-size: 1.4em;
+	font-weight: bold;
+}
+.content-box-opi .content-box-title{
+	font-size: 2.2em;
+	font-weight: bold;
+}
+.content-box-opi .test-block{
+	margin-top: 15px;
+}
+.content-box-opi .test-block .radio-block{
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.content-box-opi .test-block .radio-block label{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-weight: normal;
+}
+.content-box-opi .test-block .radio-block input{
+	margin-right: 15px;
+}
+.content-box-opi .test-block .radio-block .inblock-string{
+	font-weight: normal;
+	display: inline-flex;
+	width:100%;
+	align-items: center;
+}
+.content-box-opi .test-block .radio-block .minitext{
+	width:70%;
+    text-transform: none;
+    font-weight: 100;
+    font-family: Verdana;
+    margin-bottom: 10px;
+}
+.content-box-opi .test-block .radio-block .name-block{
+    margin-bottom: 5px;
+}
+
+.content-box-opi .test-block .test-button{
+	margin-top: 30px;
+	width: 200px;
+	padding: 8px;
+	border: 2px solid;
+	border-radius: 40px; 
+	text-align: center;
+	cursor: pointer;
+	color: #ffffff;
+	border-color: #383838;
+	background-color: #383838;
+}
+.content-box-opi .test-block .test-button:hover{
+	color: #000000;
+	background-color: #ffffff;
+}
+/*******************************************************************/
+/*								   								   */
+/*					Страница Регистрации  						   */
+/*								   								   */
+/*******************************************************************/
+.reg-form{
+	position: absolute;
+	justify-content: space-between;
+	align-items: center;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 700px;
+}
+
+.reg-title-block{
+	width: 300px;
+	height: 160px;
+	font-family: Impact;
+	font-weight: 200;
+	color: #ffffff;
+	line-height: 0.95;
+}
+.reg-block{
+	width: 300px;
+	background-color: #ffffff;
+	border-radius:10%;
+	border: 2px solid #353535;
+	padding-bottom: 30px;
+	padding-top: 15px;
+}
+.reg-title-block .title-main {
+	color: #ffffff;
+	font-size: 4.4em;
+}
+.reg-title-block .title-startup {
+	font-size: 2.3em;
+	display: inline;
+}
+.reg-title-block .title-name {
+	margin-top: 2px;
+	font-size: 0.9em;
+	text-transform: uppercase;
+	line-height: 1.4;
+    font-family: Arial Black;
+}
+.reg-block .title{
+	font-family: Impact;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size:20px;
+	margin-left:10%;
+	color:#353535;
+}
+.reg-block .title .semititle{
+	font-family: Tahoma;
+	font-weight: normal;
+	text-transform: none;
+	font-size:	16px;
+}
+.reg-block input{
+	width:80%;
+	margin-right:10%;
+	margin-left:10%;
+	font-size:16px;
+	background-color: #d0c2c2;
+	border-color:#353535;
+	color:#353535;
+	border-width: 1px;
+}
+.reg-block .line{
+	margin-top:10px;
+}
+.reg-form .buttons{
+	width:100%;
+	display:inline-flex;
+	justify-content: space-between;
+}
+.button-back{
+	font-family: Tahoma;
+	text-transform: uppercase;
+	font-size:16px;
+	text-decoration: none;
+	margin: 10px;
+	margin-left:0;
+	padding: 8 12 8 12px;
+	color: #353535;
+	background-color: #ffffff;
+	border: 2px solid #353535;
+	border-radius: 40px; 
+	text-align: center;
+	cursor: pointer;
+}
+.button-back:hover{
+	background-color: #353535;
+	color: #ffffff;
+	border: 2px solid #353535;
+}
+
+.button-reg{
+	float:right;
+	font-family: Tahoma;
+	text-transform: uppercase;
+	font-size:16px;
+	margin: 10px;
+	margin-right:0;
+	padding: 8 12 8 12px;
+	background-color: #353535;
+	color: #ffffff;
+	border: 2px solid #353535;
+	border-radius: 40px; 
+	text-align: center;
+	cursor: pointer;
+}
+.button-reg:hover{
+	color: #353535;
+	background-color: #ffffff;
+	border: 2px solid #353535;
+}

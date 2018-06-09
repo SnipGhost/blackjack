@@ -12,8 +12,9 @@ class RegController extends Controller
 
     public function regMain($msg = '') {
         $page = array(
-            'content' => 'reg/RegForm.php',
+            'content' => 'teplates/reg.php',
             'title' => 'Регистрация',
+            'template' =>'reg.php',
             'msg' => $msg,
         );
         $this->view->display($page);

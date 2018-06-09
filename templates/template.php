@@ -6,20 +6,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>	
 <body>
+
 	<div class="header">
 		<div class="header-content">
 			<?php require 'templates/login.php'; ?>
-			<!-- TODO: верните красивые кнопки! -->
-			<!-- <form class="auth" action="" method="POST">
-				<button>
-					<div class="material-icons md-light">exit_to_app</div>
-				</button>
-			</form> -->
 		</div>
 	</div>
+
 	<div class="wrapper">
 		<div class="allin-block">
-			<a href="#" id="logo">
+			<a href="/<?=BASE_URI?>" id="logo">
 				<div></div>
 				<span>Лого</span>
 			</a>
@@ -72,9 +68,11 @@
 							<div class="offer-content">
 							Разработка и реализация индивидуальных репутационных программ для публичных личностей
 							</div><br>
-							<div class="offer-button noselect">
-                            Попробовать
-							</div>
+                            <a href="opi" id="offer-button-link">
+                                <div class="offer-button noselect">
+                                    Попробовать
+                                </div>
+                            </a>
 					</div>
 					<div id="kik" class="offer">
 						<div class="offer-title noselect">
@@ -86,9 +84,11 @@
 						<div class="offer-content">
 							Комплекс избирательных технологий, обеспечивающих информационных воздействий с прогнозируемой социальной реацией
 						</div>
-						<div class="offer-button noselect">
-							Попробовать демо
-						</div>
+                        <a href="kit" id="offer-button-link">
+                            <div class="offer-button noselect">
+                                Попробовать демо
+                            </div>
+                        </a>
 					</div>
 					<div id="smt" class="offer">
 						<div class="offer-title noselect">
@@ -100,34 +100,18 @@
 						<div class="offer-content">
 							Проектирование и внедрение репутационных стратегий для предприятий и организаций разных масштабов
 						</div>
-						<div class="offer-button noselect">
-							Узнать подробнее
-						</div>
+                        <a href="rem" id="offer-button-link">
+                            <div class="offer-button noselect">
+                                Узнать подробнее
+                            </div>
+                        </a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="footer"> <!-- Нижний блок -->
-		<div class="footer-content">
-            <div class="footer-content-right">
-				<p id="address">
-					Адрес: <br>
-					Ул.Пушкина, д.9, кв.45 <br>
-					8 (916) 922 95 32 <br>
-					8 (915) 945 53 38 <br>
-				</p>
-			</div>
-			<div class="footer-content-left">
-				<a href="#" id="about-command">О команде</a><br>
-				<a href="#" id="partner">Партнёры</a><br>
-				<a href="#" id="support">Поддержка</a><br>
-                <br>
-				<span id="version">Текущая версия: <?=VERSION?></span>
-				<span id="copyright">© 2018 Startup-Analytics.com</span>
-			</div>
-			<div style="clear: both;"></div>
-		</div>
-	</div>
+
+	<?php require_once ROOT."templates/footer.php"; ?>
+
 </body>
 </html>
