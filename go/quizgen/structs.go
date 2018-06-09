@@ -58,14 +58,10 @@ func (q *Quiz) generateQuiz(outputFile string) {
 			q.generateQuestion(out, cid, qid, &aid)
 		}
 		if cid+1 != maxCand {
-			fmt.Fprintf(out, quizNextBtn, nextLabel, cid+1)
+			fmt.Fprintf(out, quizNextBtn, cid+1)
 		}
 		if cid != 0 {
-			if cid == 1 {
-				fmt.Fprintf(out, quizLastBtn, lastLabelAlt, cid-1)
-			} else {
-				fmt.Fprintf(out, quizLastBtn, lastLabel, cid-1)
-			}
+			fmt.Fprintf(out, quizLastBtn, cid-1)
 			fmt.Fprintf(out, quizSubmitBtn)
 		}
 		fmt.Fprintf(out, candEndFmt)

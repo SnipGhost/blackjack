@@ -24,10 +24,10 @@ const (
 			</div>
 	`
 	quizNextBtn = `
-			<div class="test-button noselect" onClick="nextCand();">%s (%d)</div>
+			<div class="test-button noselect" onClick="nextCand();">Следующий кандидат (%d)</div>
 	`
 	quizLastBtn = `
-			<div class="test-button noselect" onClick="lastCand();">%s (%d)</div>
+			<div class="test-button noselect" onClick="lastCand();">Предыдущий кандидат (%d)</div>
 	`
 	quizSubmitBtn = `
 			<button class="test-button noselect">Анализ</button>
@@ -38,7 +38,4 @@ const (
 	quizEndFmt = `
 	</form>
 	`
-	nextLabel    = `Следующий кандидат`
-	lastLabel    = `Предыдущий кандидат`
-	lastLabelAlt = `Вы`
 )
