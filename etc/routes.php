@@ -13,12 +13,10 @@ return array(
 
     // Страница регистрации пользователя
     'reg' => ['RegController', 'actionReg'],
-
-    // Страница ОПИ (оценка потенциала избираемости)
-    'opi' => ['OpiController', 'actionOpi'],
-
-    // Страница ОПИ (оценка потенциала избираемости)
-    'rem' => ['RemController', 'actionRem'],
+    
+    // Страницы offers блоков 
+    'opi' => ['PageController', 'actionOpi'], // Оценка потенциала избираемости
+    'rem' => ['PageController', 'actionRem'], // Репутационный менеджмент
 
     // Страницы тестирования сокращений из DBConnection
     'db'            => ['DBController', 'actionIndex'],
