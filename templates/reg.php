@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-
 	<div class="wrapper">
 		<div class="allin-block">
 			<a href="/<?=BASE_URI?>" id="logo">
@@ -20,11 +19,10 @@
 						<div>Научно-инженерное<br>репутационное агентство</div>
 					</div>
 				</div>
-				<?php if ($content != '') { include ROOT."views$content"; } ?>
+				<?php if ($content != '') { include ROOT."views/$content"; } ?>
 			</div>
 		</div>
 	</div>
-
 	<?php require_once ROOT."templates/footer.php"; ?>	
 </body>
 </html>

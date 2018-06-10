@@ -12,10 +12,10 @@ class RegController extends Controller
 
     public function regMain($msg = '') {
         $page = array(
-            'content' => '/reg/RegForm.php',
-            'title' => 'Регистрация',
-            'template' =>'reg.php',
-            'msg' => $msg, 
+            'content'  => 'reg/RegForm.php',
+            'title'    => 'Регистрация',
+            'template' => 'reg.php',
+            'msg'      => $msg, 
         );
         $this->view->display($page);
     }
@@ -45,18 +45,15 @@ class RegController extends Controller
                 return;
 			}
 
-			// TODO: возможна ошибка при добавлении, если два пользователя пытаются добавиться
-			// Пока что забью на это. Но в идеале стоит сделать одно поле - email, а username убрать
-
             if (!$this->model->addUser($_POST['password'], $_POST['email'])) {
-                $this->regMain('Ошибка при добавлении пользователя');
+                $this->regMain('Ошибка при добавлении пользователя, попробуйте еще раз');
                 return;
             }
 
             $page = array(
-                'content' => '/reg/RegEnd.php',
-                'title' => 'Завершение регистрации',
-                'template' =>'reg.php',
+                'content'  => 'reg/RegEnd.php',
+                'title'    => 'Завершение регистрации',
+                'template' => 'reg.php',
             );
             $this->view->display($page);
 
