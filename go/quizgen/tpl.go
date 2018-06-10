@@ -20,6 +20,12 @@ const (
 						%s
 					</label>
 				</div><br>`
+	answerFmtSelectBeg = `
+				<select name="aspt[%d][%d]">`
+	answerFmtOption = `
+					<option value="%s">%s</option>`
+	answerFmtSelectEnd = `
+				</select>`
 	questionEndFmt = `
 			</div>
 	`

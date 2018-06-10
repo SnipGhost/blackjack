@@ -17,6 +17,7 @@ type Answer struct {
 // Question - структура одного вопроса
 type Question struct {
 	Text        string    `json:"text"`
+	Type        string    `json:"type"`
 	Description string    `json:"desc"`
 	Answers     []*Answer `json:"answ"`
 }
@@ -32,14 +33,27 @@ func (a *Answer) generateAnswer(out *bufio.Writer, cid int, qid int, aid *int) {
 	fmt.Fprintf(out, answerFmt, sid, cid, qid, a.Value, sid, a.Text)
 }
 
+func (a *Answer) generateOption(out *bufio.Writer) {
+	fmt.Fprintf(out, answerFmtOption, a.Value, a.Text)
+}
+
 func (q *Question) generateQuestion(out *bufio.Writer, cid int, qid int, aid *int) {
 	fmt.Fprintf(out, questionHeadFmt, q.Text)
 	if len(q.Description) != 0 {
 		fmt.Fprintf(out, questionDescFmt, q.Description)
 	}
-	for _, a := range q.Answers {
-		a.generateAnswer(out, cid, qid, aid)
-		*aid++
+	switch q.Type {
+	case "select":
+		fmt.Fprintf(out, answerFmtSelectBeg, cid, qid)
+		for _, a := range q.Answers {
+			a.generateOption(out)
+		}
+		fmt.Fprintf(out, answerFmtSelectEnd)
+	default:
+		for _, a := range q.Answers {
+			a.generateAnswer(out, cid, qid, aid)
+			*aid++
+		}
 	}
 	fmt.Fprintf(out, questionEndFmt)
 }
