@@ -5,9 +5,20 @@ class PageController extends Controller
     public function actionOpi()
     {
         $page = array(
-            'title' => 'ОПИ',
+            'title'    => 'ОПИ',
             'template' => 'page.php',
-            'content' => 'offers/opi.php',
+            'content'  => 'offers/opi.php',
+            'scripts'  => ['js/opi.js'],
+        );
+        $this->view->display($page);
+    }
+
+    public function actionOpiCalc()
+    {
+        $page = array(
+            'title'    => 'ОПИ',
+            'template' => 'page.php',
+            'content'  => 'offers/opiCalc.php'
         );
         $this->view->display($page);
     }
@@ -15,9 +26,9 @@ class PageController extends Controller
     public function actionRem()
     {
         $page = array(
-            'title' => 'РЕМ',
+            'title'    => 'РЕМ',
             'template' => 'page.php',
-            'content' => 'offers/rem.php'
+            'content'  => 'offers/rem.php'
         );
         $this->view->display($page);
     }
