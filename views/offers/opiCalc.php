@@ -47,11 +47,17 @@
 			}
 
 			$sum = array_sum($matrix);
-			for ($i = 0; $i < count($matrix); $i++) {
-				$value = round($matrix[$i] / $sum * 100, 1);
-				echo "<span class=\"progress-bar-text\">Кандидат&nbsp;№$i: </span>";
-				echo '<div class="progress-bar">';
-				echo '<div class="progress-data" style="width: '.$value.'%;">'.$value.'%</div></div><br>';
+			if ($sum > 0) {
+				for ($i = 0; $i < count($matrix); $i++) {
+					$value = round($matrix[$i] / $sum * 100, 1);
+					echo '<div class="progress-bar-wrap">';
+					echo "<span class=\"progress-bar-text\">Кандидат&nbsp;№$i: </span>";
+					echo '<div class="progress-bar">';
+					echo '<div class="progress-data" style="width: '.$value.'%;">'.$value.'%</div></div><br>';
+					echo '</div>';
+				}
+			} else {
+				echo "<h2>Ошибочные данные, повторите ввод</h2>";
 			}
 
 		} else {
