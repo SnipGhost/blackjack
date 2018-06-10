@@ -22,14 +22,6 @@
 								<input type="password" name="retype"placeholder="Повторите пароль" required/>
 							</div>
                             
-<!--
-                            <a href="/<?=BASE_URI?>opi" id="offer-button-link">
-                                <div class="offer-button noselect">
-                                    Попробовать
-                                </div>
-                            </a>
--->
-                            
 						</div>
 					</div>
 					<div class="buttons">

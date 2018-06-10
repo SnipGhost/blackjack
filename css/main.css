@@ -601,6 +601,11 @@ body {
 	width:80%;
 	margin:auto;
 	bottom: 0;
+    font-family: Tahoma;
+	font-size:16px;
+    margin-bottom: -10px;
+    font-weight: 100;
+    text-transform: none;
 }
 .reg-endb {
 	width:80%;
