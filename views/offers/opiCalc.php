@@ -61,7 +61,7 @@
 			}
 
 		} else {
-			header('Location: .');
+			header('Location: ../opi'); // TODO: надо чет с этим делать. Плохо
 		}
 	?>
 
