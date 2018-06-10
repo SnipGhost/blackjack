@@ -21,18 +21,25 @@
 							<div class="line">
 								<input type="password" name="retype"placeholder="Повторите пароль" required/>
 							</div>
-
-							
+                            
+<!--
+                            <a href="/<?=BASE_URI?>opi" id="offer-button-link">
+                                <div class="offer-button noselect">
+                                    Попробовать
+                                </div>
+                            </a>
+-->
+                            
 						</div>
 					</div>
 					<div class="buttons">
-						<a href="/<?=BASE_URI?>">
-							<div class = "button-back">
+						<a href="/<?=BASE_URI?>" id="back-button-link">
+							<div class="button-back">
 								Назад
 							</div>
 						</a>
-							<button type="submit" name="reg" class = "button-reg">
-								Регистрация
-							</button>
+                        <button type="submit" name="reg" class = "button-reg">
+                            Регистрация
+                        </button>
 					</div>
 </form>

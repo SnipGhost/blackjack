@@ -512,7 +512,6 @@ body {
 	width: 300px;
 	background-color: #ffffff;
 	border-radius: 25px; 
-	border: 2px solid #353535;
 	padding-bottom: 30px;
 	padding-top: 15px;
 	font-family: Impact;
@@ -536,12 +535,13 @@ body {
 	font-size:16px;
 }
 .reg-block input {
+    padding: 5px;
 	width:100%;
 	font-size:16px;
-	background-color: #d0c2c2;
-	border-color:#353535;
+	border-color:#999999;
 	color:#353535;
-	border-width: 1px;
+	border-width: 2px;
+    border-style: solid;
 }
 .reg-block .line {
 	margin-top:10px;
@@ -554,11 +554,14 @@ body {
 	display:inline-flex;
 	justify-content: space-between;
 }
+.reg-form .buttons a{
+	text-decoration: none;
+}
 .button-back {
 	font-family: Tahoma;
 	text-transform: uppercase;
 	font-size:16px;
-	text-decoration: none;
+/*	text-decoration: none; Не работает*/
 	margin: 10px;
 	margin-left:0;
 	padding: 8 12 8 12px;
