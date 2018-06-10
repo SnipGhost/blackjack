@@ -13,6 +13,16 @@ class PageController extends Controller
         $this->view->display($page);
     }
 
+    public function actionOpiCalc()
+    {
+        $page = array(
+            'title'    => 'ОПИ',
+            'template' => 'page.php',
+            'content'  => 'offers/opiCalc.php'
+        );
+        $this->view->display($page);
+    }
+
     public function actionRem()
     {
         $page = array(

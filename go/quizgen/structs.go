@@ -24,6 +24,7 @@ type Question struct {
 
 // Quiz - общая структура опросника
 type Quiz struct {
+	Path      string      `json:"path"`
 	Questions []*Question `json:"questions"`
 }
 
@@ -63,7 +64,7 @@ func (q *Quiz) generateQuiz(outputFile string) {
 		log.Fatalln(err.Error())
 	}
 	out := bufio.NewWriter(file)
-	fmt.Fprintf(out, quizHeadFmt)
+	fmt.Fprintf(out, quizHeadFmt, q.Path)
 	aid := 0
 	for cid := 0; cid < maxCand; cid++ {
 		fmt.Fprintf(out, candHeadFmt, cid)

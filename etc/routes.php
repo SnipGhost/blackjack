@@ -15,8 +15,9 @@ return array(
     'reg' => ['RegController', 'actionReg'],
     
     // Страницы offers блоков 
-    'opi' => ['PageController', 'actionOpi'], // Оценка потенциала избираемости
-    'rem' => ['PageController', 'actionRem'], // Репутационный менеджмент
+    'opi'      => ['PageController', 'actionOpi'],     // Оценка потенциала избираемости
+    'opi/calc' => ['PageController', 'actionOpiCalc'], // Обработка данных формы ОПИ
+    'rem'      => ['PageController', 'actionRem'],     // Репутационный менеджмент
 
     // Страницы тестирования сокращений из DBConnection
     'db'            => ['DBController', 'actionIndex'],
