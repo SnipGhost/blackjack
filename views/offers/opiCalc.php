@@ -49,7 +49,9 @@
 			$sum = array_sum($matrix);
 			for ($i = 0; $i < count($matrix); $i++) {
 				$value = round($matrix[$i] / $sum * 100, 1);
-				echo "<div>Кандидат №$i: $value%</div><br>";
+				echo "<span class=\"progress-bar-text\">Кандидат&nbsp;№$i: </span>";
+				echo '<div class="progress-bar">';
+				echo '<div class="progress-data" style="width: '.$value.'%;">'.$value.'%</div></div><br>';
 			}
 
 		} else {

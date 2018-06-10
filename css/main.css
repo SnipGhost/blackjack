@@ -610,6 +610,24 @@ body {
 	width:100%;
 }
 /*******************************************************************/
+/*                           OPI Diagram                           */
+/*******************************************************************/
+.progress-bar-text {
+	display: inline-block;
+	color: #000;
+	margin-right: 10px;
+	max-width: 30%;
+}
+.progress-bar {
+	display: inline-block;
+	width: 70%;
+}
+.progress-bar > .progress-data {
+	background-color: #61ac59;
+	padding: 2px;
+	color: #fff;
+}
+/*******************************************************************/
 /*                          SMALL SCREENS                          */
 /*******************************************************************/
 @media screen and (max-width: 991px),
