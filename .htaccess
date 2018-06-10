@@ -7,8 +7,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
 
-ErrorDocument 400 /~snipghost/blackjack/etc/error.php?code=400
-ErrorDocument 401 /~snipghost/blackjack/etc/error.php?code=401
-ErrorDocument 403 /~snipghost/blackjack/etc/error.php?code=403
-ErrorDocument 404 /~snipghost/blackjack/etc/error.php?code=404
-ErrorDocument 500 /~snipghost/blackjack/etc/error.php?code=500
+ErrorDocument 400 /etc/error.php?code=400
+ErrorDocument 401 /etc/error.php?code=401
+ErrorDocument 403 /etc/error.php?code=403
+ErrorDocument 404 /etc/error.php?code=404
+ErrorDocument 500 /etc/error.php?code=500
