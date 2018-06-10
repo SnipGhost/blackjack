@@ -1,4 +1,5 @@
 <form action="" method="POST">
+	
 	<div class = "reg-block">
 		<div>
 			<div class="line title">
@@ -19,18 +20,20 @@
 			</div>
 
 			<div class="line">
-				<input type="password" name="retype"placeholder="Повторите пароль" required/>
+				<input type="password" name="retype" placeholder="Повторите пароль" required/>
 			</div>
 		</div>
 	</div>
+
 	<div class="buttons">
-		<a href="/<?=BASE_URI?>">
-			<div class = "button-back">
+		<a href="/<?=BASE_URI?>" id="back-button-link">
+			<div class="button-back">
 				Назад
 			</div>
 		</a>
-			<button type="submit" name="reg" class = "button-reg">
-				Регистрация
-			</button>
+		<button type="submit" name="reg" class = "button-reg">
+			Регистрация
+		</button>
 	</div>
+
 </form>
