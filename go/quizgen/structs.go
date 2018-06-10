@@ -24,7 +24,6 @@ type Question struct {
 
 // Quiz - общая структура опросника
 type Quiz struct {
-	Header    string      `json:"header"`
 	Questions []*Question `json:"questions"`
 }
 
