@@ -1,12 +1,15 @@
 <div class="content-box-opi">
 	<div class="content-box-title">
-		КИТ	
+		Комплекс избирательных технологий (КИТ)	
 	</div>
+<!--
 	<div class="content-box-semititle">
 			Комплекс избирательных технологий
 	</div>	
-	<div>
-	Маленькое пояснение, что такое КИТ, с чем его едят, чем посыпают и прочее, прочее, прочее
+-->
+    <div class="small-description">
+    <br>
+    	Маленькое пояснение, что такое КИТ, с чем его едят, чем посыпают и прочее, прочее, прочее
 	</div>
 </div>
 <div class="content-box">
