@@ -31,7 +31,7 @@ body {
 }
 .footer-content-left a, span {
     text-decoration: none;
-	font-family: Tahoma;
+	font-family: Verdana;
     font-weight: bold;
 	font-size: 1em;
 	line-height: 1.5em;
@@ -45,7 +45,7 @@ body {
     text-align: right;
 	display: block;
     text-decoration: none;
-	font-family: Tahoma;
+	font-family: Verdana;
     /* font-weight: bold; */
 	font-size: 1em;
     color: #ffffff;
@@ -208,7 +208,7 @@ body {
 .content-box {
 	margin: 0 20vw;
 	padding: 40px 0;
-	font-family: Tahoma;
+	font-family: Verdana;
 }
 .content-box .content-box-title {
 	margin-bottom: 40px;
@@ -634,7 +634,7 @@ body {
 }
 .progress-bar {
 	display: inline-block;
-	width: 70%;
+	width: 100%;
 }
 .progress-bar > .progress-data {
 	background-color: #61ac59;
