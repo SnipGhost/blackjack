@@ -32,4 +32,13 @@ class PageController extends Controller
         );
         $this->view->display($page);
     }
+    public function actionKit()
+    {
+        $page = array(
+            'title'    => 'КИТ',
+            'template' => 'page.php',
+            'content'  => 'offers/kit.php'
+        );
+        $this->view->display($page);
+    }
 }

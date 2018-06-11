@@ -18,6 +18,7 @@ return array(
     'opi'      => ['PageController', 'actionOpi'],     // Оценка потенциала избираемости
     'opi/calc' => ['PageController', 'actionOpiCalc'], // Обработка данных формы ОПИ
     'rem'      => ['PageController', 'actionRem'],     // Репутационный менеджмент
+    'kit'      => ['PageController', 'actionKit'],     // Репутационный менеджмент
 
     // Страницы тестирования сокращений из DBConnection
     'db'            => ['DBController', 'actionIndex'],
