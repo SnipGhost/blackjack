@@ -34,11 +34,23 @@ class PageController extends Controller
     }
     public function actionKit()
     {
-        $page = array(
-            'title'    => 'КИТ',
-            'template' => 'page.php',
-            'content'  => 'offers/kit.php'
-        );
+        global $user;
+        if(!is_null($user))
+        {
+            $page = array(
+                'title'    => 'КИТ',
+                'template' => 'page.php',
+                'content'  => 'offers/kitReg.php'
+            );
+        }
+        else
+        {
+            $page = array(
+                'title'    => 'КИТ',
+                'template' => 'page.php',
+                'content'  => 'offers/kitNotReg.php'
+            );
+        }
         $this->view->display($page);
     }
 }

@@ -88,7 +88,8 @@
                             <div class="offer-button noselect">
                                 Попробовать демо
                             </div>
-                        </a>
+						</a>						
+						</button>
 					</div>
 					<div id="smt" class="offer">
 						<div class="offer-title noselect">

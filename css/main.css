@@ -303,6 +303,7 @@ body {
 	text-align: center;	
 }
 .offer .offer-button { 
+	color: white;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -672,7 +673,11 @@ body {
 	border-width: 2px;
     border-style: solid;
 }
-
+.not-reg{
+	color: orange;
+	font-family: Tahoma;
+	font-weight: bold;
+}
 
 /*******************************************************************/
 /*                          SMALL SCREENS                          */
