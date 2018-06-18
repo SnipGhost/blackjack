@@ -1,4 +1,6 @@
 {
+	"min": 2,
+	"max": 7,
 	"path": "opi/calc",
 	"questions": [
 		{

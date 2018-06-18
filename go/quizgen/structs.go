@@ -25,6 +25,8 @@ type Question struct {
 // Quiz - общая структура опросника
 type Quiz struct {
 	Path      string      `json:"path"`
+	CountMin  int         `json:"min,int"`
+	CountMax  int         `json:"max,int"`
 	Questions []*Question `json:"questions"`
 }
 
@@ -58,7 +60,7 @@ func (q *Question) generateQuestion(out *bufio.Writer, cid int, qid int, aid *in
 	fmt.Fprintf(out, questionEndFmt)
 }
 
-func (q *Quiz) generateQuiz(outputFile string) {
+func (q *Quiz) generateQuiz(outputFile string, maxCand int) {
 	file, err := os.Create(outputFile)
 	if err != nil {
 		log.Fatalln(err.Error())
@@ -83,4 +85,10 @@ func (q *Quiz) generateQuiz(outputFile string) {
 	fmt.Fprintf(out, quizEndFmt)
 	out.Flush()
 	log.Println("Generated file:", outputFile)
+}
+
+func (q *Quiz) generateFiles(outputFmt string) {
+	for count := q.CountMin; count <= q.CountMax; count++ {
+		q.generateQuiz(fmt.Sprintf(outputFmt, count), count)
+	}
 }

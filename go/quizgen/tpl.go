@@ -1,7 +1,6 @@
 package main
 
 const (
-	maxCand     = 5 // Максимальное число кандидатов
 	quizHeadFmt = `
 	<form id="test-wrapper" class="test-block" action="%s" method="POST">
 	`

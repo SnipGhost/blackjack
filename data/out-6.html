@@ -1,0 +1,1337 @@
+
+	<form id="test-wrapper" class="test-block" action="opi/calc" method="POST">
+	
+		<div id="cand-0" class="cand-form">
+	
+			<div class="radio-block">
+				<div class="name-block">Привязка кандидата к округу</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-0-0" name="aspt[0][0]" value="0">
+					<label for="qrb-0-0-0">
+						Кандидат в округе не живет и не работает
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-0-1" name="aspt[0][0]" value="1">
+					<label for="qrb-0-0-1">
+						Кандидат работает в округе
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-0-2" name="aspt[0][0]" value="2">
+					<label for="qrb-0-0-2">
+						Кандидат живет в округе
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-0-3" name="aspt[0][0]" value="3">
+					<label for="qrb-0-0-3">
+						Кандидат живет и работает в округе
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Возраст кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-1-0" name="aspt[0][1]" value="0">
+					<label for="qrb-0-1-0">
+						Возраст <25 или >75 лет
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-1-1" name="aspt[0][1]" value="1">
+					<label for="qrb-0-1-1">
+						Возраст 25-30 или 65-75 лет
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-1-2" name="aspt[0][1]" value="2">
+					<label for="qrb-0-1-2">
+						Возраст 40-65 лет
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Поддержка кандидата общественностью</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-2-3" name="aspt[0][2]" value="3">
+					<label for="qrb-0-2-3">
+						Поддержка кандидата известными популярными у населения крупными общественными организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-2-2" name="aspt[0][2]" value="2">
+					<label for="qrb-0-2-2">
+						Поддержка достаточно известными организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-2-1" name="aspt[0][2]" value="1">
+					<label for="qrb-0-2-1">
+						Поддержка прочими организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-2-0" name="aspt[0][2]" value="0">
+					<label for="qrb-0-2-0">
+						Отсутствие поддержки
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Образование кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-3-0" name="aspt[0][3]" value="0">
+					<label for="qrb-0-3-0">
+						Среднее образование
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-3-1" name="aspt[0][3]" value="1">
+					<label for="qrb-0-3-1">
+						Незаконченное высшее образование
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-3-2" name="aspt[0][3]" value="2">
+					<label for="qrb-0-3-2">
+						Высшее образование
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Показатель предпочтительности деятельности кандидата</div>
+				<div class="minitext">(выбирается по мнению эксперта в зависимости от сформировавшихся в данной местности представлений о социальной значимости той или иной профессии)</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-4-0" name="aspt[0][4]" value="0">
+					<label for="qrb-0-4-0">
+						0 (min)
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-4-1" name="aspt[0][4]" value="1">
+					<label for="qrb-0-4-1">
+						1
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-4-2" name="aspt[0][4]" value="2">
+					<label for="qrb-0-4-2">
+						2
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-4-3" name="aspt[0][4]" value="3">
+					<label for="qrb-0-4-3">
+						3
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-4-4" name="aspt[0][4]" value="4">
+					<label for="qrb-0-4-4">
+						4
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-4-5" name="aspt[0][4]" value="5">
+					<label for="qrb-0-4-5">
+						5 (max)
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Харизма кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-5-2" name="aspt[0][5]" value="2">
+					<label for="qrb-0-5-2">
+						Кандидат - яркая, харизматичная личность
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-5-1" name="aspt[0][5]" value="1">
+					<label for="qrb-0-5-1">
+						Кандидат способен проявить себя как сильная личность, но не всегда
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-5-0" name="aspt[0][5]" value="0">
+					<label for="qrb-0-5-0">
+						Кандидат - тихоня
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Личная известность кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-6-0" name="aspt[0][6]" value="0">
+					<label for="qrb-0-6-0">
+						Кандидат не известен даже соседям
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-6-1" name="aspt[0][6]" value="1">
+					<label for="qrb-0-6-1">
+						Кандидат известен узкому кругу людей
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-6-2" name="aspt[0][6]" value="2">
+					<label for="qrb-0-6-2">
+						Кандидат известен практически всему округу
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-6-3" name="aspt[0][6]" value="3">
+					<label for="qrb-0-6-3">
+						Кандидат хорошо известен в городе
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Оттенок популярности</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-7-1" name="aspt[0][7]" value="1">
+					<label for="qrb-0-7-1">
+						Кандидат позитивно известен жителям округа
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-7--1" name="aspt[0][7]" value="-1">
+					<label for="qrb-0-7--1">
+						Кандидат известен жителям с негативных сторон
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-0-7-0" name="aspt[0][7]" value="0">
+					<label for="qrb-0-7-0">
+						Кандидат в разных ситуациях проявляет себя по-разному
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="test-button noselect" onClick="nextCand();">Следующий кандидат (1)</div>
+	
+		</div>
+	
+		<div id="cand-1" class="cand-form">
+	
+			<div class="radio-block">
+				<div class="name-block">Привязка кандидата к округу</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-0-0" name="aspt[1][0]" value="0">
+					<label for="qrb-1-0-0">
+						Кандидат в округе не живет и не работает
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-0-1" name="aspt[1][0]" value="1">
+					<label for="qrb-1-0-1">
+						Кандидат работает в округе
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-0-2" name="aspt[1][0]" value="2">
+					<label for="qrb-1-0-2">
+						Кандидат живет в округе
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-0-3" name="aspt[1][0]" value="3">
+					<label for="qrb-1-0-3">
+						Кандидат живет и работает в округе
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Возраст кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-1-0" name="aspt[1][1]" value="0">
+					<label for="qrb-1-1-0">
+						Возраст <25 или >75 лет
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-1-1" name="aspt[1][1]" value="1">
+					<label for="qrb-1-1-1">
+						Возраст 25-30 или 65-75 лет
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-1-2" name="aspt[1][1]" value="2">
+					<label for="qrb-1-1-2">
+						Возраст 40-65 лет
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Поддержка кандидата общественностью</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-2-3" name="aspt[1][2]" value="3">
+					<label for="qrb-1-2-3">
+						Поддержка кандидата известными популярными у населения крупными общественными организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-2-2" name="aspt[1][2]" value="2">
+					<label for="qrb-1-2-2">
+						Поддержка достаточно известными организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-2-1" name="aspt[1][2]" value="1">
+					<label for="qrb-1-2-1">
+						Поддержка прочими организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-2-0" name="aspt[1][2]" value="0">
+					<label for="qrb-1-2-0">
+						Отсутствие поддержки
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Образование кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-3-0" name="aspt[1][3]" value="0">
+					<label for="qrb-1-3-0">
+						Среднее образование
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-3-1" name="aspt[1][3]" value="1">
+					<label for="qrb-1-3-1">
+						Незаконченное высшее образование
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-3-2" name="aspt[1][3]" value="2">
+					<label for="qrb-1-3-2">
+						Высшее образование
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Показатель предпочтительности деятельности кандидата</div>
+				<div class="minitext">(выбирается по мнению эксперта в зависимости от сформировавшихся в данной местности представлений о социальной значимости той или иной профессии)</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-4-0" name="aspt[1][4]" value="0">
+					<label for="qrb-1-4-0">
+						0 (min)
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-4-1" name="aspt[1][4]" value="1">
+					<label for="qrb-1-4-1">
+						1
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-4-2" name="aspt[1][4]" value="2">
+					<label for="qrb-1-4-2">
+						2
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-4-3" name="aspt[1][4]" value="3">
+					<label for="qrb-1-4-3">
+						3
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-4-4" name="aspt[1][4]" value="4">
+					<label for="qrb-1-4-4">
+						4
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-4-5" name="aspt[1][4]" value="5">
+					<label for="qrb-1-4-5">
+						5 (max)
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Харизма кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-5-2" name="aspt[1][5]" value="2">
+					<label for="qrb-1-5-2">
+						Кандидат - яркая, харизматичная личность
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-5-1" name="aspt[1][5]" value="1">
+					<label for="qrb-1-5-1">
+						Кандидат способен проявить себя как сильная личность, но не всегда
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-5-0" name="aspt[1][5]" value="0">
+					<label for="qrb-1-5-0">
+						Кандидат - тихоня
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Личная известность кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-6-0" name="aspt[1][6]" value="0">
+					<label for="qrb-1-6-0">
+						Кандидат не известен даже соседям
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-6-1" name="aspt[1][6]" value="1">
+					<label for="qrb-1-6-1">
+						Кандидат известен узкому кругу людей
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-6-2" name="aspt[1][6]" value="2">
+					<label for="qrb-1-6-2">
+						Кандидат известен практически всему округу
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-6-3" name="aspt[1][6]" value="3">
+					<label for="qrb-1-6-3">
+						Кандидат хорошо известен в городе
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Оттенок популярности</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-7-1" name="aspt[1][7]" value="1">
+					<label for="qrb-1-7-1">
+						Кандидат позитивно известен жителям округа
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-7--1" name="aspt[1][7]" value="-1">
+					<label for="qrb-1-7--1">
+						Кандидат известен жителям с негативных сторон
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-1-7-0" name="aspt[1][7]" value="0">
+					<label for="qrb-1-7-0">
+						Кандидат в разных ситуациях проявляет себя по-разному
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="test-button noselect" onClick="nextCand();">Следующий кандидат (2)</div>
+	
+			<div class="test-button noselect" onClick="lastCand();">Предыдущий кандидат (0)</div>
+	
+			<button class="test-button noselect">Анализ</button>
+	
+		</div>
+	
+		<div id="cand-2" class="cand-form">
+	
+			<div class="radio-block">
+				<div class="name-block">Привязка кандидата к округу</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-0-0" name="aspt[2][0]" value="0">
+					<label for="qrb-2-0-0">
+						Кандидат в округе не живет и не работает
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-0-1" name="aspt[2][0]" value="1">
+					<label for="qrb-2-0-1">
+						Кандидат работает в округе
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-0-2" name="aspt[2][0]" value="2">
+					<label for="qrb-2-0-2">
+						Кандидат живет в округе
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-0-3" name="aspt[2][0]" value="3">
+					<label for="qrb-2-0-3">
+						Кандидат живет и работает в округе
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Возраст кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-1-0" name="aspt[2][1]" value="0">
+					<label for="qrb-2-1-0">
+						Возраст <25 или >75 лет
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-1-1" name="aspt[2][1]" value="1">
+					<label for="qrb-2-1-1">
+						Возраст 25-30 или 65-75 лет
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-1-2" name="aspt[2][1]" value="2">
+					<label for="qrb-2-1-2">
+						Возраст 40-65 лет
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Поддержка кандидата общественностью</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-2-3" name="aspt[2][2]" value="3">
+					<label for="qrb-2-2-3">
+						Поддержка кандидата известными популярными у населения крупными общественными организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-2-2" name="aspt[2][2]" value="2">
+					<label for="qrb-2-2-2">
+						Поддержка достаточно известными организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-2-1" name="aspt[2][2]" value="1">
+					<label for="qrb-2-2-1">
+						Поддержка прочими организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-2-0" name="aspt[2][2]" value="0">
+					<label for="qrb-2-2-0">
+						Отсутствие поддержки
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Образование кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-3-0" name="aspt[2][3]" value="0">
+					<label for="qrb-2-3-0">
+						Среднее образование
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-3-1" name="aspt[2][3]" value="1">
+					<label for="qrb-2-3-1">
+						Незаконченное высшее образование
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-3-2" name="aspt[2][3]" value="2">
+					<label for="qrb-2-3-2">
+						Высшее образование
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Показатель предпочтительности деятельности кандидата</div>
+				<div class="minitext">(выбирается по мнению эксперта в зависимости от сформировавшихся в данной местности представлений о социальной значимости той или иной профессии)</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-4-0" name="aspt[2][4]" value="0">
+					<label for="qrb-2-4-0">
+						0 (min)
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-4-1" name="aspt[2][4]" value="1">
+					<label for="qrb-2-4-1">
+						1
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-4-2" name="aspt[2][4]" value="2">
+					<label for="qrb-2-4-2">
+						2
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-4-3" name="aspt[2][4]" value="3">
+					<label for="qrb-2-4-3">
+						3
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-4-4" name="aspt[2][4]" value="4">
+					<label for="qrb-2-4-4">
+						4
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-4-5" name="aspt[2][4]" value="5">
+					<label for="qrb-2-4-5">
+						5 (max)
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Харизма кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-5-2" name="aspt[2][5]" value="2">
+					<label for="qrb-2-5-2">
+						Кандидат - яркая, харизматичная личность
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-5-1" name="aspt[2][5]" value="1">
+					<label for="qrb-2-5-1">
+						Кандидат способен проявить себя как сильная личность, но не всегда
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-5-0" name="aspt[2][5]" value="0">
+					<label for="qrb-2-5-0">
+						Кандидат - тихоня
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Личная известность кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-6-0" name="aspt[2][6]" value="0">
+					<label for="qrb-2-6-0">
+						Кандидат не известен даже соседям
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-6-1" name="aspt[2][6]" value="1">
+					<label for="qrb-2-6-1">
+						Кандидат известен узкому кругу людей
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-6-2" name="aspt[2][6]" value="2">
+					<label for="qrb-2-6-2">
+						Кандидат известен практически всему округу
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-6-3" name="aspt[2][6]" value="3">
+					<label for="qrb-2-6-3">
+						Кандидат хорошо известен в городе
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Оттенок популярности</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-7-1" name="aspt[2][7]" value="1">
+					<label for="qrb-2-7-1">
+						Кандидат позитивно известен жителям округа
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-7--1" name="aspt[2][7]" value="-1">
+					<label for="qrb-2-7--1">
+						Кандидат известен жителям с негативных сторон
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-2-7-0" name="aspt[2][7]" value="0">
+					<label for="qrb-2-7-0">
+						Кандидат в разных ситуациях проявляет себя по-разному
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="test-button noselect" onClick="nextCand();">Следующий кандидат (3)</div>
+	
+			<div class="test-button noselect" onClick="lastCand();">Предыдущий кандидат (1)</div>
+	
+			<button class="test-button noselect">Анализ</button>
+	
+		</div>
+	
+		<div id="cand-3" class="cand-form">
+	
+			<div class="radio-block">
+				<div class="name-block">Привязка кандидата к округу</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-0-0" name="aspt[3][0]" value="0">
+					<label for="qrb-3-0-0">
+						Кандидат в округе не живет и не работает
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-0-1" name="aspt[3][0]" value="1">
+					<label for="qrb-3-0-1">
+						Кандидат работает в округе
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-0-2" name="aspt[3][0]" value="2">
+					<label for="qrb-3-0-2">
+						Кандидат живет в округе
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-0-3" name="aspt[3][0]" value="3">
+					<label for="qrb-3-0-3">
+						Кандидат живет и работает в округе
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Возраст кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-1-0" name="aspt[3][1]" value="0">
+					<label for="qrb-3-1-0">
+						Возраст <25 или >75 лет
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-1-1" name="aspt[3][1]" value="1">
+					<label for="qrb-3-1-1">
+						Возраст 25-30 или 65-75 лет
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-1-2" name="aspt[3][1]" value="2">
+					<label for="qrb-3-1-2">
+						Возраст 40-65 лет
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Поддержка кандидата общественностью</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-2-3" name="aspt[3][2]" value="3">
+					<label for="qrb-3-2-3">
+						Поддержка кандидата известными популярными у населения крупными общественными организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-2-2" name="aspt[3][2]" value="2">
+					<label for="qrb-3-2-2">
+						Поддержка достаточно известными организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-2-1" name="aspt[3][2]" value="1">
+					<label for="qrb-3-2-1">
+						Поддержка прочими организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-2-0" name="aspt[3][2]" value="0">
+					<label for="qrb-3-2-0">
+						Отсутствие поддержки
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Образование кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-3-0" name="aspt[3][3]" value="0">
+					<label for="qrb-3-3-0">
+						Среднее образование
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-3-1" name="aspt[3][3]" value="1">
+					<label for="qrb-3-3-1">
+						Незаконченное высшее образование
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-3-2" name="aspt[3][3]" value="2">
+					<label for="qrb-3-3-2">
+						Высшее образование
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Показатель предпочтительности деятельности кандидата</div>
+				<div class="minitext">(выбирается по мнению эксперта в зависимости от сформировавшихся в данной местности представлений о социальной значимости той или иной профессии)</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-4-0" name="aspt[3][4]" value="0">
+					<label for="qrb-3-4-0">
+						0 (min)
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-4-1" name="aspt[3][4]" value="1">
+					<label for="qrb-3-4-1">
+						1
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-4-2" name="aspt[3][4]" value="2">
+					<label for="qrb-3-4-2">
+						2
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-4-3" name="aspt[3][4]" value="3">
+					<label for="qrb-3-4-3">
+						3
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-4-4" name="aspt[3][4]" value="4">
+					<label for="qrb-3-4-4">
+						4
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-4-5" name="aspt[3][4]" value="5">
+					<label for="qrb-3-4-5">
+						5 (max)
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Харизма кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-5-2" name="aspt[3][5]" value="2">
+					<label for="qrb-3-5-2">
+						Кандидат - яркая, харизматичная личность
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-5-1" name="aspt[3][5]" value="1">
+					<label for="qrb-3-5-1">
+						Кандидат способен проявить себя как сильная личность, но не всегда
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-5-0" name="aspt[3][5]" value="0">
+					<label for="qrb-3-5-0">
+						Кандидат - тихоня
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Личная известность кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-6-0" name="aspt[3][6]" value="0">
+					<label for="qrb-3-6-0">
+						Кандидат не известен даже соседям
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-6-1" name="aspt[3][6]" value="1">
+					<label for="qrb-3-6-1">
+						Кандидат известен узкому кругу людей
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-6-2" name="aspt[3][6]" value="2">
+					<label for="qrb-3-6-2">
+						Кандидат известен практически всему округу
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-6-3" name="aspt[3][6]" value="3">
+					<label for="qrb-3-6-3">
+						Кандидат хорошо известен в городе
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Оттенок популярности</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-7-1" name="aspt[3][7]" value="1">
+					<label for="qrb-3-7-1">
+						Кандидат позитивно известен жителям округа
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-7--1" name="aspt[3][7]" value="-1">
+					<label for="qrb-3-7--1">
+						Кандидат известен жителям с негативных сторон
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-3-7-0" name="aspt[3][7]" value="0">
+					<label for="qrb-3-7-0">
+						Кандидат в разных ситуациях проявляет себя по-разному
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="test-button noselect" onClick="nextCand();">Следующий кандидат (4)</div>
+	
+			<div class="test-button noselect" onClick="lastCand();">Предыдущий кандидат (2)</div>
+	
+			<button class="test-button noselect">Анализ</button>
+	
+		</div>
+	
+		<div id="cand-4" class="cand-form">
+	
+			<div class="radio-block">
+				<div class="name-block">Привязка кандидата к округу</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-0-0" name="aspt[4][0]" value="0">
+					<label for="qrb-4-0-0">
+						Кандидат в округе не живет и не работает
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-0-1" name="aspt[4][0]" value="1">
+					<label for="qrb-4-0-1">
+						Кандидат работает в округе
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-0-2" name="aspt[4][0]" value="2">
+					<label for="qrb-4-0-2">
+						Кандидат живет в округе
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-0-3" name="aspt[4][0]" value="3">
+					<label for="qrb-4-0-3">
+						Кандидат живет и работает в округе
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Возраст кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-1-0" name="aspt[4][1]" value="0">
+					<label for="qrb-4-1-0">
+						Возраст <25 или >75 лет
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-1-1" name="aspt[4][1]" value="1">
+					<label for="qrb-4-1-1">
+						Возраст 25-30 или 65-75 лет
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-1-2" name="aspt[4][1]" value="2">
+					<label for="qrb-4-1-2">
+						Возраст 40-65 лет
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Поддержка кандидата общественностью</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-2-3" name="aspt[4][2]" value="3">
+					<label for="qrb-4-2-3">
+						Поддержка кандидата известными популярными у населения крупными общественными организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-2-2" name="aspt[4][2]" value="2">
+					<label for="qrb-4-2-2">
+						Поддержка достаточно известными организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-2-1" name="aspt[4][2]" value="1">
+					<label for="qrb-4-2-1">
+						Поддержка прочими организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-2-0" name="aspt[4][2]" value="0">
+					<label for="qrb-4-2-0">
+						Отсутствие поддержки
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Образование кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-3-0" name="aspt[4][3]" value="0">
+					<label for="qrb-4-3-0">
+						Среднее образование
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-3-1" name="aspt[4][3]" value="1">
+					<label for="qrb-4-3-1">
+						Незаконченное высшее образование
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-3-2" name="aspt[4][3]" value="2">
+					<label for="qrb-4-3-2">
+						Высшее образование
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Показатель предпочтительности деятельности кандидата</div>
+				<div class="minitext">(выбирается по мнению эксперта в зависимости от сформировавшихся в данной местности представлений о социальной значимости той или иной профессии)</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-4-0" name="aspt[4][4]" value="0">
+					<label for="qrb-4-4-0">
+						0 (min)
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-4-1" name="aspt[4][4]" value="1">
+					<label for="qrb-4-4-1">
+						1
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-4-2" name="aspt[4][4]" value="2">
+					<label for="qrb-4-4-2">
+						2
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-4-3" name="aspt[4][4]" value="3">
+					<label for="qrb-4-4-3">
+						3
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-4-4" name="aspt[4][4]" value="4">
+					<label for="qrb-4-4-4">
+						4
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-4-5" name="aspt[4][4]" value="5">
+					<label for="qrb-4-4-5">
+						5 (max)
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Харизма кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-5-2" name="aspt[4][5]" value="2">
+					<label for="qrb-4-5-2">
+						Кандидат - яркая, харизматичная личность
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-5-1" name="aspt[4][5]" value="1">
+					<label for="qrb-4-5-1">
+						Кандидат способен проявить себя как сильная личность, но не всегда
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-5-0" name="aspt[4][5]" value="0">
+					<label for="qrb-4-5-0">
+						Кандидат - тихоня
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Личная известность кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-6-0" name="aspt[4][6]" value="0">
+					<label for="qrb-4-6-0">
+						Кандидат не известен даже соседям
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-6-1" name="aspt[4][6]" value="1">
+					<label for="qrb-4-6-1">
+						Кандидат известен узкому кругу людей
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-6-2" name="aspt[4][6]" value="2">
+					<label for="qrb-4-6-2">
+						Кандидат известен практически всему округу
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-6-3" name="aspt[4][6]" value="3">
+					<label for="qrb-4-6-3">
+						Кандидат хорошо известен в городе
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Оттенок популярности</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-7-1" name="aspt[4][7]" value="1">
+					<label for="qrb-4-7-1">
+						Кандидат позитивно известен жителям округа
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-7--1" name="aspt[4][7]" value="-1">
+					<label for="qrb-4-7--1">
+						Кандидат известен жителям с негативных сторон
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-4-7-0" name="aspt[4][7]" value="0">
+					<label for="qrb-4-7-0">
+						Кандидат в разных ситуациях проявляет себя по-разному
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="test-button noselect" onClick="nextCand();">Следующий кандидат (5)</div>
+	
+			<div class="test-button noselect" onClick="lastCand();">Предыдущий кандидат (3)</div>
+	
+			<button class="test-button noselect">Анализ</button>
+	
+		</div>
+	
+		<div id="cand-5" class="cand-form">
+	
+			<div class="radio-block">
+				<div class="name-block">Привязка кандидата к округу</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-0-0" name="aspt[5][0]" value="0">
+					<label for="qrb-5-0-0">
+						Кандидат в округе не живет и не работает
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-0-1" name="aspt[5][0]" value="1">
+					<label for="qrb-5-0-1">
+						Кандидат работает в округе
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-0-2" name="aspt[5][0]" value="2">
+					<label for="qrb-5-0-2">
+						Кандидат живет в округе
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-0-3" name="aspt[5][0]" value="3">
+					<label for="qrb-5-0-3">
+						Кандидат живет и работает в округе
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Возраст кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-1-0" name="aspt[5][1]" value="0">
+					<label for="qrb-5-1-0">
+						Возраст <25 или >75 лет
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-1-1" name="aspt[5][1]" value="1">
+					<label for="qrb-5-1-1">
+						Возраст 25-30 или 65-75 лет
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-1-2" name="aspt[5][1]" value="2">
+					<label for="qrb-5-1-2">
+						Возраст 40-65 лет
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Поддержка кандидата общественностью</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-2-3" name="aspt[5][2]" value="3">
+					<label for="qrb-5-2-3">
+						Поддержка кандидата известными популярными у населения крупными общественными организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-2-2" name="aspt[5][2]" value="2">
+					<label for="qrb-5-2-2">
+						Поддержка достаточно известными организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-2-1" name="aspt[5][2]" value="1">
+					<label for="qrb-5-2-1">
+						Поддержка прочими организациями
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-2-0" name="aspt[5][2]" value="0">
+					<label for="qrb-5-2-0">
+						Отсутствие поддержки
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Образование кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-3-0" name="aspt[5][3]" value="0">
+					<label for="qrb-5-3-0">
+						Среднее образование
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-3-1" name="aspt[5][3]" value="1">
+					<label for="qrb-5-3-1">
+						Незаконченное высшее образование
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-3-2" name="aspt[5][3]" value="2">
+					<label for="qrb-5-3-2">
+						Высшее образование
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Показатель предпочтительности деятельности кандидата</div>
+				<div class="minitext">(выбирается по мнению эксперта в зависимости от сформировавшихся в данной местности представлений о социальной значимости той или иной профессии)</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-4-0" name="aspt[5][4]" value="0">
+					<label for="qrb-5-4-0">
+						0 (min)
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-4-1" name="aspt[5][4]" value="1">
+					<label for="qrb-5-4-1">
+						1
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-4-2" name="aspt[5][4]" value="2">
+					<label for="qrb-5-4-2">
+						2
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-4-3" name="aspt[5][4]" value="3">
+					<label for="qrb-5-4-3">
+						3
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-4-4" name="aspt[5][4]" value="4">
+					<label for="qrb-5-4-4">
+						4
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-4-5" name="aspt[5][4]" value="5">
+					<label for="qrb-5-4-5">
+						5 (max)
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Харизма кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-5-2" name="aspt[5][5]" value="2">
+					<label for="qrb-5-5-2">
+						Кандидат - яркая, харизматичная личность
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-5-1" name="aspt[5][5]" value="1">
+					<label for="qrb-5-5-1">
+						Кандидат способен проявить себя как сильная личность, но не всегда
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-5-0" name="aspt[5][5]" value="0">
+					<label for="qrb-5-5-0">
+						Кандидат - тихоня
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Личная известность кандидата</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-6-0" name="aspt[5][6]" value="0">
+					<label for="qrb-5-6-0">
+						Кандидат не известен даже соседям
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-6-1" name="aspt[5][6]" value="1">
+					<label for="qrb-5-6-1">
+						Кандидат известен узкому кругу людей
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-6-2" name="aspt[5][6]" value="2">
+					<label for="qrb-5-6-2">
+						Кандидат известен практически всему округу
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-6-3" name="aspt[5][6]" value="3">
+					<label for="qrb-5-6-3">
+						Кандидат хорошо известен в городе
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="radio-block">
+				<div class="name-block">Оттенок популярности</div>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-7-1" name="aspt[5][7]" value="1">
+					<label for="qrb-5-7-1">
+						Кандидат позитивно известен жителям округа
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-7--1" name="aspt[5][7]" value="-1">
+					<label for="qrb-5-7--1">
+						Кандидат известен жителям с негативных сторон
+					</label>
+				</div><br>
+				<div class="inblock-string">
+					<input type="radio" id="qrb-5-7-0" name="aspt[5][7]" value="0">
+					<label for="qrb-5-7-0">
+						Кандидат в разных ситуациях проявляет себя по-разному
+					</label>
+				</div><br>
+			</div>
+	
+			<div class="test-button noselect" onClick="lastCand();">Предыдущий кандидат (4)</div>
+	
+			<button class="test-button noselect">Анализ</button>
+	
+		</div>
+	
+	</form>
+	
