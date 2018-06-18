@@ -20,6 +20,9 @@ return array(
     'rem'      => ['PageController', 'actionRem'],     // Репутационный менеджмент
     'kit'      => ['PageController', 'actionKit'],     // Репутационный менеджмент
 
+    // Страница личного кабинета
+    'cab' => ['PageController', 'actionCab'],
+
     // Страницы тестирования сокращений из DBConnection
     'db'            => ['DBController', 'actionIndex'],
     'db/insert'     => ['DBController', 'actionInsert'],

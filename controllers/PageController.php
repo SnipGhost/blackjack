@@ -53,4 +53,20 @@ class PageController extends Controller
         }
         $this->view->display($page);
     }
+    public function actionCab()
+    {
+        global $user;
+        if(!is_null($user))
+        {
+            $page = array(
+                'title'    => 'Личный кабинет',
+                'template' => 'page.php',
+                'content'  => 'cab/cab_main.php'
+            );
+            $this->view->display($page);
+        }
+        else{
+            $this->actionKit(); //Сделать адекватный переход
+        }
+    }
 }
