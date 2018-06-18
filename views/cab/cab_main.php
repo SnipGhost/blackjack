@@ -179,7 +179,8 @@
 			</div>
 			<div class="block-content-cab">
 				<div class="line">
-					Email: test_email@mail.ru    	
+                    <?php global $user; ?>
+					Email: <?=$user->email?>   
 				</div>	<br>	
 				<div class="line">
 					<div class="button-cab noselect">
