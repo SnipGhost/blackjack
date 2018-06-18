@@ -6,6 +6,8 @@ const (
 	`
 	candHeadFmt = `
 		<div id="cand-%d" class="cand-form">
+		
+			<div class="cand-title">Кандидат №%d</div>
 	`
 	questionHeadFmt = `
 			<div class="radio-block">

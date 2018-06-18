@@ -69,15 +69,15 @@ func (q *Quiz) generateQuiz(outputFile string, maxCand int) {
 	fmt.Fprintf(out, quizHeadFmt, q.Path)
 	aid := 0
 	for cid := 0; cid < maxCand; cid++ {
-		fmt.Fprintf(out, candHeadFmt, cid)
+		fmt.Fprintf(out, candHeadFmt, cid, cid+1)
 		for qid, q := range q.Questions {
 			q.generateQuestion(out, cid, qid, &aid)
 		}
 		if cid+1 != maxCand {
-			fmt.Fprintf(out, quizNextBtn, cid+1)
+			fmt.Fprintf(out, quizNextBtn, cid+2)
 		}
 		if cid != 0 {
-			fmt.Fprintf(out, quizLastBtn, cid-1)
+			fmt.Fprintf(out, quizLastBtn, cid)
 			fmt.Fprintf(out, quizSubmitBtn)
 		}
 		fmt.Fprintf(out, candEndFmt)
