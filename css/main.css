@@ -795,6 +795,66 @@ body {
   .content-box-cab div[id*=t]:target ~ #one {
 	display: none;
   }
+
+  .block-content-cab .offer-cab{
+	  	background-color: #353535;
+	  	color: #ffffff;
+		margin: 0 20px;
+		width: 100%;
+		position: relative;
+		text-transform: uppercase;
+		border-radius: 3px;
+		box-shadow: 0 0 8px rgba(0,0,0,0.5);
+		border: 2px solid;
+		min-width: 100px;
+  }
+  .offer-cab .offer-content {
+	color: #ffffff;
+	position: relative;
+	text-align: center;
+	margin: 10px 8px 0 8px;
+	font-size: 12px;
+	word-wrap: break-word;
+	margin-bottom: 100px;
+}
+#offer-button-link div {
+	color: white;
+}
+.offer-cab .offer-title {
+	left: 0;
+	right: 0;
+	margin: auto;
+	margin-top: -1px;
+	font-size: 48px;
+	text-align: center;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+.offer-cab .offer-ttext {
+	left: 0;
+	right: 0;
+	margin: auto;
+	margin-top: 5px;
+	font-weight: normal;
+	font-size: 13px;
+	text-align: center;
+}
+.offer-cab .offer-button {
+	color: white;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 10px;
+	width: 80%;
+	margin: auto;
+	padding: 8px;
+	border: 2px solid;
+	border-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+}
+
 /*******************************************************************/
 /*                          SMALL SCREENS                          */
 /*******************************************************************/

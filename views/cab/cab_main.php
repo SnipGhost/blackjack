@@ -95,13 +95,14 @@
 			</div>
 			<div class="block-content-cab">
 				<div class="offers-wrap" style="color: #ffffff">
-					<div id="opi" class="offer">
+					<div class="offer-cab">
 						<div class="offer-title noselect">
 							СТД
 							<div class="offer-ttext">
 								Стандартный<br><br>
 							</div>
 						</div>
+						<hr>
 						<div class="offer-content">
 							Стандартный набор услуг. Включает в себя пакет функций КИТ.
 						</div><br>
@@ -111,13 +112,14 @@
 							</div>
 						</a>
 					</div>
-					<div id="kik" class="offer">
+					<div class="offer-cab">
 						<div class="offer-title noselect">
 							ПРМ
 							<div class="offer-ttext">
 								Премиум<br><br>
 							</div>
 						</div>
+						<hr>
 						<div class="offer-content">
 							Помимо функций КИТа включает в себя пакет репутационного менеджмента. В последствии будет дополняться
 						</div>
@@ -127,13 +129,14 @@
 							</div>
 						</a>						
 					</div>
-					<div id="smt" class="offer">
+					<div class="offer-cab">
 						<div class="offer-title noselect">
 							VIP
 							<div class="offer-ttext">
 								Люкс<br><br>
 							</div>
 						</div>
+						<hr>
 						<div class="offer-content">
 						В разработке
 						</div>
