@@ -9,7 +9,7 @@
 				<span class="orange"><?=$msg?></span>
 			</div>
 			<div class="line">
-				<input type="password" name="old-pass" placeholder="Старый пароль"  required/>
+				<input type="password" name="now-pass" placeholder="Старый пароль"  required/>
 			</div>
 			
 			<div class="line">
