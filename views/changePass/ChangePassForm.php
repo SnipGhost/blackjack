@@ -3,24 +3,21 @@
 	<div class = "reg-block">
 		<div>
 			<div class="line title">
-				Регистрация
-				<div class = "semititle">
-					Создание нового пользователя
-				</div>
+				Изменение пароля
 			</div>
 			<div class="line">
 				<span class="orange"><?=$msg?></span>
 			</div>
 			<div class="line">
-				<input type="email" name="email" placeholder="Электронная почта"  required/>
+				<input type="password" name="old-pass" placeholder="Старый пароль"  required/>
 			</div>
 			
 			<div class="line">
-				<input type="password" name="password" placeholder="Пароль" required/>
+				<input type="password" name="new-pass" placeholder="Новый пароль" required/>
 			</div>
 
 			<div class="line">
-				<input type="password" name="retype" placeholder="Повторите пароль" required/>
+				<input type="password" name="repeat-new-pass" placeholder="Повторите новый пароль" required/>
 			</div>
 		</div>
 	</div>
@@ -31,8 +28,8 @@
                 Назад
             </div>
         </a>
-        <button type="submit" name="reg" class = "button-enter">
-            Регистрация
+        <button type="submit" name="changePass" class = "button-enter">
+            Изменить
         </button>
     </div>
 </form>

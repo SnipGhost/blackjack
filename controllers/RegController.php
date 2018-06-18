@@ -14,7 +14,27 @@ class RegController extends Controller
         $page = array(
             'content'  => 'reg/RegForm.php',
             'title'    => 'Регистрация',
-            'template' => 'reg.php',
+            'template' => 'pageCreateChange.php',
+            'msg'      => $msg, 
+        );
+        $this->view->display($page);
+    }
+
+    public function actionChangePassMain($msg = '') {
+        $page = array(
+            'content'  => 'changePass/ChangePassForm.php',
+            'title'    => 'Изменение пароля',
+            'template' => 'pageCreateChange.php',
+            'msg'      => $msg, 
+        );
+        $this->view->display($page);
+    }
+    
+    public function actionChangeEmailMain($msg = '') {
+        $page = array(
+            'content'  => 'changeEmail/ChangeEmailForm.php',
+            'title'    => 'Изменение Email',
+            'template' => 'pageCreateChange.php',
             'msg'      => $msg, 
         );
         $this->view->display($page);

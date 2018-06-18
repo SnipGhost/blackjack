@@ -605,7 +605,7 @@ body {
 	color: #ffffff;
 	border: 2px solid #353535;
 }
-.button-reg {
+.button-enter {
 	float: right;
 	font-family: Tahoma;
 	text-transform: uppercase;
@@ -620,7 +620,7 @@ body {
 	text-align: center;
 	cursor: pointer;
 }
-.button-reg:hover {
+.button-enter:hover {
 	color: #353535;
 	background-color: #ffffff;
 	border: 2px solid #353535;

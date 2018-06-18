@@ -14,6 +14,12 @@ return array(
     // Страница регистрации пользователя
     'reg' => ['RegController', 'actionReg'],
     
+    // Страница изменения пароля
+    'cab/chgpass' => ['RegController', 'actionChangePassMain'],
+    
+    // Страница изменения Email
+    'cab/chgemail' => ['RegController', 'actionChangeEmailMain'],
+    
     // Страницы offers блоков 
     'opi'      => ['PageController', 'actionOpi'],     // Оценка потенциала избираемости
     'opi/calc' => ['PageController', 'actionOpiCalc'], // Обработка данных формы ОПИ
