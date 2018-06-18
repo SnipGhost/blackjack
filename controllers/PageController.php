@@ -4,15 +4,43 @@ class PageController extends Controller
 {
     public function actionOpi()
     {
-        $page = array(
-            'title'    => 'ОПИ',
-            'template' => 'page.php',
-            'content'  => 'offers/opi.php',
-            'scripts'  => ['js/opi.js'],
-        );
-        $this->view->display($page);
+        if((isset($_POST['num_kand']))&&(isset($_POST['kand_button'])))
+        {
+            $mas=array('2','3','4','5','6','7');
+            if(in_array($_POST['num_kand'],$mas))
+            {
+            $page = array(
+                'title'    => 'ОПИ',
+                'template' => 'page.php',
+                'content'  => 'offers/opi_quiz.php',
+                'scripts'  => ['js/opi.js'],
+                'num_kand' => $_POST['num_kand'],
+            );
+            $this->view->display($page);
+            }
+            else
+            {
+                $page = array(
+                    'title'    => 'ОПИ',
+                    'template' => 'page.php',
+                    'content'  => 'offers/opi.php',
+                    'scripts'  => ['js/opi.js'],
+                );
+                $this->view->display($page);
+            }
+        }
+        else
+        {
+            $page = array(
+                'title'    => 'ОПИ',
+                'template' => 'page.php',
+                'content'  => 'offers/opi.php',
+                'scripts'  => ['js/opi.js'],
+            );
+            $this->view->display($page);
+        }
     }
-
+    
     public function actionOpiCalc()
     {
         $page = array(
