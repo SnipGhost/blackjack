@@ -69,4 +69,31 @@ class PageController extends Controller
             $this->actionKit(); //Сделать адекватный переход
         }
     }
+    public function actionAboutTeam()
+    {
+        $page = array(
+            'title'    => 'О команде',
+            'template' => 'page.php',
+            'content'  => 'main/about_team.php'
+        );
+        $this->view->display($page);
+    }
+//    public function actionPartners() // Пока не требуется
+//    {
+//        $page = array(
+//            'title'    => 'Партнёры',
+//            'template' => 'page.php',
+//            'content'  => 'main/partners.php'
+//        );
+//        $this->view->display($page);
+//    }
+    public function actionSupport()
+    {
+        $page = array(
+            'title'    => 'Поддержка',
+            'template' => 'page.php',
+            'content'  => 'main/support.php'
+        );
+        $this->view->display($page);
+    }
 }

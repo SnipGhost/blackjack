@@ -4,6 +4,11 @@ return array(
 
     // Страница по-умолчанию
     '' => ['MainController', 'actionIndex'],
+    
+    // Нижний блок
+    'about_team' => ['PageController', 'actionAboutTeam'],      // О команде
+    'partners' => ['PageController', 'actionPartners'],         // Партнёры
+    'support' => ['PageController', 'actionSupport'],           // Поддержка
 
     // Отображает список таблиц в БД
     'tables' => ['MainController', 'actionTables'],

@@ -245,6 +245,35 @@ body {
 	padding: 0 5vw;
 	font-style: italic;
 }
+.content-box .contacts-support-block {
+/*	padding: 0 5vw;*/
+	font-style: italic;
+}
+.content-box .developer-block { }
+.content-box .developer-block .person {
+    display: inline-flex;
+    margin-right: 10vw;
+    margin-bottom: 20px;
+}
+.content-box .developer-block .person .image {
+	box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+.content-box .developer-block .person .name{
+    margin: 0 40px;
+    font-weight: bold;
+}
+.content-box .developer-block .person .name .info{
+    margin: 20px 0;
+    font-weight: 100;
+}
+#developer1 {
+	margin-left: 0;
+}
+#developer2 {
+}
+#developer3 {
+	margin-right: 0;
+}
 /*******************************************************************/
 /*
 .decorative-strip{
