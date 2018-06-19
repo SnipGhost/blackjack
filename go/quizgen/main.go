@@ -26,6 +26,22 @@ func loadQuizFile(fileName string) *Quiz {
 		log.Println("Incorrect max value:", q.CountMin)
 		q.CountMax = q.CountMin + 1
 	}
+	if len(q.Questions) < 1 {
+		log.Fatalln("Number of questions should be more than zero")
+	}
+	if q.Defaults == nil || len(q.Defaults) < 2 {
+		zero := []int{}
+		for i := 0; i < len(q.Questions); i++ {
+			zero = append(zero, -1)
+		}
+		q.Defaults = [][]int{zero, zero}
+		log.Println("Number of defaults should be more than one, reset to zeros")
+	}
+	for idx, defs := range q.Defaults {
+		if len(q.Questions) != len(defs) {
+			log.Fatalln("Incompatible length of defaults to the question", idx)
+		}
+	}
 	log.Println("Loading success")
 	return &q
 }
