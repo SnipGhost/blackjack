@@ -30,11 +30,11 @@ func loadQuizFile(fileName string) *Quiz {
 		log.Fatalln("Number of questions should be more than zero")
 	}
 	if q.Defaults == nil || len(q.Defaults) < 2 {
-		zero := []int{}
-		for i := 0; i < len(q.Questions); i++ {
-			zero = append(zero, -1)
+		zeros := make([]int, len(q.Questions))
+		for i := range zeros {
+			zeros[i] = -1
 		}
-		q.Defaults = [][]int{zero, zero}
+		q.Defaults = [][]int{zeros, zeros}
 		log.Println("Number of defaults should be more than one, reset to zeros")
 	}
 	for idx, defs := range q.Defaults {
