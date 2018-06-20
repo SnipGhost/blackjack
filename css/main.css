@@ -111,7 +111,7 @@ body {
 	border-radius: 50px;
 	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
-.login-panel span {
+.login-panel a {
 	height: 50px;
 	background-color: #000000;
 	line-height: 50px;
@@ -119,6 +119,10 @@ body {
 	padding: 0 15px;
 	border-radius: 50px;
 	margin-right: -50px;
+	text-decoration: none;
+	font-family: Verdana;
+	font-weight: bold;
+	color: #ffffff;
 }
 .login-panel .error-msg {
 	padding: 0 40px 0 15px;
@@ -454,9 +458,14 @@ body {
 #cand-0 {
 	display: block;
 }
+.content-box-opi .test-block .cand-form .cand-title {
+	font-weight: bold;
+	margin-bottom: 15px;
+}
 .content-box-opi .test-block .radio-block {
 	font-weight: bold;
 	margin-bottom: 10px;
+	margin-left: 15px;
 }
 .content-box-opi .test-block .radio-block label {
 	margin-top: 0px;
@@ -706,7 +715,26 @@ body {
 	font-weight: bold;
 }
 /*******************************************************************/
-.button-cab{
+
+.button-cab-tab {
+	font-family: Tahoma;
+	text-transform: uppercase;
+	font-size: 16px;
+	margin: 10px 0;
+	padding: 8 12 8 12px;
+	color: #353535;
+	background-color: #ffffff;
+	border: 2px solid #353535;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+}
+.button-cab-tab:hover {
+	background-color: #353535;
+	color: #ffffff;
+	border: 2px solid #353535;
+}
+.button-cab {
 	font-family: Tahoma;
 	text-transform: uppercase;
 	font-size: 16px;
@@ -726,7 +754,7 @@ body {
 	color: #ffffff;
 	border: 2px solid #353535;
 }
-.button-cab-black{
+.button-cab-black {
 	font-family: Tahoma;
 	text-transform: uppercase;
 	font-size: 16px;
@@ -746,69 +774,73 @@ body {
 	color: #353535;
 	border: 2px solid #353535;
 }
-.content-box-cab .block-content-cab .line{
+.content-box-cab .block-content-cab .line {
 	display: inline-flex;
 	align-items: center;
 }
-.content-box-cab .block-content-cab{
+.content-box-cab .block-content-cab {
 	margin-top: 50px;
 	font-size: 20px;
 	font-family: Tahoma;
 }
-.buttons{
-	padding:15px 0;
+.buttons {
+	padding: 15px 0;
 }
-.kit-func{
+.kit-func {
 	margin: 80px 0;
 }
 .content-box-cab {
 	margin: 0 20vw;
 	padding: 40px 0;
 }
-  .content-box-cab .block {
+.content-box-cab .block {
 	display: none;
-  }
-  .content-box-cab .tabs {
+}
+.content-box-cab .tabs {
 	font-family: monostace;
-  }
-  .content-box-cab .tabs p {
+}
+.content-box-cab .tabs p {
 	font-family: monostace;
-  }
-  .content-box-cab .content-cab-title{
-	  font-size: 30px;
-	  font-family: Tahoma;
-	  font-weight: bold;
-  }
-
-  .content-box-cab #one {
+}
+.content-box-cab .content-cab-title {
+	font-size: 30px;
+	font-family: Tahoma;
+	font-weight: bold;
+}
+.content-box-cab .content-cab-semititle {
+	font-size: 20px;
+	font-family: Tahoma;
+	font-weight: bold;
+}
+.content-box-cab #one {
 	display: block;
-  }
-  .content-box-cab div:target {
+}
+.content-box-cab div:target {
 	display: block;
-  }
-  .content-box-cab div[id*=tab]:target {
+}
+.content-box-cab div[id*=tab]:target {
 	display: block;
-  }
-  .content-box-cab div[id*=tab]:target ~ #tab {
+}
+.content-box-cab div[id*=tab]:target ~ #tab {
 	display: block;
-  }
-  .content-box-cab div[id*=t]:target ~ #one {
+}
+.content-box-cab div[id*=t]:target ~ #one {
 	display: none;
-  }
+}
 
-  .block-content-cab .offer-cab{
-	  	background-color: #353535;
-	  	color: #ffffff;
-		margin: 0 20px;
-		width: 100%;
-		position: relative;
-		text-transform: uppercase;
-		border-radius: 3px;
-		box-shadow: 0 0 8px rgba(0,0,0,0.5);
-		border: 2px solid;
-		min-width: 100px;
-  }
-  .offer-cab .offer-content {
+.block-content-cab .offer-cab {
+	background-color: #353535;
+	color: #ffffff;
+	margin: 0 20px;
+	width: 100%;
+	position: relative;
+	text-transform: uppercase;
+	border-radius: 3px;
+	box-shadow: 0 0 8px rgba(0,0,0,0.5);
+	border: 2px solid;
+	min-width: 100px;
+}
+.offer-cab .offer-content {
 	color: #ffffff;
 	position: relative;
 	text-align: center;

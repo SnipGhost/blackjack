@@ -94,7 +94,12 @@ class PageController extends Controller
             $this->view->display($page);
         }
         else{
-            $this->actionKit(); //Сделать адекватный переход
+            $page = array(
+                'title'    => 'Личный кабинет',
+                'template' => 'page.php',
+                'content'  => 'cab/cab_notReg.php'
+            );
+            $this->view->display($page);
         }
     }
 }

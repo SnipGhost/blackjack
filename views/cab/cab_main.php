@@ -83,15 +83,15 @@
 	</div>
 </div> -->
 <div class="content-box-cab">
-	<div class="content-cab-title">
-		Личный кабинет
-	</div>
 	<div class="back">
 		<!--Блок тарифов-->
 		<div id="tarif" class="tabs block">
+			<div class="content-cab-title">
+				Личный кабинет
+			</div><br>
 			<div class="buttons noselect">
 				<!--Кнопки (не получилось написать их вне блока)-->
-				<a href="#profile" class="button-cab">профиль</a><a href="#kit" class="button-cab">КИТ</a><a href="#tarif" class="button-cab">тариф</a>
+				<a href="#profile" class="button-cab-tab">профиль</a><a href="#kit" class="button-cab-tab">КИТ</a><a href="#tarif" class="button-cab-tab">тариф</a>
 			</div>
 			<div class="block-content-cab">
 				<div class="offers-wrap" style="color: #ffffff">
@@ -151,9 +151,12 @@
 		</div>
 		<!--Блок кита-->
 		<div id="kit" class="tabs block">
+			<div class="content-cab-title">
+				Личный кабинет
+			</div><br>
 			<div class="buttons noselect">
 				<!--Кнопки (не получилось написать их вне блока)-->
-				<a href="#profile" class="button-cab">профиль</a><a href="#kit" class="button-cab">КИТ</a><a href="#tarif" class="button-cab">тариф</a>
+				<a href="#profile" class="button-cab-tab">профиль</a><a href="#kit" class="button-cab-tab">КИТ</a><a href="#tarif" class="button-cab-tab">тариф</a>
 			</div>
 			<div class="block-content-cab">
 				<form enctype="multipart/form-data" action="" method="POST">	
@@ -176,9 +179,12 @@
 		</div>
 		<!--Блок профиля-->
 		<div id="profile" class="tabs block">
+			<div class="content-cab-title">
+				Личный кабинет
+			</div><br>
 			<div class="buttons noselect">
 				<!--Кнопки (не получилось написать их вне блока)-->
-				<a href="#profile" class="button-cab">профиль</a><a href="#kit" class="button-cab">КИТ</a><a href="#tarif" class="button-cab">тариф</a>
+				<a href="#profile" class="button-cab-tab">профиль</a><a href="#kit" class="button-cab-tab">КИТ</a><a href="#tarif" class="button-cab-tab">тариф</a>
 			</div>
 			<div class="block-content-cab">
 				<div class="line">
@@ -186,17 +192,18 @@
 					Email: <?=$user->email?>   
 				</div>	<br>	
 				<div class="line">
-					<div class="button-cab noselect">
+					<a href="/<?=BASE_URI?>chgemail" class="button-cab noselect">
 						Сменить email
-					</div>
-					<div class="button-cab noselect" style="margin-left: 20px">
+					</a>
+					<a href="/<?=BASE_URI?>chgpass" class="button-cab noselect" style="margin-left: 20px">
 						Сменить пароль
-					</div>  
+					</a>  
 				</div>
-
-				<div class="button-cab-black noselect" style="margin-top: 100px; width: 100px;">
-						выйти
-					</div>
+				<!--<form action="" method="POST">
+					<button  class="button-cab-black noselect" style="margin-top: 100px; width: 100px;" name="logout">
+							выйти
+					</button>
+				</form>-->
 				</div>
 			</div>
 		</div>
