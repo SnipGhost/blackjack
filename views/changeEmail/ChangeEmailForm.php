@@ -19,7 +19,7 @@
 	</div>
 
     <div class="buttons">
-        <a href="/<?=BASE_URI?>" id="back-button-link">
+        <a href="/<?=BASE_URI?>cab#profile" id="back-button-link">
             <div class="button-back">
                 Назад
             </div>

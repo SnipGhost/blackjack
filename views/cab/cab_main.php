@@ -192,10 +192,10 @@
 					Email: <?=$user->email?>   
 				</div>	<br>	
 				<div class="line">
-					<a href="/<?=BASE_URI?>chgemail" class="button-cab noselect">
+					<a href="/<?=BASE_URI?>cab/chgemail" class="button-cab noselect">
 						Сменить email
 					</a>
-					<a href="/<?=BASE_URI?>chgpass" class="button-cab noselect" style="margin-left: 20px">
+					<a href="/<?=BASE_URI?>cab/chgpass" class="button-cab noselect" style="margin-left: 20px">
 						Сменить пароль
 					</a>  
 				</div>
