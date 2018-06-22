@@ -84,7 +84,7 @@
 						<div class="offer-content">
 							Комплекс избирательных технологий, обеспечивающих информационных воздействий с прогнозируемой социальной реацией
 						</div>
-                        <a href="/<?=BASE_URI?>kit" id="offer-button-link">
+                        <a href="/<?=BASE_URI?>cab#profile" id="offer-button-link">
                             <div class="offer-button noselect">
                                 Попробовать демо
                             </div>
