@@ -1,6 +1,6 @@
 <div class="content-box-opi">
 	<div class="content-box-title">
-		Репутационный менеджмент (РЕМ)	
+		Репутационный менеджмент	
 	</div>
 <!--
 	<div class="content-box-semititle">

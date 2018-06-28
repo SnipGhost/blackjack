@@ -10,11 +10,11 @@
 		</div>
 		<div class="footer-content-left">
 			<a href="/<?=BASE_URI?>about_team" id="about-team">О команде</a><br>
-			<a href="/<?=BASE_URI?>" id="partner">Партнёры</a><br>
+<!--		<a href="/<?=BASE_URI?>" id="partner">Партнёры</a><br> -->
 			<a href="/<?=BASE_URI?>support" id="support">Поддержка</a><br>
 			<br>
 			<span id="version">Текущая версия: <?=VERSION?></span>
-			<span id="copyright">Copyright &copy; Startup-Analytics.com, 2018</span>
+			<span id="copyright">Copyright &copy; Катков О.Н., 2018</span>
 		</div>
 		<div style="clear: both;"></div>
 	</div>

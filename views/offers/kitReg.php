@@ -1,6 +1,6 @@
 <div class="content-box-opi">
 	<div class="content-box-title">
-		Комплекс избирательных технологий (КИТ)	
+		Комплекс избирательных технологий
 	</div>
 <!--
 	<div class="content-box-semititle">
@@ -16,12 +16,14 @@
 	<form enctype="multipart/form-data" action="" method="POST">		
 		<div style="margin-bottom: 15px">
 			Красиво написанное предложение скачать форму заполнения КИТа
+<!--            ЧТО ЭТО ТАКОЕ?! РОМАААААААА-->
 		</div>
 		<div>
 			<a href="/<?=BASE_URI?>data/download.xlsx" class="button-kit noselect" download>скачать</a>
 		</div>
 		<div style="margin-top: 15px">
-			Красиво написанное предложение загрузить заполненную форму КИТа
+			Красиво написанное предложение скачать форму заполнения КИТа
+<!--            ЧТО ЭТО ТАКОЕ?! РОМАААААААА-->
 		</div>
 		<!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла  -->
 		<input type="hidden" name="MAX_FILE_SIZE" value="30000" /> 

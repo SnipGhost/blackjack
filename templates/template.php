@@ -37,7 +37,23 @@
 					<div class="ab-text">
 						<div class="ab-title">Описание</div>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+							Доброе имя – Ваш инструмент. Вот почему грамотный репутационный менеджмент необходим как персонам, так и организациям. В отличие от традиционного подхода, когда Вы пользуетесь услугами PR-специалистов и получаете размытые формулировки без каких-либо числовых подтверждений, мы предлагаем программный комплекс, помогающий Вам просчитывать  и отслеживать результаты работы по формированию репутации. 
+                            <br>
+                            <br>
+                            Помните, что РЕПУТАЦИЯ это, прежде всего:
+                            <br>
+                            <br>
+                            •	Реальная ценность
+                            <br>
+                            •	Доверие партнеров
+                            <br>
+                            •	Самоуважение
+                            <br>
+                            •	Престиж
+                            <br>
+                            •	Финансовая стабильность
+
+
 						</p>
 					</div>
 				</div>
@@ -48,7 +64,20 @@
 					<div class="ab-text">
 						<div class="ab-title">Наши плюсы</div>
 						<p>
-						Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+						НИР - Агентство  - команда, обладающая современными авторскими технологиями формирования репутации организаций и отдельных персон, реализации политических проектов. 
+                            <br>
+                            <br>
+                        Наши преимущества: 
+                            <br>
+                            <br>
+                        •	Доступность: использование наших технологий не требует специальной подготовки.
+                            <br>
+                        •	Безопасность: система не требует персональных данных, Ваша анонимность – залог нашей работы.
+                            <br>
+                        •	Информированность: при работе с нашими технологиями Вы имеете необходимый объем информации для принятия репутационных решений.
+                            <br>
+                        •	PR-сопровождение малых предприятий. 
+
 						</p>
 					</div>
 				</div>
@@ -84,7 +113,7 @@
 						<div class="offer-content">
 							Комплекс избирательных технологий, обеспечивающих информационных воздействий с прогнозируемой социальной реацией
 						</div>
-                        <a href="/<?=BASE_URI?>cab#profile" id="offer-button-link">
+                        <a href="/<?=BASE_URI?>cab#kit" id="offer-button-link">
                             <div class="offer-button noselect">
                                 Попробовать демо
                             </div>
