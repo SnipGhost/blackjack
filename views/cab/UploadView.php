@@ -3,11 +3,23 @@
 
 		function loadKitFile()
 		{
+			// Если файл не приложен к форме
+			if (!isset($_FILES['file']['name'])) {
+				header('Location: ' . BASE_URI . 'cab#kit');
+			}
+
+			// Поверяем пользователя
 			global $user;
-			
 			if (is_null($user)) {
-				echo "Неавторизированный пользователь\n";
-				return 0;
+				throw new UploadException(UPLOAD_S_ERR_AUTH);
+			}
+
+			echo "Некоторая отладочная информация:\n";
+			print_r($_FILES);
+
+			// Добавим проверочку на ошибки подгрузки файла
+			if (!$_FILES['file']['error'] === UPLOAD_ERR_OK) { 
+				throw new UploadException($_FILES['file']['error']);
 			}
 
 			// Обратите внимение!
@@ -21,41 +33,39 @@
 			// TODO: Плохо, нужно вообще рандомное имя генерить и записывать в БД
 			$uploadfile = $uploaddir . $user->id . '_' . md5(basename($_FILES['file']['name']));
 
-			echo "Некоторая отладочная информация:\n";
-			print_r($_FILES);
-
 			// Проверка MIME-типов
 			if (!in_array($_FILES['file']['type'], $types)) {
-				echo "Файл некорректного типа!\n";
-				return 0;
+				throw new UploadException(UPLOAD_S_ERR_WRONG_TYPE);
 			}
 
 			// Проверка размеров файла (уже после загрузки!)
 			// А проверка до - только через php.ini, переменные:
 			// upload_max_filesize и post_max_size
 			if ($_FILES['file']['size'] > $maxFileSize) {
-				echo "Слишком большой файл!\n";
-				return 0;
+				throw new UploadException(UPLOAD_S_ERR_WRONG_SIZE);
 			}
 
 			// TODO: Безопасная проверка содержимого файла (?)
+			// Ошибка - UPLOAD_S_ERR_WRONG_CONTENT
 
 			// В принципе, можно делать бизнес-логику прям сразу тут, не копируя файл
 			echo "Имя файла после загрузки: $uploadfile\n";
 
 			// Перемещение в постоянное хранилище
 			if (!move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile)) {
-				echo "Ошибка при перемещении файла!\n";
-				return 0;
+				throw new UploadException(UPLOAD_S_ERR_MOVE_FILE);
 			}
 
 			echo "Файл корректен и был успешно загружен.\n";
-			return 1;
 		}
 
 		// Использование, стоит перенести все в контроллер
 		echo "<pre>Загрузка файла ...\n";
-		loadKitFile();
+		try {
+			loadKitFile();
+		} catch (UploadException $e) {
+			echo 'Ошибка при загрузке файла: ', $e->getMessage();
+		}
 		echo '</pre>';
 
 	?>
