@@ -1,10 +1,10 @@
 <div class="content-box">
 	<?php
 
-		function loadKitFile()
+		function loadKitFile($file)
 		{
 			// Если файл не приложен к форме
-			if (!isset($_FILES['file']['name'])) {
+			if (!isset($file['name'])) {
 				header('Location: ' . BASE_URI . 'cab#kit');
 			}
 
@@ -18,8 +18,8 @@
 			print_r($_FILES);
 
 			// Добавим проверочку на ошибки подгрузки файла
-			if (!$_FILES['file']['error'] === UPLOAD_ERR_OK) { 
-				throw new UploadException($_FILES['file']['error']);
+			if (!$file['error'] === UPLOAD_ERR_OK) { 
+				throw new UploadException($file['error']);
 			}
 
 			// Обратите внимение!
@@ -31,17 +31,17 @@
 			$maxFileSize = 255; // В байтах
 
 			// TODO: Плохо, нужно вообще рандомное имя генерить и записывать в БД
-			$uploadfile = $uploaddir . $user->id . '_' . md5(basename($_FILES['file']['name']));
+			$uploadfile = $uploaddir . $user->id . '_' . md5(basename($file['name']));
 
 			// Проверка MIME-типов
-			if (!in_array($_FILES['file']['type'], $types)) {
+			if (!in_array($file['type'], $types)) {
 				throw new UploadException(UPLOAD_S_ERR_WRONG_TYPE);
 			}
 
 			// Проверка размеров файла (уже после загрузки!)
 			// А проверка до - только через php.ini, переменные:
 			// upload_max_filesize и post_max_size
-			if ($_FILES['file']['size'] > $maxFileSize) {
+			if ($file['size'] > $maxFileSize) {
 				throw new UploadException(UPLOAD_S_ERR_WRONG_SIZE);
 			}
 
@@ -52,7 +52,7 @@
 			echo "Имя файла после загрузки: $uploadfile\n";
 
 			// Перемещение в постоянное хранилище
-			if (!move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile)) {
+			if (!move_uploaded_file($file['tmp_name'], $uploadfile)) {
 				throw new UploadException(UPLOAD_S_ERR_MOVE_FILE);
 			}
 
@@ -62,7 +62,7 @@
 		// Использование, стоит перенести все в контроллер
 		echo "<pre>Загрузка файла ...\n";
 		try {
-			loadKitFile();
+			loadKitFile($_FILES['file']);
 		} catch (UploadException $e) {
 			echo 'Ошибка при загрузке файла: ', $e->getMessage();
 		}
