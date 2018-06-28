@@ -8,7 +8,7 @@
 	</form>
 <?php else: ?>
 	<form class="login-panel" method="POST">
-		<span class="ok-msg"><?=$user->email?></span>
+		<a href="/<?=BASE_URI?>cab#profile" class="ok-msg"><?=$user->email?></a>
 		<button class="btn" name="logout">
 			<!-- <div class="material-icons md-light">exit_to_app</div> -->
 			Выйти

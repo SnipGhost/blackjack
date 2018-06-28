@@ -31,7 +31,7 @@
                 Назад
             </div>
         </a>
-        <button type="submit" name="reg" class = "button-reg">
+        <button type="submit" name="reg" class = "button-enter">
             Регистрация
         </button>
     </div>

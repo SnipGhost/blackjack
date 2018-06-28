@@ -1,9 +1,9 @@
 <?php
 
 // Значения по-умолчанию:
-define('DEFAULT_TEMPLATE_FILENAME', 'default.php'); // Файл шаблона
-define('DEFAULT_CONTENT_FILENAME', '');             // Файл содержимого
-define('DEFAULT_PAGE_TITLE', 'Главная');            // <title>...</title>
+define('DEFAULT_TEMPLATE_FILENAME', 'template.php'); // Файл шаблона
+define('DEFAULT_CONTENT_FILENAME', '');              // Файл содержимого
+define('DEFAULT_PAGE_TITLE', 'Главная');             // <title>...</title>
 
 class View
 {
