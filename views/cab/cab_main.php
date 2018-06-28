@@ -159,7 +159,7 @@
 				<a href="#profile" class="button-cab-tab">профиль</a><a href="#kit" class="button-cab-tab">КИТ</a><a href="#tarif" class="button-cab-tab">тариф</a>
 			</div>
 			<div class="block-content-cab">
-				<form enctype="multipart/form-data" action="" method="POST">	
+				<form enctype="multipart/form-data" action="/<?=BASE_URI?>upload" method="POST">	
 					<div class="content-box-title">
 						КИТ
 					</div>	
