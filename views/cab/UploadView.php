@@ -10,6 +10,10 @@
 				return 0;
 			}
 
+			// Обратите внимение!
+			// На директорию $uploaddir должны быть выданы права пользователю, от которого
+			// запускается веб-сервер и php, для Apache-а это пользователь _www
+			// Для этого можно сделать: sudo chown _www data/upload
 			$uploaddir = ROOT . 'data/upload/';
 			$types = array('application/vnd.ms-excel','text/plain','text/csv','text/tsv');
 			$maxFileSize = 255; // В байтах
