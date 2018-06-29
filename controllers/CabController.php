@@ -1,5 +1,7 @@
 <?php
 
+require_once ROOT.'engine/LoadFile.php';
+
 class CabController extends Controller
 {
     public function actionUpload() 
