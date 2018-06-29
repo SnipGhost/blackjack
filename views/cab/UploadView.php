@@ -31,7 +31,7 @@
 			$maxFileSize = 255; // В байтах
 
 			// TODO: Плохо, нужно вообще рандомное имя генерить и записывать в БД
-			$uploadfile = $uploaddir . $user->id . '_' . md5(basename($file['name']));
+			$uploadfile = $uploaddir . $user->id . '_' . md5(basename($file['name'])) . '.csv';
 
 			// Проверка MIME-типов
 			if (!in_array($file['type'], $types)) {
