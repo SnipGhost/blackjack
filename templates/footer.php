@@ -2,10 +2,10 @@
 	<div class="footer-content">
 		<div class="footer-content-right">
 			<p id="address">
-				Адрес: <br>
-				Ул.Пушкина, д.9, кв.45 <br>
-				8 (916) 922 95 32 <br>
-				8 (915) 945 53 38 <br>
+				Юридический адрес: <br>
+				Москва, ул. Кедрова, д. 4 ООО «Бизнес-генерационный центр» <br>
+				8 (xxx) xxx xx xx <br>
+				8 (xxx) xxx xx xx <br>
 			</p>
 		</div>
 		<div class="footer-content-left">

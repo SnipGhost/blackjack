@@ -280,18 +280,17 @@ body {
 	margin-right: 0;
 }
 /*******************************************************************/
-/*
 .decorative-strip{
        display: block;
     height: 3px;
-    width: 200px;
     margin-top: 2px;
     margin-bottom: 2px;
     background-color: #ff7f28;
-    margin-left: auto;
-    margin-right: auto;
-} 
+/*
+    margin-left: 50px;
+    margin-right: 50px;
 */
+} 
 /*******************************************************************/
 #block-about {
 	min-height: 100vh; /* All-in-им блок */
@@ -867,6 +866,26 @@ body {
 	font-weight: bold;
 	margin-bottom: 5px;
 }
+.block-content-cab .content-box-name {
+	font-size: 1.0em;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.block-content-cab .step {
+    display: inline-block;
+	font-size: 1.0em;
+	font-weight: bold;
+}
+
+.block-content-cab .image {
+    display: block;
+    width: 100%;
+    color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.8);
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
 .block-content-cab .offer-cab {
 	background-color: #353535;
 	color: #ffffff;
