@@ -15,10 +15,10 @@
 			}
 
 			echo "Некоторая отладочная информация:\n";
-			print_r($_FILES);
+			print_r($file);
 
 			// Добавим проверочку на ошибки подгрузки файла
-			if (!$file['error'] === UPLOAD_ERR_OK) { 
+			if ($file['error'] !== UPLOAD_ERR_OK) { 
 				throw new UploadException($file['error']);
 			}
 
