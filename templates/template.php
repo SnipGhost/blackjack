@@ -115,7 +115,17 @@
 						</div>
                         <a href="/<?=BASE_URI?>cab#kit" id="offer-button-link">
                             <div class="offer-button noselect">
-                                Попробовать демо
+							<?php
+								global $user;
+								if(isset($user))
+								{
+									echo 'В личный кабинет';
+								}
+								else
+								{
+									echo 'Регистрация';
+								};
+							?>
                             </div>
 						</a>						
 					</div>
