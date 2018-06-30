@@ -245,9 +245,9 @@ body {
 	margin-top: -2.5em;
 }
 .content-box .contacts-block {
-	margin-top: 3.5em;
-	padding: 0 5vw;
-	font-style: italic;
+    margin-top: 3.5em;
+    padding: 0 5vw;
+    font-style: italic;
 }
 .content-box .contacts-support-block {
 	/*	padding: 0 5vw;*/
@@ -357,6 +357,17 @@ body {
 	font-size: 13px;
 	text-align: center;
 }
+.offer .offer-rem-dop {
+/*
+	left: 0;
+	right: 0;
+	margin: auto;
+*/
+	margin-bottom: 5px;
+	font-weight: normal;
+	font-size: 20px;
+	text-align: center;
+}
 .offer .offer-button {
 	color: white;
 	position: absolute;
@@ -386,6 +397,26 @@ body {
 	background-color: #ffffff;
 	color: #61ac59;
 }
+
+#rem-dop {
+	width: 40%;
+    height: 50%;
+    margin-left: 0;
+	border-color: #73a859;
+}
+#rem-dop .offer-title {
+	background-color: #73a859;
+}
+#rem-dop .offer-button {
+	border-color: #73a859;
+	background-color: #73a859;
+}
+#rem-dop .offer-button:hover {
+	background-color: #ffffff;
+	color: #73a859;
+}
+
+
 #kik {
 	border-color: #ac5868;
 }
