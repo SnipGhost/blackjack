@@ -174,9 +174,9 @@
 						Загрузить и анализировать файл:
 					</div>
 					<div>
-						<a href="/<?=BASE_URI?>data/download.xlsx" class="button-kit noselect" download>скачать шаблон</a>
+						<a href="/<?=BASE_URI?>data/download.csv" class="button-kit noselect" download>скачать шаблон</a>
 						<input type="hidden" name="MAX_FILE_SIZE" value="30000" /> 
-						<input name="kitfile" type="file" class="file-kit"/>
+						<input name="file" type="file" class="file-kit"/>
 						<button type="submit" name="reg" class = "button-kit noselect">
 							Отправить
 						</button>
