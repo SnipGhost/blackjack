@@ -1,7 +1,7 @@
 <?php global $user, $login_err; if (is_null($user)): ?>
 	<form class="login-panel" action="" method="POST">
 		<a class="btn reg" href="/<?=BASE_URI?>reg">Регистрация</a>
-		<?php if ($login_err != '') echo '<span class="error-msg">', $login_err, '</span>'; ?>
+		<?php if ($login_err != '') echo '<a class="error-msg">', $login_err, '</a>'; ?>
 		<input name="email" placeholder="Email" type="text"/>
 		<input name="password" placeholder="Пароль" type="password"/>
 		<button class="btn" name="login" type="submit">Войти</button>

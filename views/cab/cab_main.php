@@ -91,7 +91,9 @@
 			</div><br>
 			<div class="buttons noselect">
 				<!--Кнопки (не получилось написать их вне блока)-->
-				<a href="#profile" class="button-cab-tab">профиль</a><a href="#kit" class="button-cab-tab">КИТ</a><a href="#tarif" class="button-cab-tab">тариф</a>
+				<a href="#profile" class="button-cab-tab">профиль</a>
+				<a href="#kit" class="button-cab-tab">КИТ</a>
+				<a href="#tarif" class="button-cab-tab darkstyle">тариф</a>
 			</div>
 			<div class="block-content-cab">
 				<div class="offers-wrap" style="color: #ffffff">
@@ -156,7 +158,9 @@
 			</div><br>
 			<div class="buttons noselect">
 				<!--Кнопки (не получилось написать их вне блока)-->
-				<a href="#profile" class="button-cab-tab">профиль</a><a href="#kit" class="button-cab-tab">КИТ</a><a href="#tarif" class="button-cab-tab">тариф</a>
+				<a href="#profile" class="button-cab-tab">профиль</a>
+				<a href="#kit" class="button-cab-tab darkstyle">КИТ</a>
+				<a href="#tarif" class="button-cab-tab">тариф</a>
 			</div>
 			<div class="block-content-cab">
 				<form enctype="multipart/form-data" action="/<?=BASE_URI?>upload" method="POST">	
@@ -219,7 +223,9 @@
 			</div><br>
 			<div class="buttons noselect">
 				<!--Кнопки (не получилось написать их вне блока)-->
-				<a href="#profile" class="button-cab-tab">профиль</a><a href="#kit" class="button-cab-tab">КИТ</a><a href="#tarif" class="button-cab-tab">тариф</a>
+				<a href="#profile" class="button-cab-tab  darkstyle">профиль</a>
+				<a href="#kit" class="button-cab-tab">КИТ</a>
+				<a href="#tarif" class="button-cab-tab">тариф</a>
 			</div>
 			<div class="block-content-cab">
 				<div class="line">
