@@ -1,75 +1,14 @@
 <?php
 
-include_once ROOT.'models/CabModel.php';
-
-class PassChangeController extends Controller
+class CabController extends Controller
 {
-    public function __construct()
+    public function actionUpload() 
     {
-        $this->view = new View();
-        $this->model = new CabModel();
-    }
-
-    public function regMain($msg = '') {
         $page = array(
-            'content'  => 'changePass/ChangePassForm.php',
-            'title'    => 'Изменение пароля',
-            'template' => 'pageCreateChange.php',
-            'msg'      => $msg, 
+            'title' => 'Загрузка',
+            'template' => 'page.php',
+            'content' => 'cab/UploadView.php',
         );
         $this->view->display($page);
     }
-    
-    public function regMain($msg = '') {
-        $page = array(
-            'content'  => 'changeEmail/ChangeEmailForm.php',
-            'title'    => 'Изменение Email',
-            'template' => 'pageCreateChange.php',
-            'msg'      => $msg, 
-        );
-        $this->view->display($page);
-    }
-    
-    
-//    public function actionReg()
-//    {
-//        global $user;
-//        // Если пользователь уже залогинен, то
-//        //  игнорируем его запрос на actionReg
-//        if (!is_null($user)) {
-//            header('Location: /'.BASE_URI);
-//            return;
-//        }
-//
-//        if (isset($_POST['reg'],
-//                  $_POST['password'],
-//                  $_POST['retype'],
-//                  $_POST['email'])) {
-//
-//            if ($_POST['retype'] != $_POST['password']) {
-//                $this->regMain('Вы повторили пароль неверно');
-//                return;
-//            }
-//	
-//			if (!$this->model->checkUserField('email', $_POST['email'])) {
-//				$this->regMain('Пользователь с таким email уже есть');
-//                return;
-//			}
-//
-//            if (!$this->model->addUser($_POST['password'], $_POST['email'])) {
-//                $this->regMain('Ошибка при добавлении пользователя, попробуйте еще раз');
-//                return;
-//            }
-//
-//            $page = array(
-//                'content'  => 'reg/RegEnd.php',
-//                'title'    => 'Завершение регистрации',
-//                'template' => 'reg.php',
-//            );
-//            $this->view->display($page);
-//
-//        } else {
-//            $this->regMain();
-//        }
-//    }
 }

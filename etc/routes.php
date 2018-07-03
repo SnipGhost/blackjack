@@ -14,7 +14,7 @@ return array(
     'tables' => ['MainController', 'actionTables'],
 
     // Скрипт загрузки excel-документов на сервер
-    'upload' => ['MainController', 'actionUpload'],
+    'upload' => ['CabController', 'actionUpload'],
 
     // Страница регистрации пользователя
     'reg' => ['RegController', 'actionReg'],
