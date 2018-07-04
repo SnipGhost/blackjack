@@ -1,5 +1,9 @@
 <?php
 
+require_once ROOT.'engine/LoadFile.php';
+require_once ROOT.'engine/ReadFile.php';
+require_once ROOT.'data/Classes/PHPExcel.php';
+
 class CabController extends Controller
 {
     public function actionUpload() 
