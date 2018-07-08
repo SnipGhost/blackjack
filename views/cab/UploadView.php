@@ -1,26 +1,26 @@
 <div class="content-box">
 	<?php
-		echo "<pre>Загрузка файла ...\n";
-		try {
-			$filename = loadFile($_FILES['file'], 'data/upload/', 'csv', 10000000);
-			echo "Имя файла после загрузки: $filename\n";
-			echo "Файл корректен и был успешно загружен.\n";
-		} catch (UploadException $e) {
-			echo 'Ошибка при загрузке файла: ', $e->getMessage();
-		}
-		try{
-			$data = handleFile($filename);
+		if(!isset($ex)){
 			$keys = array_keys($data);
-			echo "Файл успешно обработан.\n";
-			echo "Результат обработки: \n";
-			for($i=0;$i<5;$i++){
-				$a=$data[$keys[$i]];
-				echo "$keys[$i]: $a\n";
+			
+			foreach($keys as $k)
+			{
+				$value = $data[$k];
+				echo '<div class="progress-bar-wrap">';
+				echo "<span class=\"progress-bar-text\">'$k': </span>";
+				echo '<div class="progress-bar">';
+				if($value>=10)
+					echo '<div class="progress-data" style="width: '.$value.'%;">'.round($value,2).'%</div></div><br>';
+				else
+					echo '<div class="progress-data" style="width: 10%;">'.round($value,2).'%</div></div><br>';
+				echo '</div>';
+//				echo "<div class = \"cand-block\"><div class = \"cand-left\">$k</div><div class=\"cand-right\">$data[$k]</div></div>";
 			}
-		}catch (UploadException $e)
-		{
-			echo 'Ошибка при обработке файла: ', $e->getMessage();	
 		}
-		echo '</pre>';
+		else
+		{
+			Echo "Что-то пошло не так:\n";
+			Echo "$msg";
+		}
 	?>
 </div>

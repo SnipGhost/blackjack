@@ -40,7 +40,7 @@
         <div class="offers-wrap">
             <div id="rem-dop" class="offer">
                     <div class="offer-title noselect">
-                        <div class="offer-rem-dop">
+                        <div class="offer-rem-dop" style="color: #ffffff">
                             Заказать РЕМ на компанию
                         </div>
                     </div>
@@ -55,7 +55,7 @@
             </div>
             <div id="rem-dop" class="offer">
                 <div class="offer-title noselect">
-                    <div class="offer-rem-dop">
+                    <div class="offer-rem-dop" style="color: #ffffff">
                         Заказать персональный РЕМ
                     </div>
                 </div>

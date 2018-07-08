@@ -729,7 +729,7 @@ body {
 	display: inline-block;
 	color: #000000;
 	margin-right: 10px;
-	max-width: 30%;
+	width: 130px;
 }
 .progress-bar {
 	display: inline-block;

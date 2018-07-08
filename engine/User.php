@@ -6,6 +6,7 @@ class User
     public $hash;
     public $email;
     public $date;
+    public $file;
 
     public static function authentication(Session &$session, DBConnection &$db)
     {
@@ -20,7 +21,7 @@ class User
         } elseif (isset($_POST['login'], $_POST['email'], $_POST['password'])) {
 
             $email = $db->escape($_POST['email']);
-            $q = "SELECT `id`, `password`, `email`, `date` 
+            $q = "SELECT `id`, `password`, `email`, `date` , `file`
 				  FROM `users`
 				  WHERE `email` = '$email'
                   LIMIT 1";
@@ -48,5 +49,6 @@ class User
         $this->hash = $userData['password'];
         $this->email = $userData['email'];
         $this->date = $userData['date'];
+        $this->file = $userData['file'];
     }
 }

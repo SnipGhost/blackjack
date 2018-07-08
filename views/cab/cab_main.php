@@ -1,87 +1,4 @@
-<!--<div class="content-box-opi">
-	<div class="content-box-title">
-		Личный кабинет	
-	</div>
-	<div class="content-box-semititle">
-		Email: test@mail.ru
-		<button class="button-cab-black noselect">
-			выйти
-		</button>
-	</div>
-	<div class="kit-func">
-		
-		<form enctype="multipart/form-data" action="" method="POST">	
-			<div class="content-box-title">
-				КИТ
-			</div>	
-			<div style="margin-bottom: 10px">
-				Красиво написанное предложение скачать форму заполнения КИТа
-			</div>
-			<div>
-				<a href="/<?=BASE_URI?>data/download.xlsx" class="button-kit noselect" download>скачать шаблон</a>
-				<input type="hidden" name="MAX_FILE_SIZE" value="30000" /> 
-				<input name="kitfile" type="file" class="file-kit"/>
-				<button type="submit" name="reg" class = "button-kit noselect">
-					Отправить
-				</button>
-			</div>
-			
-		</form>	
-	</div>	
-	<a class="button-cab select">
-		Сменить пароль
-	</a>
-	<div class="offers-wrap" style="color: #ffffff">
-		<div id="opi" class="offer">
-			<div class="offer-title noselect">
-				ОПИ
-				<div class="offer-ttext">
-					ОПРЕДЕЛЕНИЕ ПОТЕНЦИАЛА ИЗБИРАЕМОСТИ
-				</div>
-			</div>
-			<div class="offer-content">
-				Разработка и реализация индивидуальных репутационных программ для публичных личностей			
-			</div><br>
-			<a href="/<?=BASE_URI?>opi" id="offer-button-link">
-				<div class="offer-button noselect">
-					Попробовать
-				</div>
-			</a>
-		</div>
-		<div id="kik" class="offer">
-			<div class="offer-title noselect">
-				КИТ
-				<div class="offer-ttext">
-					Комплекс избирательных технологий
-				</div>
-			</div>
-			<div class="offer-content">
-				Комплекс избирательных технологий, обеспечивающих информационных воздействий с прогнозируемой социальной реацией
-			</div>
-               		<a href="/<?=BASE_URI?>kit" id="offer-button-link">
-				<div class="offer-button noselect">
-					Попробовать демо
-				</div>
-			</a>						
-		</div>
-		<div id="smt" class="offer">
-			<div class="offer-title noselect">
-				РЕМ
-				<div class="offer-ttext">
-					Репутационный менеджмент<br><br>
-				</div>
-			</div>
-			<div class="offer-content">
-				Проектирование и внедрение репутационных стратегий для предприятий и организаций разных масштабов
-			</div>
-			<a href="/<?=BASE_URI?>rem" id="offer-button-link">
-				<div class="offer-button noselect">
-					Узнать подробнее
-				</div>
-			</a>
-		</div>
-	</div>
-</div> -->
+
 <div class="content-box-cab">
 	<div class="back">
 		<!--Блок тарифов-->
@@ -211,7 +128,35 @@
                         </div>
                     <img class="image" src="img/guide/4.png"/>
                     <div style="margin-bottom: 10px">
-				        <div class="step">Шаг 4.</div> Обработка и просмотр результата.
+						<div class="step">Шаг 4.</div> Обработка и просмотр результата.<br>
+						<?php
+						global $user;
+						if(!is_null($user->file))
+						{
+							echo "Данные последнего загруженного файла:<br>";
+							$data = readRes();
+							if(!isset($ex)){
+								$keys = array_keys($data);
+								foreach($keys as $k)
+								{
+									$value = $data[$k];
+									echo '<div class="progress-bar-wrap">';
+									echo "<span class=\"progress-bar-text\">'$k': </span>";
+									echo '<div class="progress-bar">';
+									if($value>=10)
+										echo '<div class="progress-data" style="width: '.$value.'%;">'.round($value,2).'%</div></div><br>';
+									else
+										echo '<div class="progress-data" style="width: 10%;">'.round($value,2).'%</div></div><br>';
+									echo '</div>';
+//									echo "<div class = \"cand-block\"><div class = \"cand-left\">$k</div><div class=\"cand-right\">$data[$k]</div></div>";
+								}
+							}
+							else
+							{
+								Echo "Что-то пошло не так:\n";
+								Echo "$msg";
+							}						}
+						?>
 					</div>
 				</form>	
 			</div>

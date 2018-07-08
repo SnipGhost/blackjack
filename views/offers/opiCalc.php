@@ -48,12 +48,15 @@
 
 			$sum = array_sum($matrix);
 			if ($sum > 0) {
-				for ($i = 0; $i < count($matrix); $i++) {
-					$value = round($matrix[$i] / $sum * 100, 1);
+				for ($i = 1; $i <= count($matrix); $i++) {
+					$value = round($matrix[$i-1] / $sum * 100, 1);
 					echo '<div class="progress-bar-wrap">';
 					echo "<span class=\"progress-bar-text\">Кандидат&nbsp;№$i: </span>";
 					echo '<div class="progress-bar">';
-					echo '<div class="progress-data" style="width: '.$value.'%;">'.$value.'%</div></div><br>';
+					if($value>=10)
+						echo '<div class="progress-data" style="width: '.$value.'%;">'.$value.'%</div></div><br>';
+					else
+						echo '<div class="progress-data" style="width: 10%;">'.$value.'%</div></div><br>';
 					echo '</div>';
 				}
 			} else {

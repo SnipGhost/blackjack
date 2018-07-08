@@ -1,4 +1,5 @@
 <?php
+require_once ROOT.'engine/readFile.php';
 
 class PageController extends Controller
 {
