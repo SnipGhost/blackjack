@@ -13,6 +13,9 @@ class CabController extends Controller
     }
     public function actionUpload() 
     {
+        global $db;
+        global $user;
+        $user->refreshFile($db);
         $filename="";
         try {
 			$filename = $this->loadFile($_FILES['file'], 'data/upload/', 'xls', 10000000);
@@ -93,45 +96,63 @@ class CabController extends Controller
 
 		switch ($ext) {
 			case 'xls':
-				$types = array('application/vnd.ms-excel','text/plain','text/csv','text/tsv');
+				$types = array('application/vnd.ms-excel');
 				break;
 			default:
 				$types = array('text/plain');
 				break;
 		}
 
-		// TODO: Плохо, нужно вообще рандомное имя генерить и записывать в БД
-		$uploadfile = $uploaddir . $user->id . '_' . md5(basename($file['name'])) . '.' . $ext;
 		// Проверка MIME-типов
-		//if (!in_array($file['type'], $types)) {
-		//	throw new UploadException(UPLOAD_S_ERR_WRONG_TYPE);
-		//}
-
+		if (!in_array($file['type'], $types)) {
+			throw new UploadException(UPLOAD_S_ERR_WRONG_TYPE);
+        }
+        $buf = count(explode(".",$file['name']))-1;
+        $file_ext = explode(".",$file['name'])[$buf];
+        if($file_ext!=="xls")
+        {
+			throw new UploadException(UPLOAD_S_ERR_WRONG_TYPE);
+		}
 		// Проверка размеров файла (уже после загрузки!)
 		// А проверка до - только через php.ini, переменные:
 		// upload_max_filesize и post_max_size
 		if ($file['size'] > $size) {
 			throw new UploadException(UPLOAD_S_ERR_WRONG_SIZE);
 		}
-
-		// TODO: Безопасная проверка содержимого файла (?)
-		// Ошибка - UPLOAD_S_ERR_WRONG_CONTENT
-
-		// В принципе, можно делать бизнес-логику прям сразу тут, не копируя файл
-		//echo "Имя файла после загрузки: $uploadfile\n"; // DEBUG
-
+        $uploadfile = $uploaddir . md5(date('l jS \of F Y h:i:s A')). '.' . $ext;
+		
 		// Перемещение в постоянное хранилище
 		if (!move_uploaded_file($file['tmp_name'], $uploadfile)) {
 			throw new UploadException(UPLOAD_S_ERR_MOVE_FILE);
-		}
-		
+        }
+        
+        // TODO: Безопасная проверка содержимого файла (?)
+        // Ошибка - UPLOAD_S_ERR_WRONG_CONTENT
+		$excel = PHPExcel_IOFactory::load($uploadfile);
+        try{
+            $buf = $excel->getSheetNames();
+            if(!in_array("Исходные параметры",$buf))
+                throw new UploadException(UPLOAD_S_ERR_WRONG_CONTENT);
+            
+        }
+        catch(Exception $e){
+            unlink($uploadfile);
+            throw new UploadException(UPLOAD_S_ERR_WRONG_CONTENT);
+        }
+        global $user;
+        if(!is_null($user->file)){
+            //TODO прикрутить обработку ошибки удаления файла
+            unlink($user->file);
+        }
+        $this->model->updateUserFile($user->id,$uploadfile);
+
 		//echo "Файл корректен и был успешно загружен.\n"; // DEBUG
 		return $uploadfile;
     }
     function handleFile($filename)
 	{
         global $user;
-		$params = PHPExcel_IOFactory::load("/Library/WebServer/Documents/blackjack/data/params.xls");
+		$params = PHPExcel_IOFactory::load(ROOT."data/params.xls");
 		$excel = PHPExcel_IOFactory::load($filename);
 		$params = $params->getSheetByName("params");
 		$chuv = $params->getCellByColumnAndRow(5,23)->getValue();
@@ -249,7 +270,7 @@ class CabController extends Controller
         for($i=0;$i<5;$i++)
         if(!is_null($cands[$i]))
             $res[$cands[$i]]=$pres[$i];
-        
+        //Запись результата в файл
         $excel->createSheet();
         $page = $excel->setActiveSheetIndex($excel->getSheetCount()-1);
         $page->setTitle("Результат");

@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>	
 <body>
-
 	<div class="header">
 		<div class="header-content">
 			<?php require 'templates/login.php'; ?>
@@ -139,3 +138,5 @@
 
 </body>
 </html>
+
+
