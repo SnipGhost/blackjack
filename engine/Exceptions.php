@@ -19,7 +19,7 @@ class UploadException extends Exception
 		$message = $this->codeToMessage($code);
 		parent::__construct($message, $code);
 	}
-
+	
 	private function codeToMessage($code)
 	{
 		// TODO: Перепишите на русский потом, а?
@@ -65,6 +65,33 @@ class UploadException extends Exception
 				break;
 			default:
 				$message = "Неизвестная ошибка загрузки файла";
+				break;
+		}
+		return $message;
+	}
+} 
+class HandleException extends Exception
+{
+	public function __construct($code) {
+		$message = $this->codeToMessage($code);
+		parent::__construct($message, $code);
+	}
+
+	private function codeToMessage($code)
+	{
+		// TODO: Перепишите на русский потом, а?
+		switch ($code) {
+			case HANDLE_ERR_OPEN:
+				$message = "Не удалось обработать загружаемый файл. Не удалось прочитать загружаемый файл";
+				break;
+			case HANDLE_ERR_STARTPARAMS:
+				$message = "Не удалось прочитать исходные данные. Проверьте их заполнение";
+				break;
+			case HANDLE_ERR_LISTS:
+				$message = "Не удалось проочитать страницы дней. Проверьте заполнение данных листов";
+				break;
+			default:
+				$message = "Неизвестная ошибка обработки файла";
 				break;
 		}
 		return $message;
