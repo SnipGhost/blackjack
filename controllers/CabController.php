@@ -189,7 +189,7 @@ class CabController extends Controller
 		try{
 			foreach ($excel->getSheetNames() as $lName)
 			{
-				if(($lName !== "Исходные параметры")||($lName !== "Результат"))
+				if(($lName !== "Исходные параметры")&&($lName !== "Результат"))
 				{
 					$list = $excel->getSheetByName($lName);
 					$day = $list->getCellByColumnAndRow(3,2)->getValue();//День. Важно, чтобы данный параметр был корректным!
