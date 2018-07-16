@@ -42,7 +42,18 @@ class User
         }
         return [null, $msg];
     }
-
+    public function refreshFile(DBConnection $db)
+    {   
+        $q = "SELECT `file`
+				  FROM `users`
+				  WHERE `email` = '$this->email'
+                  LIMIT 1";
+        if ($data = $db->query($q)) {
+            $this->file = $data[0]['file'];
+        }
+        else 
+        throw new Exception();
+    }
     public function __construct($userData)
     {
         $this->id = $userData['id'];

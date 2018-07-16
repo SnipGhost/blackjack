@@ -2,14 +2,10 @@
 -- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1:3306
--- Время создания: Июн 09 2018 г., 17:34
--- Версия сервера: 5.7.22
--- Версия PHP: 7.1.16
-
--- Правил вручную.
--- Правки: SnipGhost
--- Время: Июн 09 2018 г., 23:02
+-- Host: 127.0.0.1:3306
+-- Generation Time: Jul 10, 2018 at 09:12 PM
+-- Server version: 5.7.22
+-- PHP Version: 7.1.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -23,25 +19,22 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `blackjack`
+-- Database: `blackjack`
 --
-CREATE DATABASE IF NOT EXISTS `blackjack` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `blackjack`;
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `test`
+-- Table structure for table `test`
 --
 
-DROP TABLE IF EXISTS `test`;
 CREATE TABLE `test` (
   `id` int(11) NOT NULL,
   `colname` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп данных таблицы `test`
+-- Dumping data for table `test`
 --
 
 INSERT INTO `test` (`id`, `colname`) VALUES
@@ -54,58 +47,57 @@ INSERT INTO `test` (`id`, `colname`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `users`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `password` varchar(64) NOT NULL,
   `email` varchar(64) NOT NULL,
+  `file` varchar(128) DEFAULT NULL,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп данных таблицы `users`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `password`, `email`, `date`) VALUES
-(1, '$2y$10$lKpEyM9hIhiWuvQHSWBEhOlUcuVwgOIguy4t.s55rM0KkTfY/7F3W', 'adm@test.ru', '2018-05-01 22:32:41'),
-(2, '$2y$10$yC8GeAiLK7OW78CuBkAxyOQyIbUS8/mwjCxaNnITQVnKFR7WgHY9C', 'snipghost@list.ru', '2018-05-01 22:32:41'),
-(3, '$2y$10$eOQbUmc.ulBW3dieVWlO7Oi3oKbTiSBv7DM1CmV.YrPj7xPNyUXqa', 'ihikaru@inbox.ru', '2018-05-01 22:33:17');
+INSERT INTO `users` (`id`, `password`, `email`, `file`, `date`) VALUES
+(9, '$2y$10$uSlSho6uWU/V4S2CDrQbauCIwFsJgQXh55EStvIvjL3WcOWAFIlHa', 'Rbaybarin@gmail.com', NULL, '2018-07-04 20:32:31'),
+(10, '$2y$10$EI/JIpN10ll8GY8h6Bxwn.kK2wKlKEmU160tZI2ckWCEz2ABEEg4K', 'RRR@gmail.com', '/Library/WebServer/Documents/blackjack/data/upload/6f0a7fb0e8a1906d9082c413adfa44df.xls', '2018-07-05 12:58:57');
 
 --
--- Индексы сохранённых таблиц
+-- Indexes for dumped tables
 --
 
 --
--- Индексы таблицы `test`
+-- Indexes for table `test`
 --
 ALTER TABLE `test`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблицы `test`
+-- AUTO_INCREMENT for table `test`
 --
 ALTER TABLE `test`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT для таблицы `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
