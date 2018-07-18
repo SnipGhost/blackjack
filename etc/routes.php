@@ -30,6 +30,7 @@ return array(
     'opi/calc' => ['PageController', 'actionOpiCalc'], // Обработка данных формы ОПИ
     'rem'      => ['PageController', 'actionRem'],     // Репутационный менеджмент
     'kit'      => ['PageController', 'actionKit'],     // Репутационный менеджмент
+    'activation'=>['RegController','actionActiv'],
 
     // Страница личного кабинета
     'cab' => ['PageController', 'actionCab'],

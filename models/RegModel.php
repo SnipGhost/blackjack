@@ -60,6 +60,32 @@ class RegModel extends Model
         }
         return $result;
     }
+    public function setActivation($nowid, $status)
+    {
+        global $user; 
+        global $session;
+        try {
+            $q = "UPDATE `users` 
+                  SET `Activation` = '".$status."'
+                  WHERE `id` = ".$nowid;
+            $result = $this->db->query($q);
+        } catch (DataBaseException $e) {
+            $result = false;
+        }
+        return $result;
+    }
+    public function checkActivation($token)
+    {
+        try {
+            $q = "SELECT UserID FROM Activation
+                  WHERE Token LIKE '".$token."%'";
+            $result = $this->db->query($q);
+                $result = $result[0]['UserID'];
+        } catch (DataBaseException $e) {
+            $result = -1;
+        }
+        return $result;
+    }
     public function changeEmail($nowid, $newemail)
     {
         global $user; 
@@ -77,4 +103,27 @@ class RegModel extends Model
         }
         return $result;
     } 
+    public function createToken($email,$token)
+    {
+        global $session;
+        $res=true;
+        $id=false;
+        try {
+            $q = "SELECT `ID` FROM `users`
+                  WHERE `email` = '".$email."'";
+                  $result = $this->db->query($q);
+                    $id=$result[0]['ID'];
+        } catch (DataBaseException $e) {
+            $res=false;
+        }
+        try {
+            $q = 'INSERT INTO activation  (Token,UserID,date)
+                  VALUES ("'.$token.'",'.$id.',"'.date('l jS \of F Y h:i:s A').'")';
+            $result = $this->db->query($q);
+
+        } catch (DataBaseException $e) {
+            $res = false;
+        }
+        return $res;
+    }
 }

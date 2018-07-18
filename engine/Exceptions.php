@@ -9,6 +9,10 @@ define('UPLOAD_S_ERR_WRONG_TYPE',    -2);
 define('UPLOAD_S_ERR_WRONG_SIZE',    -3);
 define('UPLOAD_S_ERR_WRONG_CONTENT', -4);
 define('UPLOAD_S_ERR_MOVE_FILE',     -5);
+define('FILE_NOT_FOUND', 		     -6);
+define('HANDLE_ERR_OPEN',          -7);
+define('HANDLE_ERR_STARTPARAMS',    -8);
+define('HANDLE_ERR_LISTS',    -9);
 
 class RoutingException extends Exception {}
 class DataBaseException extends Exception {}
@@ -28,19 +32,19 @@ class UploadException extends Exception
 				$message = "The uploaded file exceeds the upload_max_filesize directive in php.ini";
 				break;
 			case UPLOAD_ERR_FORM_SIZE:
-				$message = "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form";
+				$message = "Размер файла превысил максимальный размер загружаемого файла";
 				break;
 			case UPLOAD_ERR_PARTIAL:
-				$message = "The uploaded file was only partially uploaded";
+				$message = "Файл был загружен лишь частично";
 				break;
 			case UPLOAD_ERR_NO_FILE:
-				$message = "No file was uploaded";
+				$message = "Файл не был выбран";
 				break;
 			case UPLOAD_ERR_NO_TMP_DIR:
 				$message = "Missing a temporary folder";
 				break;
 			case UPLOAD_ERR_CANT_WRITE:
-				$message = "Failed to write file to disk";
+				$message = "Не удалось сохранить файл на диск";
 				break;
 			case UPLOAD_ERR_EXTENSION:
 				$message = "File upload stopped by extension";

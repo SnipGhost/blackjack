@@ -1,6 +1,12 @@
 <?php
 
 include_once ROOT.'models/RegModel.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require ROOT.'data/Classes/PHPmail/src/Exception.php';
+require ROOT.'data/Classes/PHPmail/src/PHPMailer.php';
+require ROOT.'data/Classes/PHPmail/src/SMTP.php';
 
 class RegController extends Controller
 {
@@ -146,7 +152,7 @@ class RegController extends Controller
                 $this->regMain('Ошибка при добавлении пользователя, попробуйте еще раз');
                 return;
             }
-
+            $this->sendMail($_POST['email']);
             $page = array(
                 'content'  => 'reg/RegEnd.php',
                 'title'    => 'Завершение регистрации',
@@ -158,4 +164,65 @@ class RegController extends Controller
             $this->regMain();
         }
     }
+    public function actionActiv()
+    {
+        $token = explode('\r',$_GET['token'])[0];
+        $id = $this->model->checkActivation($token);
+        $this->model->setActivation($id,1);
+        header("Location: ./");
+    }
+    public function sendMail($email)
+    {
+        $token = md5($email." is user, activate me plz)")."_".md5(date('d.m.y H:i:s'))."\r\n";
+        $mail = new PHPmailer(true);
+        $mail->isSMTP();                                      // Set mailer to use SMTP
+        $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
+        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        $mail->Username = 'startupanalytics.mail@gmail.com';  // SMTP username
+        $mail->Password = 'gfd12hgf';                         // SMTP password
+        $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 465;                                    // TCP port to connect to
+        
+            //Recipients
+        $mail->setFrom('startupanalytics.mail@gmail.com','StartUp Analytics Team');
+        $mail->addAddress($email);    
+            //Content
+        $mail->charSet='UTF-8';
+        $mail->isHTML(true);                                  // Set email format to HTML
+        $mail->Subject = 'Подтверждение регистрации';
+        $mail->MsgHTML($this->makeMail($token,$email));
+        $mail->send();
+        $this->model->createToken($email,$token);
+        return $token;
+    }
+    function makeMail($token, $email)
+    {
+        $link = 'localhost/'.BASE_URI.'activation?token='.$token;
+        $message  = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><div style="font-family: Arial; font-size: 12px;">';
+        $message .= "<p>Здравствуйте,</p>";
+        $message .= "<p>Спасибо за регистрацию на сайте StartUpAnalytics.ru!</p>";
+        $message .= "<p>Пожалуйста, подтвердите Вашу регистацию здесь:</p>";
+        $message .= "<a href = '$link'>$link</a>";
+        $message .= "<p>Ваш email Пользователя StartUpAnalytics:<br>".$email."</p>";
+        $message .= "<p>Мы надеемся увидеть Вас скоро на нашем сайте!</p>";
+        $message .= "<p>Команда StartUpAnalytics</p> <br>";
+        $message .= "<p>P.S. Данное письмо отправляется автоматически, отвечать на него не нужно</p>";
+        $message .= "<p>Если Вы думаете, что получили это сообщение по-ошибке, пожалуйста, проигнорируйте это письмо.</p></div>";
+        return $message;
+    }
+    //function makeMail($token, $email)
+    //{
+    //    $link = 'localhost/'.BASE_URI.'activation?token='.$token;
+    //    $message  = '<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251">';
+    //    $message .= "Здравствуйте,\r\n";
+    //    $message .= "Спасибо за регистрацию на сайте StartUpAnalytics.ru!<br>\r\n";
+    //    $message .= "Пожалуйста, подтвердите Вашу регистацию здесь:<br>\r\n";
+    //    $message .= "<a href = '$link'>$link</a><br>\r\n";
+    //    $message .= "Ваш email Пользователя StartUpAnalytics:<br>\r\n".$email." <br>\r\n";
+    //    $message .= "Мы надеемся увидеть Вас скоро на нашем сайте!<br>\r\n";
+    //   $message .= "Команда StartUpAnalytics <br><br> \r\n";
+    //    $message .= "P.S. Данное письмо отправляется автоматически, отвечать на него не нужно<br>\r\n";
+    //    $message .= "Если Вы думаете, что получили это сообщение по-ошибке, пожалуйста, проигнорируйте это письмо.<br>\r\n";
+    //    return $message;
+    //}
 }

@@ -1,12 +1,12 @@
 <div class="content-box">
-	<div class="orange content-box-title">
+	<div class="orange ab-title">
 		<?php 
 		echo $msg;
 		?>
 	</div>
-	<div class="orange ab-title">
+	<div class="orange" style="font-weight: bold">
 		<?php 
-		echo $e->msg;
+		echo $ex->getMessage();
 		?>
 	</div>
 </div>
