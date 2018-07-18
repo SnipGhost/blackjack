@@ -2,7 +2,7 @@
 	<?php
 		if(!isset($ex)){
 			$keys = array_keys($data);
-			
+			echo '<div>';
 			foreach($keys as $k)
 			{
 				$value = $data[$k];
@@ -15,6 +15,10 @@
 					echo '<div class="progress-data" style="width: 10%;">'.round($value,2).'%</div></div><br>';
 				echo '</div>';
 			}
+			echo '</div>';
+		echo '<div style="clear: both;"></div>';
+		echo '<a href="/' .BASE_URI .'cab#kit" class="button-cab-black">назад</a>';
+
 		}
 		else
 		{
