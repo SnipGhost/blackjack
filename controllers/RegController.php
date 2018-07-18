@@ -175,6 +175,10 @@ class RegController extends Controller
     {
         $token = md5($email." is user, activate me plz)")."_".md5(date('d.m.y H:i:s'))."\r\n";
         $mail = new PHPmailer(true);
+
+        // TODO: Обязательно вынести все константы в отдельный файл!
+        //       + Сделать функцию sendMail универсальной (передавать все как параметры)
+
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -183,11 +187,12 @@ class RegController extends Controller
         $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 465;                                    // TCP port to connect to
         
-            //Recipients
+        // Recipients
         $mail->setFrom('startupanalytics.mail@gmail.com','StartUp Analytics Team');
-        $mail->addAddress($email);    
-            //Content
-        $mail->charSet='UTF-8';
+        $mail->addAddress($email);   
+
+        // Content
+        $mail->CharSet = 'UTF-8';
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Подтверждение регистрации';
         $mail->MsgHTML($this->makeMail($token,$email));
