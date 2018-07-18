@@ -202,12 +202,12 @@ class RegController extends Controller
     }
     function makeMail($token, $email)
     {
-        $link = 'localhost/'.BASE_URI.'activation?token='.$token;
+        $link = 'http://localhost/'.BASE_URI.'activation?token='.$token;
         $message  = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><div style="font-family: Arial; font-size: 12px;">';
         $message .= "<p>Здравствуйте,</p>";
         $message .= "<p>Спасибо за регистрацию на сайте StartUpAnalytics.ru!</p>";
         $message .= "<p>Пожалуйста, подтвердите Вашу регистацию здесь:</p>";
-        $message .= "<a href = '$link'>$link</a>";
+        $message .= "<p><a target=\"blank\" href=\"$link\">Прямая ссылка - $link</a></p>";
         $message .= "<p>Ваш email Пользователя StartUpAnalytics:<br>".$email."</p>";
         $message .= "<p>Мы надеемся увидеть Вас скоро на нашем сайте!</p>";
         $message .= "<p>Команда StartUpAnalytics</p> <br>";
