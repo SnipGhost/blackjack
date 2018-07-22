@@ -11,8 +11,9 @@
 				На главную
 			</div>
 		<a>
+		<form action="" method="POST">
 		<button class="button-kit noselect" name="reactiv">
 			Отправить письмо еще раз
-		</button>	
+		</button>	</form>
 	</div>
 </div>

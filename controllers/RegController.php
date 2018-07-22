@@ -25,7 +25,45 @@ class RegController extends Controller
         $this->view = new View();
         $this->model = new RegModel();
     }
-
+    public function actionCab()
+    {
+        global $user;
+        if(!is_null($user))
+        {
+            $msg = "Сожалеем, но ваш аккаунт не авторизирован. Подтвердите, пожалуйста, регистрацию через электронную почту.";
+            if (isset($_POST['reactiv'])) // Real?
+            {
+                $msg = "Письмо повторно выслано вам на почту. перейдите по ссылке в письме и обновите эту страницу.";
+                $this->sendMail($user->email,$this->makeMail($user->email));
+            }
+            if($user->activation)
+            {
+                $page = array(
+                    'title'    => 'Личный кабинет',
+                    'template' => 'page.php',
+                    'content'  => 'cab/cab_main.php'
+                );
+                $this->view->display($page);
+            }
+            else{
+                $page = array(
+                    'title'    => 'Личный кабинет',
+                    'template' => 'page.php',
+                    'content'  => 'cab/cab_notActiv.php',
+                    'msg'=>$msg
+                );
+                $this->view->display($page);
+            }
+        }
+        else{
+            $page = array(
+                'title'    => 'Личный кабинет',
+                'template' => 'page.php',
+                'content'  => 'cab/cab_notReg.php'
+            );
+            $this->view->display($page);
+        }
+    }
     public function regMain($msg = '') {
         $page = array(
             'content'  => 'reg/RegForm.php',
@@ -152,7 +190,7 @@ class RegController extends Controller
                 $this->regMain('Ошибка при добавлении пользователя, попробуйте еще раз');
                 return;
             }
-            $this->sendMail($_POST['email']);
+            $this->sendMail($_POST['email'],$this->makeMail($_POST['email']));
             $page = array(
                 'content'  => 'reg/RegEnd.php',
                 'title'    => 'Завершение регистрации',
@@ -171,14 +209,12 @@ class RegController extends Controller
         $this->model->setActivation($id,1);
         header("Location: ./");
     }
-    public function sendMail($email)
+    public function sendMail($email,$message)
     {
-        $token = md5($email." is user, activate me plz)")."_".md5(date('d.m.y H:i:s'))."\r\n";
         $mail = new PHPmailer(true);
 
         // TODO: Обязательно вынести все константы в отдельный файл!
         //       + Сделать функцию sendMail универсальной (передавать все как параметры)
-
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -195,13 +231,30 @@ class RegController extends Controller
         $mail->CharSet = 'UTF-8';
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Подтверждение регистрации';
-        $mail->MsgHTML($this->makeMail($token,$email));
+        $mail->MsgHTML($message);
         $mail->send();
-        $this->model->createToken($email,$token);
-        return $token;
     }
-    function makeMail($token, $email)
+    //function makeReeMail($token, $email)
+    //{
+    //    $token = md5("I'm ".$email."activate me plz")."_".md5(date("d.m.Y H:i:s"));
+    //    $this->model->createToken($email,$token);
+    //    $link = 'http://localhost/'.BASE_URI.'activation?token='.$token;
+    //    $message  = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><div style="font-family: Arial; font-size: 12px;">';
+    //    $message .= "<p>Здравствуйте,</p>";
+    //    $message .= "<p>Спасибо за регистрацию на сайте StartUpAnalytics.ru!</p>";
+    //    $message .= "<p>Пожалуйста, подтвердите Вашу регистацию здесь:</p>";
+    //    $message .= "<p><a target=\"blank\" href=\"$link\">Прямая ссылка - $link</a></p>";
+    //    $message .= "<p>Ваш email Пользователя StartUpAnalytics:<br>".$email."</p>";
+    //    $message .= "<p>Мы надеемся увидеть Вас скоро на нашем сайте!</p>";
+    //    $message .= "<p>Команда StartUpAnalytics</p> <br>";
+    //    $message .= "<p>P.S. Данное письмо отправляется автоматически, отвечать на него не нужно</p>";
+    //    $message .= "<p>Если Вы думаете, что получили это сообщение по-ошибке, пожалуйста, проигнорируйте это письмо.</p></div>";
+    //    return $message;
+    //}
+    function makeMail($email)
     {
+        $token = md5("I'm ".$email."activate me plz")."_".md5(date("d.m.Y H:i:s"));
+        $this->model->createToken($email,$token);
         $link = 'http://localhost/'.BASE_URI.'activation?token='.$token;
         $message  = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><div style="font-family: Arial; font-size: 12px;">';
         $message .= "<p>Здравствуйте,</p>";
@@ -215,19 +268,39 @@ class RegController extends Controller
         $message .= "<p>Если Вы думаете, что получили это сообщение по-ошибке, пожалуйста, проигнорируйте это письмо.</p></div>";
         return $message;
     }
-    //function makeMail($token, $email)
-    //{
-    //    $link = 'localhost/'.BASE_URI.'activation?token='.$token;
-    //    $message  = '<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251">';
-    //    $message .= "Здравствуйте,\r\n";
-    //    $message .= "Спасибо за регистрацию на сайте StartUpAnalytics.ru!<br>\r\n";
-    //    $message .= "Пожалуйста, подтвердите Вашу регистацию здесь:<br>\r\n";
-    //    $message .= "<a href = '$link'>$link</a><br>\r\n";
-    //    $message .= "Ваш email Пользователя StartUpAnalytics:<br>\r\n".$email." <br>\r\n";
-    //    $message .= "Мы надеемся увидеть Вас скоро на нашем сайте!<br>\r\n";
-    //   $message .= "Команда StartUpAnalytics <br><br> \r\n";
-    //    $message .= "P.S. Данное письмо отправляется автоматически, отвечать на него не нужно<br>\r\n";
-    //    $message .= "Если Вы думаете, что получили это сообщение по-ошибке, пожалуйста, проигнорируйте это письмо.<br>\r\n";
-    //    return $message;
-    //}
+
+    public function actionReestablish(){
+        $msg="";
+        if (isset($_POST['Reestablish'],
+                  $_POST['email'])) {   
+            if($this->model->checkEmail($_POST['email']))
+            {
+                $this->sendMail($_POST['email'], $this->makeMail($_POST['email']));
+                $page = array(
+                    'content'  => 'Reestablish/ReestablishEnd.php',
+                    'title'    => 'Восстановление пароля',
+                    'template' => 'pageCreateChange.php',
+                );
+                $this->view->display($page);
+            }
+            else{
+                $msg="Введен неверный email";
+            $page = array(
+                'content'  => 'Reestablish/ReestablishForm.php',
+                'title'    => 'Восстановление пароля',
+                'template' => 'pageCreateChange.php',
+                'msg'      => $msg, 
+            );
+            $this->view->display($page);
+            }
+        } else {
+            $page = array(
+                'content'  => 'Reestablish/ReestablishForm.php',
+                'title'    => 'Восстановление пароля',
+                'template' => 'pageCreateChange.php',
+                'msg'      => $msg, 
+            );
+            $this->view->display($page);
+        }
+    }
 }

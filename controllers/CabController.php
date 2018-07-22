@@ -312,5 +312,6 @@ class CabController extends Controller
 
         $this->model->updateUserFile($user->id,$filename);
 		return $res;
-    }    
+	}    
+	
 }

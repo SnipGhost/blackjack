@@ -82,45 +82,7 @@ class PageController extends Controller
         }
         $this->view->display($page);
     }
-    public function actionCab()
-    {
-        global $user;
-        if(!is_null($user))
-        {
-            $msg = "Сожалеем, но ваш аккаунт не авторизирован. Подтвердите, пожалуйста, регистрацию через электронную почту.";
-            if (isset($_POST['reactiv'])) // Real?
-            {
-                $msg = "Письмо повторно выслано вам на почту. перейдите по ссылке в письме и обновите эту страницу.";
-                
-            }
-            if($user->activation)
-            {
-                $page = array(
-                    'title'    => 'Личный кабинет',
-                    'template' => 'page.php',
-                    'content'  => 'cab/cab_main.php'
-                );
-                $this->view->display($page);
-            }
-            else{
-                $page = array(
-                    'title'    => 'Личный кабинет',
-                    'template' => 'page.php',
-                    'content'  => 'cab/cab_notActiv.php',
-                    'msg'=>$msg
-                );
-                $this->view->display($page);
-            }
-        }
-        else{
-            $page = array(
-                'title'    => 'Личный кабинет',
-                'template' => 'page.php',
-                'content'  => 'cab/cab_notReg.php'
-            );
-            $this->view->display($page);
-        }
-    }
+   
     public function actionAboutTeam()
     {
         $page = array(

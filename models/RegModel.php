@@ -126,4 +126,18 @@ class RegModel extends Model
         }
         return $res;
     }
+    public function checkEmail($email)
+    {
+        try {
+            $q = "SELECT `ID` FROM `users`
+                  WHERE `email` = '".$email."'";
+                  $result = $this->db->query($q);
+                  if(count($result)==0)
+                  $res = false;
+                  else $res = true;
+        } catch (DataBaseException $e) {
+            $res=false;
+        }
+        return $res;
+    }
 }

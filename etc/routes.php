@@ -31,9 +31,9 @@ return array(
     'rem'      => ['PageController', 'actionRem'],     // Репутационный менеджмент
     'kit'      => ['PageController', 'actionKit'],     // Репутационный менеджмент
     'activation'=>['RegController','actionActiv'],
-
+    'reestablish' =>['RegController','actionReestablish'],
     // Страница личного кабинета
-    'cab' => ['PageController', 'actionCab'],
+    'cab' => ['RegController', 'actionCab'],
 
     // Страницы тестирования сокращений из DBConnection
     'db'            => ['DBController', 'actionIndex'],
