@@ -7,6 +7,8 @@ use PHPMailer\PHPMailer\Exception;
 require ROOT.'data/Classes/PHPmail/src/Exception.php';
 require ROOT.'data/Classes/PHPmail/src/PHPMailer.php';
 require ROOT.'data/Classes/PHPmail/src/SMTP.php';
+require_once ROOT.'engine/readFile.php';
+
 
 class RegController extends Controller
 {
@@ -34,7 +36,7 @@ class RegController extends Controller
             if (isset($_POST['reactiv'])) // Real?
             {
                 $msg = "Письмо повторно выслано вам на почту. перейдите по ссылке в письме и обновите эту страницу.";
-                $this->sendMail($user->email,$this->makeMail($user->email));
+                $this->sendMail($user->email,['Подтверждение регистрации',$this->makeMail($user->email)]);
             }
             if($user->activation)
             {
@@ -190,7 +192,7 @@ class RegController extends Controller
                 $this->regMain('Ошибка при добавлении пользователя, попробуйте еще раз');
                 return;
             }
-            $this->sendMail($_POST['email'],$this->makeMail($_POST['email']));
+            $this->sendMail($_POST['email'],['Подтверждение регистрации',$this->makeMail($_POST['email'])]);
             $page = array(
                 'content'  => 'reg/RegEnd.php',
                 'title'    => 'Завершение регистрации',
@@ -216,56 +218,53 @@ class RegController extends Controller
         // TODO: Обязательно вынести все константы в отдельный файл!
         //       + Сделать функцию sendMail универсальной (передавать все как параметры)
         $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
+        $mail->Host = 'startupanalytics.ru';                       // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = 'startupanalytics.mail@gmail.com';  // SMTP username
-        $mail->Password = 'gfd12hgf';                         // SMTP password
+        $mail->Username = 'ourTeam@startupanalytics.ru';  // SMTP username
+        $mail->Password = 'gfd12hgfgfd12hgf';                         // SMTP password
         $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 465;                                    // TCP port to connect to
         
         // Recipients
-        $mail->setFrom('startupanalytics.mail@gmail.com','StartUp Analytics Team');
+        $mail->setFrom('ourTeam@startupanalytics.ru','StartUp Analytics Team');
         $mail->addAddress($email);   
-
+        
         // Content
         $mail->CharSet = 'UTF-8';
         $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = 'Подтверждение регистрации';
-        $mail->MsgHTML($message);
+        $mail->Subject = $message[0];
+        $mail->MsgHTML($message[1]);
         $mail->send();
     }
-    //function makeReeMail($token, $email)
-    //{
-    //    $token = md5("I'm ".$email."activate me plz")."_".md5(date("d.m.Y H:i:s"));
-    //    $this->model->createToken($email,$token);
-    //    $link = 'http://localhost/'.BASE_URI.'activation?token='.$token;
-    //    $message  = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><div style="font-family: Arial; font-size: 12px;">';
-    //    $message .= "<p>Здравствуйте,</p>";
-    //    $message .= "<p>Спасибо за регистрацию на сайте StartUpAnalytics.ru!</p>";
-    //    $message .= "<p>Пожалуйста, подтвердите Вашу регистацию здесь:</p>";
-    //    $message .= "<p><a target=\"blank\" href=\"$link\">Прямая ссылка - $link</a></p>";
-    //    $message .= "<p>Ваш email Пользователя StartUpAnalytics:<br>".$email."</p>";
-    //    $message .= "<p>Мы надеемся увидеть Вас скоро на нашем сайте!</p>";
-    //    $message .= "<p>Команда StartUpAnalytics</p> <br>";
-    //    $message .= "<p>P.S. Данное письмо отправляется автоматически, отвечать на него не нужно</p>";
-    //    $message .= "<p>Если Вы думаете, что получили это сообщение по-ошибке, пожалуйста, проигнорируйте это письмо.</p></div>";
-    //    return $message;
-    //}
     function makeMail($email)
     {
         $token = md5("I'm ".$email."activate me plz")."_".md5(date("d.m.Y H:i:s"));
         $this->model->createToken($email,$token);
-        $link = 'http://localhost/'.BASE_URI.'activation?token='.$token;
+        $link = 'http://'.HOSTNAME.'/'.BASE_URI.'activation?token='.$token;
         $message  = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><div style="font-family: Arial; font-size: 12px;">';
         $message .= "<p>Здравствуйте,</p>";
         $message .= "<p>Спасибо за регистрацию на сайте StartUpAnalytics.ru!</p>";
         $message .= "<p>Пожалуйста, подтвердите Вашу регистацию здесь:</p>";
-        $message .= "<p><a target=\"blank\" href=\"$link\">Прямая ссылка - $link</a></p>";
+        $message .= "<p>Прямая ссылка - <a target=\"blank\" href=\"$link\">$link</a></p>";
         $message .= "<p>Ваш email Пользователя StartUpAnalytics:<br>".$email."</p>";
         $message .= "<p>Мы надеемся увидеть Вас скоро на нашем сайте!</p>";
         $message .= "<p>Команда StartUpAnalytics</p> <br>";
         $message .= "<p>P.S. Данное письмо отправляется автоматически, отвечать на него не нужно</p>";
         $message .= "<p>Если Вы думаете, что получили это сообщение по-ошибке, пожалуйста, проигнорируйте это письмо.</p></div>";
+        return $message;
+    }
+    function makeReeMail($email,$newpass)
+    {
+        $message  = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><div style="font-family: Arial; font-size: 12px;">';
+        $message .= "<p>Здравствуйте, ".$email."</p>";
+        $message .= "<p>Спасибо за использование сайта StartUpAnalytics.ru!</p>";
+        $message .= "<p>Восстановление пароля прошло успешно,</p>";
+        $message .= "<p>Ваш новый пароль для входа в профиль: ".$newpass."</p>";
+        $message .= "<p>Никому его не показывайте и не забудьте его поменять на новый</p>";
+        $message .= "<p>Мы надеемся увидеть Вас скоро на нашем сайте!</p>";
+        $message .= "<p>Команда StartUpAnalytics</p> <br>";
+        $message .= "<p>P.S. Данное письмо отправляется автоматически, отвечать на него не нужно</p>";
+        $message .= "<p>Если Вы думаете, что получили это сообщение по-ошибке, пожалуйста, проигнорируйте это письмо или обратитесь в служду технической поддержки.</p></div>";
         return $message;
     }
 
@@ -275,7 +274,9 @@ class RegController extends Controller
                   $_POST['email'])) {   
             if($this->model->checkEmail($_POST['email']))
             {
-                $this->sendMail($_POST['email'], $this->makeMail($_POST['email']));
+                $newpass=md5(date("His").$_POST['email'].date("dmY"));
+                $this->model->changePassNoUser($this->model->getUserID($_POST['email']),$newpass);
+                $this->sendMail($_POST['email'], ['Восстановление пароля',$this->makeReeMail($_POST['email'],$newpass)]);
                 $page = array(
                     'content'  => 'Reestablish/ReestablishEnd.php',
                     'title'    => 'Восстановление пароля',

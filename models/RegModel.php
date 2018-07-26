@@ -13,7 +13,18 @@ class RegModel extends Model
         }
         return !($result);
 	}
-
+    public function getUserID($email)
+    {
+        $email = $this->db->escape($email);
+        try {
+            $q = "SELECT id FROM users WHERE email = '".$email."' LIMIT 1";
+            $result = $this->db->query($q);
+            $result = $result[0]['id'];
+        } catch (Exception $e) {
+            $result = -1;
+        }
+        return $result;
+    }
     public function addUser($password, $email)
     {
         $password = password_hash($password, PASSWORD_DEFAULT);
@@ -42,7 +53,7 @@ class RegModel extends Model
         } catch (DataBaseException $e) {
             throw $e;
         }
-	}
+    }
     public function changePass($nowid, $newpass)
     {
         global $user; 
@@ -55,6 +66,20 @@ class RegModel extends Model
             $result = $this->db->query($q);
             $user->hash = $newpass;
             $session->user = serialize($user);
+        } catch (DataBaseException $e) {
+            $result = false;
+        }
+        return $result;
+    }
+    public function changePassNoUser($nowid, $newpass)
+    {
+        global $session;
+        $newpass = password_hash($newpass, PASSWORD_DEFAULT);
+        try {
+            $q = "UPDATE `users` 
+                  SET `password` = '".$newpass."'
+                  WHERE `id` = '".$nowid."'";
+            $result = $this->db->query($q);
         } catch (DataBaseException $e) {
             $result = false;
         }
@@ -115,14 +140,16 @@ class RegModel extends Model
                     $id=$result[0]['ID'];
         } catch (DataBaseException $e) {
             $res=false;
+            echo "ошибка в поиске ID\n";
         }
         try {
-            $q = 'INSERT INTO activation  (Token,UserID,date)
+            $q = 'INSERT INTO Activation  (Token,UserID,date)
                   VALUES ("'.$token.'",'.$id.',"'.date('l jS \of F Y h:i:s A').'")';
             $result = $this->db->query($q);
 
         } catch (DataBaseException $e) {
             $res = false;
+            echo "ошибка в добавлении записи\n";
         }
         return $res;
     }

@@ -47,7 +47,7 @@ class DBConnection
     }
 
     // Сокращение для функции экранирования символов
-    public function escape(string $str)
+    public function escape($str)
     {
         return $this->mysqli->real_escape_string($str);
     }

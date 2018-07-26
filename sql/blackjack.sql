@@ -24,12 +24,6 @@ SET time_zone
 --
 -- Database: `blackjack`
 --
-CREATE DATABASE
-IF NOT EXISTS `blackjack` DEFAULT CHARACTER
-SET latin1
-COLLATE latin1_swedish_ci;
-USE `blackjack`;
-
 -- --------------------------------------------------------
 
 --

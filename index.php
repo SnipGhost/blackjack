@@ -38,7 +38,9 @@ try {
 
 // Производим аутентификацию пользователя
 try {
-    [$user, $login_err] = User::authentication($session, $db);
+    $tmp_array = User::authentication($session, $db);
+    $user = $tmp_array[0];
+    $login_err = $tmp_array[1];
 } catch (DataBaseException $e) {
     $login_err = "Ошибка при запросе в БД";
 }

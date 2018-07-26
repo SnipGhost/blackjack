@@ -7,7 +7,7 @@
 		</div>
 	</div>
 	<div class="buttons reg-endb">
-		<a href="/<?=BASE_URI?>cab#profile">
+		<a href="/<?=BASE_URI?>">
 			<div class = "button-back reg-end">
 				Назад
 			</div>
