@@ -19,6 +19,9 @@
 			<div class="line">
 				<input type="password" name="repeat-new-pass" placeholder="Повторите новый пароль" required/>
 			</div>
+			<div class="line">
+				<div class="g-recaptcha" data-sitekey="6LdMvGYUAAAAADE7J7B4IFRHXIKsRVQTbFUkv0Uk" style="transform:scale(0.79);-webkit-transform:scale(0.79);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+			</div>
 		</div>
 	</div>
 

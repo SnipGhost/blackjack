@@ -10,6 +10,7 @@
 			}
 		}
 	?>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>	
 <body>

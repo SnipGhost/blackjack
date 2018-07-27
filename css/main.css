@@ -569,6 +569,12 @@ body {
 	color: #000000;
 	background-color: #ffffff;
 }
+.g-recaptcha{
+	transform:scale(0.9);
+	-webkit-transform:scale(0.9);
+	transform-origin:0 0;
+	-webkit-transform-origin:0 0;
+}
 /*******************************************************************/
 /*                                                                 */
 /*                      Страница Регистрации                       */
@@ -585,6 +591,7 @@ body {
 	margin: auto;
 	width: 700px;
 }
+
 .reg-title-block {
 	width: 300px;
 	height: 160px;

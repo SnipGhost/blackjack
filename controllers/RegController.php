@@ -98,34 +98,64 @@ class RegController extends Controller
     
     public function actionChangeEmailMain() {
         if (!$this->checkLogin()) $this->redirect();
-        
-        if (isset($_POST['changeEmail'],
-                  $_POST['new-email'],          // old-pass
-                  $_POST['password'])) {        // repeat-new-pass
+        if(isset($_POST['g-recaptcha-response']))
+        {
+            $recaptcha = $_POST['g-recaptcha-response'];
+            if(!empty($recaptcha)) {
+                $recaptcha = $_REQUEST['g-recaptcha-response'];
+                $secret = '6LdMvGYUAAAAAEBDdN0VXyT3AtlMgqYhkYLgAGCC';
+                $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secret ."&response=".$recaptcha."&remoteip=".$_SERVER['REMOTE_ADDR'];
             
-            try
-            {
-                global $user; // [TO DO]
-                if (!$this->model->checkPass($user->id, $_POST['password'])) {
-                    $this->changeEmailMain('Пароль введён неверно');
-                    return;
-                } 
-                if (!$this->model->changeEmail($user->id, $_POST['new-email'])) {
-                    $this->changeEmailMain('Ошибка при изменении Email, попробуйте еще раз');
-                    return;
-                }  
-            } catch (DataBaseException $e) {
-                $this->changeEmailMain('База данный сайта временно не работает');
+                $curl = curl_init();
+                curl_setopt($curl, CURLOPT_URL, $url);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+                curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.16) Gecko/20110319 Firefox/3.6.16");
+                $curlData = curl_exec($curl);
+            
+                curl_close($curl);  
+                $curlData = json_decode($curlData, true);
+    
+                if($curlData['success']) {
+                    if (isset($_POST['changeEmail'],
+                            $_POST['new-email'],          // old-pass
+                            $_POST['password'])) {        // repeat-new-pass
+                        
+                        try
+                        {
+                            global $user; // [TO DO]
+                            if (!$this->model->checkPass($user->id, $_POST['password'])) {
+                                $this->changeEmailMain('Пароль введён неверно');
+                                return;
+                            } 
+                            if (!$this->model->changeEmail($user->id, $_POST['new-email'])) {
+                                $this->changeEmailMain('Ошибка при изменении Email, попробуйте еще раз');
+                                return;
+                            }  
+                        } catch (DataBaseException $e) {
+                            $this->changeEmailMain('База данный сайта временно не работает');
+                        }
+
+                        $page = array(
+                            'content'  => 'changeEmail/ChangeEmailEnd.php',
+                            'title'    => 'Email изменён',
+                            'template' => 'pageCreateChange.php',
+                        );
+                        $this->view->display($page);
+
+                    } else {
+                        $this->changeEmailMain();
+                    }
+                }
+                else{
+                    $this->changeEmailMain('Не пройден тест "Я не робот"');
+                }
             }
-
-            $page = array(
-                'content'  => 'changeEmail/ChangeEmailEnd.php',
-                'title'    => 'Email изменён',
-                'template' => 'pageCreateChange.php',
-            );
-            $this->view->display($page);
-
-        } else {
+            else {
+                $this->changeEmailMain('Не пройден тест "Я не робот"');
+            }
+        }
+        else {
             $this->changeEmailMain();
         }
     }
@@ -133,38 +163,66 @@ class RegController extends Controller
     public function actionChangePassMain() {
         if (!$this->checkLogin()) $this->redirect();
         
-        if (isset($_POST['changePass'],
-                  $_POST['now-pass'],             
-                  $_POST['new-pass'],             
-                  $_POST['repeat-new-pass'])) {   
-
-            if ($_POST['new-pass'] != $_POST['repeat-new-pass']) { // Изменил
-                $this->changePassMain('Вы повторили пароль неверно');
-                return;
-            }
+        if(isset($_POST['g-recaptcha-response']))
+        {
+            $recaptcha = $_POST['g-recaptcha-response'];
+            if(!empty($recaptcha)) {
+                $recaptcha = $_REQUEST['g-recaptcha-response'];
+                $secret = '6LdMvGYUAAAAAEBDdN0VXyT3AtlMgqYhkYLgAGCC';
+                $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secret ."&response=".$recaptcha."&remoteip=".$_SERVER['REMOTE_ADDR'];
             
-            try {
-                global $user; // [TO DO]
-                if (!$this->model->checkPass($user->id, $_POST['now-pass'])) {
-                    $this->changePassMain('Старый пароль введён неверно');
-                    return;
-                } 
-                if (!$this->model->changePass($user->id, $_POST['new-pass'])) {
-                    $this->changePassMain('Ошибка при изменении пароля, попробуйте еще раз');
-                    return; 
+                $curl = curl_init();
+                curl_setopt($curl, CURLOPT_URL, $url);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+                curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.16) Gecko/20110319 Firefox/3.6.16");
+                $curlData = curl_exec($curl);
+            
+                curl_close($curl);  
+                $curlData = json_decode($curlData, true);
+    
+                if($curlData['success']) {
+                    if (isset($_POST['changePass'],
+                            $_POST['now-pass'],             
+                            $_POST['new-pass'],             
+                            $_POST['repeat-new-pass'])) {   
+
+                        if ($_POST['new-pass'] != $_POST['repeat-new-pass']) { // Изменил
+                            $this->changePassMain('Вы повторили пароль неверно');
+                            return;
+                        }
+                        
+                        try {
+                            global $user; // [TO DO]
+                            if (!$this->model->checkPass($user->id, $_POST['now-pass'])) {
+                                $this->changePassMain('Старый пароль введён неверно');
+                                return;
+                            } 
+                            if (!$this->model->changePass($user->id, $_POST['new-pass'])) {
+                                $this->changePassMain('Ошибка при изменении пароля, попробуйте еще раз');
+                                return; 
+                            }
+                        } catch (DataBaseException $e) {
+                            $this->changePassMain('База данный сайта временно не работает');
+                        }
+
+                        $page = array(
+                            'content'  => 'changePass/ChangePassEnd.php',
+                            'title'    => 'Пароль изменён',
+                            'template' => 'pageCreateChange.php',
+                        );
+                        $this->view->display($page);
+
+                    } else {
+                        $this->changePassMain();
+                    }
+                }else {
+                    $this->changePassMain('не пройден тест "Я не робот"');
                 }
-            } catch (DataBaseException $e) {
-                $this->changePassMain('База данный сайта временно не работает');
+            }else {
+                $this->changePassMain('не пройден тест "Я не робот"');
             }
-
-            $page = array(
-                'content'  => 'changePass/ChangePassEnd.php',
-                'title'    => 'Пароль изменён',
-                'template' => 'pageCreateChange.php',
-            );
-            $this->view->display($page);
-
-        } else {
+        }else {
             $this->changePassMain();
         }
     }
@@ -172,36 +230,65 @@ class RegController extends Controller
     public function actionReg()
     {
         if ($this->checkLogin()) $this->redirect();
+        if(isset($_POST['g-recaptcha-response']))
+        {
+            $recaptcha = $_POST['g-recaptcha-response'];
+            if(!empty($recaptcha)) {
+                $recaptcha = $_REQUEST['g-recaptcha-response'];
+                $secret = '6LdMvGYUAAAAAEBDdN0VXyT3AtlMgqYhkYLgAGCC';
+                $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secret ."&response=".$recaptcha."&remoteip=".$_SERVER['REMOTE_ADDR'];
+            
+                $curl = curl_init();
+                curl_setopt($curl, CURLOPT_URL, $url);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+                curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.16) Gecko/20110319 Firefox/3.6.16");
+                $curlData = curl_exec($curl);
+            
+                curl_close($curl);  
+                $curlData = json_decode($curlData, true);
+    
+                if($curlData['success']) {
+                    if (isset($_POST['reg'],
+                    $_POST['password'],
+                    $_POST['retype'],
+                    $_POST['email'])) {
 
-        if (isset($_POST['reg'],
-                  $_POST['password'],
-                  $_POST['retype'],
-                  $_POST['email'])) {
+                if ($_POST['retype'] != $_POST['password']) {
+                    $this->regMain('Вы повторили пароль неверно');
+                    return;
+                }
+        
+                if (!$this->model->checkUserField('email', $_POST['email'])) {
+                    $this->regMain('Пользователь с таким email уже есть');
+                    return;
+                }
 
-            if ($_POST['retype'] != $_POST['password']) {
-                $this->regMain('Вы повторили пароль неверно');
-                return;
+                if (!$this->model->addUser($_POST['password'], $_POST['email'])) {
+                    $this->regMain('Ошибка при добавлении пользователя, попробуйте еще раз');
+                    return;
+                }
+                $this->sendMail($_POST['email'],['Подтверждение регистрации',$this->makeMail($_POST['email'])]);
+                $page = array(
+                    'content'  => 'reg/RegEnd.php',
+                    'title'    => 'Завершение регистрации',
+                    'template' => 'pageCreateChange.php',
+                );
+                $this->view->display($page);
+
+            } else {
+                $this->regMain('');
             }
-	
-			if (!$this->model->checkUserField('email', $_POST['email'])) {
-				$this->regMain('Пользователь с таким email уже есть');
-                return;
-			}
-
-            if (!$this->model->addUser($_POST['password'], $_POST['email'])) {
-                $this->regMain('Ошибка при добавлении пользователя, попробуйте еще раз');
-                return;
+                } else {
+                    $this->regMain('Пройдите проверку "Я не робот"');
+                }
             }
-            $this->sendMail($_POST['email'],['Подтверждение регистрации',$this->makeMail($_POST['email'])]);
-            $page = array(
-                'content'  => 'reg/RegEnd.php',
-                'title'    => 'Завершение регистрации',
-                'template' => 'pageCreateChange.php',
-            );
-            $this->view->display($page);
-
-        } else {
-            $this->regMain();
+            else {
+                $this->regMain('');
+            }
+        }
+        else{
+            $this->regMain('');
         }
     }
     public function actionActiv()
@@ -267,41 +354,64 @@ class RegController extends Controller
         $message .= "<p>Если Вы думаете, что получили это сообщение по-ошибке, пожалуйста, проигнорируйте это письмо или обратитесь в служду технической поддержки.</p></div>";
         return $message;
     }
-
     public function actionReestablish(){
         $msg="";
-        if (isset($_POST['Reestablish'],
-                  $_POST['email'])) {   
-            if($this->model->checkEmail($_POST['email']))
-            {
-                $newpass=md5(date("His").$_POST['email'].date("dmY"));
-                $this->model->changePassNoUser($this->model->getUserID($_POST['email']),$newpass);
-                $this->sendMail($_POST['email'], ['Восстановление пароля',$this->makeReeMail($_POST['email'],$newpass)]);
-                $page = array(
-                    'content'  => 'Reestablish/ReestablishEnd.php',
-                    'title'    => 'Восстановление пароля',
-                    'template' => 'pageCreateChange.php',
-                );
-                $this->view->display($page);
+        if(isset($_POST['g-recaptcha-response']))
+        {
+            $recaptcha = $_POST['g-recaptcha-response'];
+            if(!empty($recaptcha)) {
+                $recaptcha = $_REQUEST['g-recaptcha-response'];
+                $secret = '6LdMvGYUAAAAAEBDdN0VXyT3AtlMgqYhkYLgAGCC';
+                $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secret ."&response=".$recaptcha."&remoteip=".$_SERVER['REMOTE_ADDR'];
+            
+                $curl = curl_init();
+                curl_setopt($curl, CURLOPT_URL, $url);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+                curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.16) Gecko/20110319 Firefox/3.6.16");
+                $curlData = curl_exec($curl);
+            
+                curl_close($curl);  
+                $curlData = json_decode($curlData, true);
+    
+                if($curlData['success']) {
+        
+                    if (isset($_POST['Reestablish'],
+                            $_POST['email'])) {   
+                        if($this->model->checkEmail($_POST['email']))
+                        {
+                            $newpass=md5(date("His").$_POST['email'].date("dmY"));
+                            $this->model->changePassNoUser($this->model->getUserID($_POST['email']),$newpass);
+                            $this->sendMail($_POST['email'], ['Восстановление пароля',$this->makeReeMail($_POST['email'],$newpass)]);
+                            $page = array(
+                                'content'  => 'Reestablish/ReestablishEnd.php',
+                                'title'    => 'Восстановление пароля',
+                                'template' => 'pageCreateChange.php',
+                            );
+                            $this->view->display($page);
+                            return;
+                        }
+                        else{
+                        }
+                    } else {
+                        $msg="Введен неверный email";
+                    }
+                }
+                else{
+                    $msg="Не пройдена проверка \"Я не робот\"";
+                }
             }
-            else{
-                $msg="Введен неверный email";
-            $page = array(
-                'content'  => 'Reestablish/ReestablishForm.php',
-                'title'    => 'Восстановление пароля',
-                'template' => 'pageCreateChange.php',
-                'msg'      => $msg, 
-            );
-            $this->view->display($page);
-            }
-        } else {
-            $page = array(
-                'content'  => 'Reestablish/ReestablishForm.php',
-                'title'    => 'Восстановление пароля',
-                'template' => 'pageCreateChange.php',
-                'msg'      => $msg, 
-            );
-            $this->view->display($page);
         }
+        else{
+            if(isset($_POST['Reestablish']))
+                $msg = "Не пройдена проверка \"Я не робот\"";
+        }
+        $page = array(
+            'content'  => 'Reestablish/ReestablishForm.php',
+            'title'    => 'Восстановление пароля',
+            'template' => 'pageCreateChange.php',
+            'msg'      => $msg, 
+        );
+        $this->view->display($page);
     }
 }
