@@ -15,7 +15,7 @@
 <!--<div class="decorative-strip"></div>-->
 <div class="content-box">
     <div class="contacts-support-block">
-        <li>Отправить письмо на электронную почту: startupanalyticsservice@gmail.com</li>
+        <li>Отправить письмо на электронную почту: <?=TEX_PODD_EMAIL?></li>
         <li>Связаться во ВКонтакте: <a href=">https://vk.com/support">https://vk.com/support</a></li>
         <li>Другие ресурсы</li>
     </div>

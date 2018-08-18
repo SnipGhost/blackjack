@@ -8,10 +8,6 @@
 <body>
 	<div class="wrapper">
 		<div class="allin-block">
-			<a href="/<?=BASE_URI?>" id="logo">
-				<div></div>
-				<span>Лого</span>
-			</a>
 			<div class="reg-form inline-flex">
 				<div class="reg-title-block noselect">
 					<div class="title-startup">START</div><div class="title-startup orange">UP</div>

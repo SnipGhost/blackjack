@@ -234,6 +234,7 @@ class RegController extends Controller
         {
             $recaptcha = $_POST['g-recaptcha-response'];
             if(!empty($recaptcha)) {
+                //Подключение рекапчи
                 $recaptcha = $_REQUEST['g-recaptcha-response'];
                 $secret = '6LdMvGYUAAAAAEBDdN0VXyT3AtlMgqYhkYLgAGCC';
                 $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secret ."&response=".$recaptcha."&remoteip=".$_SERVER['REMOTE_ADDR'];
@@ -268,7 +269,14 @@ class RegController extends Controller
                     $this->regMain('Ошибка при добавлении пользователя, попробуйте еще раз');
                     return;
                 }
-                $this->sendMail($_POST['email'],['Подтверждение регистрации',$this->makeMail($_POST['email'])]);
+                try{
+                    $this->sendMail($_POST['email'],['Подтверждение регистрации',$this->makeMail($_POST['email'])]);
+                }
+                catch(error $ex)
+                {
+                    $this->regMain('Ошибка при отправке письма, проверьте адрес электронной почты');
+                    return;
+                }
                 $page = array(
                     'content'  => 'reg/RegEnd.php',
                     'title'    => 'Завершение регистрации',
@@ -296,24 +304,23 @@ class RegController extends Controller
         $token = explode('\r',$_GET['token'])[0];
         $id = $this->model->checkActivation($token);
         $this->model->setActivation($id,1);
+        $this->model->deleteToken($id);
         header("Location: ./");
     }
     public function sendMail($email,$message)
     {
         $mail = new PHPmailer(true);
-
         // TODO: Обязательно вынести все константы в отдельный файл!
-        //       + Сделать функцию sendMail универсальной (передавать все как параметры)
+        // ПРОВЕРИТЬ РАБОТУ
         $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = 'startupanalytics.ru';                       // Specify main and backup SMTP servers
+        $mail->Host = EMAIL_HOST;                       // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = 'ourTeam@startupanalytics.ru';  // SMTP username
-        $mail->Password = 'gfd12hgfgfd12hgf';                         // SMTP password
+        $mail->Username = EMAIL_USERNAME;  // SMTP username
+        $mail->Password = EMAIL_PASS;                         // SMTP password
         $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-        $mail->Port = 465;                                    // TCP port to connect to
-        
-        // Recipients
-        $mail->setFrom('ourTeam@startupanalytics.ru','StartUp Analytics Team');
+        $mail->Port = 465;                                    // TCP port to connect to    
+       // Recipients
+        $mail->setFrom(EMAIL_USERNAME,'StartUp Analytics Team');
         $mail->addAddress($email);   
         
         // Content

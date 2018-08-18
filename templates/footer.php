@@ -4,7 +4,7 @@
 			<p id="address">
 				Юридический адрес: <br>
 				Москва, ул. Кедрова, д. 4 ООО «Бизнес-генерационный центр» <br>
-				8 (xxx) xxx xx xx <br>
+				<?=TEX_PODD_PHONE?> <br>
 				8 (xxx) xxx xx xx <br>
 			</p>
 		</div>

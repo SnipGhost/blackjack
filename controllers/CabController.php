@@ -19,7 +19,7 @@ class CabController extends Controller
             header("Location: ".BASE_URI."cab#profile");
 		}
 		else{
-			$user->refreshFile($db);
+			$user->refresh($db);
 			$filename="";
 			try {
 				$filename = $this->loadFile($_FILES['file'], 'data/upload/', 'xls', 10000000);
@@ -101,7 +101,7 @@ class CabController extends Controller
 
 		switch ($ext) {
 			case 'xls':
-				$types = array('application/vnd.ms-excel');
+				$types = array('application/vnd.ms-excel','application/octet-stream');
 				break;
 			default:
 				$types = array('text/plain');
@@ -110,12 +110,14 @@ class CabController extends Controller
 
 		// Проверка MIME-типов
 		if (!in_array($file['type'], $types)) {
+			echo $file['type'];
 			throw new UploadException(UPLOAD_S_ERR_WRONG_TYPE);
         }
         $buf = count(explode(".",$file['name']))-1;
         $file_ext = explode(".",$file['name'])[$buf];
         if($file_ext!=="xls")
         {
+			echo "$file_ext";
 			throw new UploadException(UPLOAD_S_ERR_WRONG_TYPE);
 		}
 		// Проверка размеров файла (уже после загрузки!)
@@ -136,8 +138,11 @@ class CabController extends Controller
 		$excel = PHPExcel_IOFactory::load($uploadfile);
         try{
             $buf = $excel->getSheetNames();
-            if(!in_array("Исходные параметры",$buf))
-                throw new UploadException(UPLOAD_S_ERR_WRONG_CONTENT);
+			if(!in_array("Исходные параметры",$buf))
+			{
+				echo "Ломаюсь тут";
+				throw new UploadException(UPLOAD_S_ERR_WRONG_CONTENT);
+			}
             
         }
         catch(Exception $e){
@@ -166,13 +171,14 @@ class CabController extends Controller
 			throw new HandleException(HANDLE_ERR_OPEN);
 		}
 		$params = $params->getSheetByName("params");
-		$chuv = $params->getCellByColumnAndRow(5,23)->getValue();
-		$days = $params->getCellByColumnAndRow(5,24)->getValue();
-		$z = $params->getCellByColumnAndRow(5,25)->getValue();
+		$chuv = $params->getCellByColumnAndRow(5,30)->getValue();
+		$days = $params->getCellByColumnAndRow(5,31)->getValue();
+		$z = $params->getCellByColumnAndRow(5,32)->getValue();
 		try{
 			$aud = $excel->getSheetByName("Исходные параметры")->getCellByColumnAndRow(3, 4)->getValue();//Количество избирателей в округе
 			$zhit = $excel->getSheetByName("Исходные параметры")->getCellByColumnAndRow(3, 5)->getValue();//Количество жителей в округе
 			$yav = $excel->getSheetByName("Исходные параметры")->getCellByColumnAndRow(3, 6)->getValue();//Процент явки
+			//TODO проверка на нули
 			$pres = array(0,0,0,0,0);
 			$promres = array();
 			$cands[] = $excel->getSheetByName("Исходные параметры")->getCellByColumnAndRow(3, 11)->getValue();
@@ -193,8 +199,8 @@ class CabController extends Controller
 					$list = $excel->getSheetByName($lName);
 					$day = $list->getCellByColumnAndRow(3,2)->getValue();//День. Важно, чтобы данный параметр был корректным!
 					$remainDays = $days - $day;
-					$k1 = $params->getCellByColumnAndRow($day,15)->getValue();
-					$k2 = $params->getCellByColumnAndRow($day,16)->getValue();
+					$k1 = $params->getCellByColumnAndRow($day,22)->getValue();
+					$k2 = $params->getCellByColumnAndRow($day,23)->getValue();
 					unset($dayparam);
 					unset($kaud);
 					unset($kk1);
@@ -216,10 +222,10 @@ class CabController extends Controller
 					$kk5=array();
 					for($i=0;$i<5;$i++)
 					{
-						$pk[]=$params->getCellByColumnAndRow($day,18+$i)->getValue();
+						$pk[]=$params->getCellByColumnAndRow($day,25+$i)->getValue();
 					}
 					$fon = 0;
-					for($i=0;$i<10;$i++)//TODO исправить количество параметров (в данной таблице не хватает строк)
+					for($i=0;$i<18;$i++)//TODO исправить количество параметров (в данной таблице не хватает строк)
 					{
 						$dayparam[]=$params->getCellByColumnAndRow($day,2+$i)->getValue();
 						if(!is_null($list->getCellByColumnAndRow(5,7+$i)->getValue())){
@@ -312,5 +318,4 @@ class CabController extends Controller
         $this->model->updateUserFile($user->id,$filename);
 		return $res;
 	}    
-	
 }

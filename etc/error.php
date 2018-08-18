@@ -24,24 +24,8 @@
 <html>
  <head>
   <title>Ошибка</title>	
-  <meta http-equiv="Content-Language" content="ru">
+  	<meta http-equiv="Content-Language" content="ru">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-		}
-		body {
-			align: center;
-			padding: 200px 50px 50px 50px;
-			background: #2f4e81;
-			color: white;
-			font-family: Courier New;
-		}
-		body a {
-			color: white;
-		}
-	</style>
 	<!-- <script type="text/javascript">
 		function handler(event) {
 			switch(event.keyCode) {
@@ -51,21 +35,37 @@
 		}
 		window.addEventListener('keydown', handler, false);
 	</script> -->
+	<link rel="stylesheet" type="text/css" href="/<?=BASE_URI?>css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/<?=BASE_URI?>css/icons.css" />
  </head>	
  <body>
-	<center>
- 	<h1>Kernel panic!</h1>
- 	<br><br>
- 	Произошла ошибка. Для продолжения: <br>
- 	<!-- Нажмите любую клавишу, чтобы вернуться назад, или  -->тыкните 
-	<a href="javascript:history.back();">ЗДЕСЬ</a><br>
- 	Зажмите CTRL+ALT+DEL и перезагрузите ваш компьютер, но это точно не поможет. <br>
- 	<br><br>
-	<b>Код ошибки: <?=$code?></b><br>
- 	<b>Расшифровка: <?=$name?></b><br>
-	<?php if (DEBUG) echo '<br>'.$message.'<br>'; ?>
-	<br><br>
- 	<!-- <b>Press ANY key to continue</b> -->
-	</center>
+ 	<div class="wrapper">
+		<div class="opi-allin-block">
+			<!-- Надо продумать так, чтобы у нас эта часть была недублируема -->
+			<!-- Дублер в templates/template.php -->
+			<a href="/<?=BASE_URI?>" id="logo">
+				<div></div>
+			</a>
+		</div>
+		<!-- Тут явно баг в логике названий. Почему about? -->
+		<div id="block-about">
+			<div class="content-box">
+				<div class="content-box-title">Ошибка</div>
+				<div class="ab-text">
+					<p>
+						Извините, по техническим причинам на данный момент сайт не работает :(
+					</p>
+					<p>
+						Мы уже решаем данную проблему. Если вам требуется срочная помошь, пожалуйста, обратитесь в нашу службу технической поддержки по следующим контактам:<br>
+						Электронная почта: <?=TEX_PODD_EMAIL?><br>
+						Телефон: <?=TEX_PODD_PHONE?><br>
+						Мы постараемся Вам помочь
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<?php require_once ROOT."templates/footer.php"; ?>
  </body>
 </html>

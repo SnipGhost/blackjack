@@ -153,6 +153,12 @@ class RegModel extends Model
         }
         return $res;
     }
+    public function deleteToken($userID)
+    {
+        $q="DELETE FROM Activation WHERE UserID = ".$userID;
+        $res = $this->db->query($q);
+        return $res;
+    }
     public function checkEmail($email)
     {
         try {

@@ -15,13 +15,14 @@ require_once ROOT.'engine/Exceptions.php';
 require_once ROOT.'engine/DBConnection.php';
 require_once ROOT.'engine/Session.php';
 require_once ROOT.'engine/User.php';
-
 // Запускаем сессию
+
 try {
     $session = Session::getInstance();
 } catch (SessionException $e) {
     // TODO: Сделать нормальную страницу ошибки "Сайт временно недоступен"
     // Т.к. если невозможно запустить сессию - сайт ПОЧТИ неработоспособен
+    $msg = 'Ошибка запуска сессии';
     include ROOT.'etc/error.php';
     exit();
 }
@@ -32,10 +33,10 @@ try {
 } catch (DataBaseException $e) {
     // TODO: Сделать нормальную страницу ошибки "БД сайта временно недоступна"
     // Т.к. если невозможно подключиться к БД - сайт ЧАСТИЧНО неработоспособен
+    $msg = 'Ошибка подключения к БД';
     include ROOT.'etc/error.php';
     exit();
 }
-
 // Производим аутентификацию пользователя
 try {
     $tmp_array = User::authentication($session, $db);
@@ -44,7 +45,8 @@ try {
 } catch (DataBaseException $e) {
     $login_err = "Ошибка при запросе в БД";
 }
-
+//include ROOT.'etc/error.php';
+//exit();
 // Маршрутизируем на подходящий контроллер
 $router = new Router();
 try {
@@ -52,8 +54,8 @@ try {
 } catch (RoutingException $e) {
     // TODO: Сделать нормальную страницу ошибки "У нас криворукие кодеры"
     // Т.к. если возникает RoutingException - баг где-то в модуле MVC
+    $msg = 'Ошибка маршрутизации сервера';
     include ROOT.'etc/error.php';
 }
-
 // Закрытие соединения
 $db->close();

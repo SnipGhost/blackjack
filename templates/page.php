@@ -14,7 +14,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>	
 <body>
-
 	<div class="header">
 		<div class="header-content">
 			<?php require 'templates/login.php'; ?>
@@ -27,11 +26,7 @@
 			<!-- Дублер в templates/template.php -->
 			<a href="/<?=BASE_URI?>" id="logo">
 				<div></div>
-				<span>Лого</span>
 			</a>
-			<div class="title-block noselect">
-				<div class="title-main">STARTUPANALYTICS</div>
-			</div>
 		</div>
 		<!-- Тут явно баг в логике названий. Почему about? -->
 		<div id="block-about">

@@ -25,11 +25,12 @@
 						<div class="offer-content">
 							Стандартный набор услуг. Включает в себя пакет функций КИТ.
 						</div><br>
-						<a href="/<?=BASE_URI?>opi" id="offer-button-link">
-							<div class="offer-button noselect">
-								Попробовать демо
-							</div>
-						</a>
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="button-place">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="5VU7LXLHNACEQ">
+							<input type="image" src="https://www.paypalobjects.com/ru_RU/RU/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal — более безопасный и легкий способ оплаты через Интернет!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/ru_RU/i/scr/pixel.gif" width="1" height="1">
+						</form>
 					</div>
 					<div class="offer-cab">
 						<div class="offer-title noselect">
@@ -42,11 +43,12 @@
 						<div class="offer-content">
 							Помимо функций КИТа включает в себя пакет репутационного менеджмента. В последствии будет дополняться
 						</div>
-						<a href="/<?=BASE_URI?>kit" id="offer-button-link">
-							<div class="offer-button noselect">
-								Купить
-							</div>
-						</a>						
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="button-place">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="5VU7LXLHNACEQ">
+							<input type="image" src="https://www.paypalobjects.com/ru_RU/RU/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal — более безопасный и легкий способ оплаты через Интернет!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/ru_RU/i/scr/pixel.gif" width="1" height="1">
+						</form>
 					</div>
 					<div class="offer-cab">
 						<div class="offer-title noselect">
@@ -59,11 +61,12 @@
 						<div class="offer-content">
 						В разработке
 						</div>
-						<a href="/<?=BASE_URI?>rem" id="offer-button-link">
-							<div class="offer-button noselect">
-								В разработке
-							</div>
-						</a>
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="button-place">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="5VU7LXLHNACEQ">
+							<input type="image" src="https://www.paypalobjects.com/ru_RU/RU/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal — более безопасный и легкий способ оплаты через Интернет!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/ru_RU/i/scr/pixel.gif" width="1" height="1">
+						</form>
 					</div>
 				</div>
 			</div>
@@ -95,7 +98,7 @@
 						Загрузить и анализировать файл:
 					</div>
 					<div>
-						<a href="/<?=BASE_URI?>data/download.csv" class="button-kit noselect" download>скачать шаблон</a>
+						<a href="/<?=BASE_URI?>data/download.xls" class="button-kit noselect" download>скачать шаблон</a>
 						<input type="hidden" name="MAX_FILE_SIZE" value="10000000" /> 
 						<input name="file" type="file" class="file-kit"/>
 						<button type="submit" name="reg" class = "button-kit noselect">
